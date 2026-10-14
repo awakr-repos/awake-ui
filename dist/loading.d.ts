@@ -1,5 +1,19 @@
 import * as react from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
-declare function Loading(): react.JSX.Element;
+type LoadingSize = 'sm' | 'md' | 'lg';
+type LoadingProps = ComponentPropsWithoutRef<'div'> & {
+    /**
+     * Size of the dots.
+     * @default 'md'
+     */
+    size?: LoadingSize;
+    /**
+     * Accessible label for screen readers.
+     * @default 'Loading…'
+     */
+    label?: string;
+};
+declare function Loading({ size, label, className, ...props }: LoadingProps): react.JSX.Element;
 
-export { Loading };
+export { Loading, type LoadingProps, type LoadingSize };

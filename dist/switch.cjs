@@ -27,9 +27,13 @@ module.exports = __toCommonJS(switch_exports);
 var import_switch = require("@base-ui/react/switch");
 var import_clsx = require("clsx");
 var import_jsx_runtime = require("react/jsx-runtime");
-function Switch({ className, ...props }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_switch.Switch.Root, { className: (0, import_clsx.clsx)("awake-switch-root", className), ...props, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_switch.Switch.Thumb, { className: "awake-switch-thumb" }) });
+function Root({ className, ...props }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_switch.Switch.Root, { className: (0, import_clsx.clsx)("awake-switch-root", className), ...props });
 }
+function Thumb({ className, ...props }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_switch.Switch.Thumb, { className: (0, import_clsx.clsx)("awake-switch-thumb", className), ...props });
+}
+var Switch = { Root, Thumb };
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Switch

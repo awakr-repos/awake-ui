@@ -8,7 +8,7 @@ function Root(props) {
   return /* @__PURE__ */ jsx(BaseUIDialog.Root, { ...props });
 }
 function Trigger({ className, ...props }) {
-  return /* @__PURE__ */ jsx(BaseUIDialog.Trigger, { className: clsx("awake-dialog-trigger", className), ...props });
+  return /* @__PURE__ */ jsx(BaseUIDialog.Trigger, { className: clsx(className), ...props });
 }
 function Backdrop({ className, ...props }) {
   return /* @__PURE__ */ jsx(BaseUIDialog.Backdrop, { className: clsx("awake-dialog-backdrop", className), ...props });
@@ -29,7 +29,6 @@ var Dialog = {
   Root,
   Trigger,
   Portal: BaseUIDialog.Portal,
-  // não precisa de estilo próprio, só reexporta
   Backdrop,
   Popup,
   Title,

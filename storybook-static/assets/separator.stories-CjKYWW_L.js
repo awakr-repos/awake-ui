@@ -1,0 +1,9 @@
+import{a as e,n as t,r as n}from"./rolldown-runtime-DkW27tQK.js";import{f as r}from"./iframe-C8zTdqCC.js";import{t as i}from"./jsx-runtime-DeHZSEgm.js";import{n as a,t as o}from"./clsx-CTwy9ux-.js";import{n as s,t as c}from"./useRenderElement-651MmLYR.js";var l,u;function d(){return(d=t((()=>{l=e(r(),1),c(),u=l.forwardRef(function(e,t){let{className:n,render:r,orientation:i=`horizontal`,style:a,...o}=e;return s(`div`,e,{state:{orientation:i},ref:t,props:[{role:`separator`,"aria-orientation":i},o]})})})))()}function f({orientation:e=`horizontal`,className:t,...n}){return(0,p.jsx)(u,{orientation:e,className:o(`awake-separator`,t),...n})}var p;function m(){return(m=t((()=>{d(),a(),p=i(),f.__docgenInfo={description:``,methods:[],displayName:`Separator`,props:{orientation:{required:!1,tsType:{name:`union`,raw:`'horizontal' | 'vertical'`,elements:[{name:`literal`,value:`'horizontal'`},{name:`literal`,value:`'vertical'`}]},description:``,defaultValue:{value:`'horizontal'`,computed:!1}},className:{required:!1,tsType:{name:`string`},description:``}}}})))()}var h=n({Horizontal:()=>_,Vertical:()=>v,__namedExportsOrder:()=>y,default:()=>g}),g,_,v,y;function b(){return(b=t((()=>{m(),g={title:`Components/Separator`,component:f,argTypes:{orientation:{control:`select`,options:[`horizontal`,`vertical`]}}},_={args:{orientation:`horizontal`}},v={args:{orientation:`vertical`}},y=[`Horizontal`,`Vertical`],_.parameters={..._.parameters,docs:{..._.parameters?.docs,source:{originalSource:`{
+  args: {
+    orientation: 'horizontal'
+  }
+}`,..._.parameters?.docs?.source}}},v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
+  args: {
+    orientation: 'vertical'
+  }
+}`,...v.parameters?.docs?.source}}}})))()}export{h as i,v as n,b as r,_ as t};

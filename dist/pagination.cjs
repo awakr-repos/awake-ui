@@ -29,12 +29,23 @@ var import_clsx2 = require("clsx");
 // src/button/index.tsx
 var import_clsx = require("clsx");
 var import_jsx_runtime = require("react/jsx-runtime");
-function Button({ children, variant = "primary", className, ...props }) {
+function Button({
+  children,
+  variant = "primary",
+  size = "md",
+  className,
+  ...props
+}) {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
     "button",
     {
       ...props,
-      className: (0, import_clsx.clsx)("awake-button", `awake-button--${variant}`, className),
+      className: (0, import_clsx.clsx)(
+        "awake-button",
+        `awake-button--${variant}`,
+        `awake-button--${size}`,
+        className
+      ),
       children
     }
   );

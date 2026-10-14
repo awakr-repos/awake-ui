@@ -31,7 +31,7 @@ function Root(props) {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_dialog.Dialog.Root, { ...props });
 }
 function Trigger({ className, ...props }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_dialog.Dialog.Trigger, { className: (0, import_clsx.clsx)("awake-dialog-trigger", className), ...props });
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_dialog.Dialog.Trigger, { className: (0, import_clsx.clsx)(className), ...props });
 }
 function Backdrop({ className, ...props }) {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_dialog.Dialog.Backdrop, { className: (0, import_clsx.clsx)("awake-dialog-backdrop", className), ...props });
@@ -52,7 +52,6 @@ var Dialog = {
   Root,
   Trigger,
   Portal: import_dialog.Dialog.Portal,
-  // não precisa de estilo próprio, só reexporta
   Backdrop,
   Popup,
   Title,
