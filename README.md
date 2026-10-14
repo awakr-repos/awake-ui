@@ -1,69 +1,115 @@
-# Awake UI
+# @developmentsnil/awake-ui
+
+A React component library built on [Base UI](https://base-ui.com/) with Tailwind CSS v4. Unstyled primitives with a pre-built token system — easy to drop in, easy to customize.
 
 ## Installation
 
 ```bash
 npm install @developmentsnil/awake-ui
+# or
+pnpm add @developmentsnil/awake-ui
 ```
 
-## Usage
+**Peer dependencies:** React 19+
 
-Import the CSS once in your application root:
+---
+
+## Setup
+
+### 1. Import the base styles
+
+In your application root (e.g. `main.tsx`):
 
 ```tsx
 import '@developmentsnil/awake-ui/style.css';
 ```
 
-## Dark Mode
-
-This design system provides both light and dark mode color palettes, but the theme control is left to the implementing application. To enable dark mode, add the `data-theme="dark"` attribute to a parent element:
+### 2. (Optional) Import dark mode styles
 
 ```tsx
-// Enable dark mode
-<html data-theme="dark">
-  {/* your app */}
-</html>
-
-// Or toggle dynamically
-function App() {
-  const [isDark, setIsDark] = useState(false);
-  
-  return (
-    <div data-theme={isDark ? 'dark' : 'light'}>
-      {/* your components */}
-    </div>
-  );
-}
+import '@developmentsnil/awake-ui/dark-theme.css';
 ```
 
-The components will automatically use the appropriate colors based on the `data-theme` attribute.
+Then apply `data-theme="dark"` or the `.dark` class to a parent element to activate dark mode:
+
+```tsx
+// HTML attribute
+<html data-theme="dark">
+
+// CSS class
+<html class="dark">
+
+// Dynamic toggle
+const [isDark, setIsDark] = useState(false);
+<div data-theme={isDark ? 'dark' : 'light'}>
+  {/* your app */}
+</div>
+```
+
+---
+
+## Components
 
 ### Button
 
 ```tsx
 import { Button } from '@developmentsnil/awake-ui/button';
 
-<Button variant="primary">Primary Button</Button>
-<Button variant="secondary">Secondary Button</Button>
+// Variants: primary | secondary | ghost | outline | destructive
+<Button variant="primary">Save</Button>
+<Button variant="secondary">Cancel</Button>
+<Button variant="ghost">Learn more</Button>
+<Button variant="outline">Edit</Button>
+<Button variant="destructive">Delete</Button>
+
+// Sizes: sm | md (default) | lg
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>
+
+// Disabled
+<Button variant="primary" disabled>Processing…</Button>
 ```
+
+---
+
+### Alert
+
+```tsx
+import { Alert } from '@developmentsnil/awake-ui/alert';
+
+// Variants: info (default) | success | warning | error
+<Alert variant="info">Your session will expire in 5 minutes.</Alert>
+<Alert variant="success">Profile saved successfully.</Alert>
+<Alert variant="warning">This action cannot be undone.</Alert>
+<Alert variant="error">Failed to save changes.</Alert>
+```
+
+---
 
 ### Dialog
 
+`Dialog.Trigger` has no visual style — pass any element via the `render` prop:
+
 ```tsx
 import { Dialog } from '@developmentsnil/awake-ui/dialog';
+import { Button } from '@developmentsnil/awake-ui/button';
 
 <Dialog.Root>
-  <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+  <Dialog.Trigger render={<Button variant="primary">Open</Button>} />
   <Dialog.Portal>
     <Dialog.Backdrop />
     <Dialog.Popup>
-      <Dialog.Title>Dialog Title</Dialog.Title>
-      <Dialog.Description>Dialog description text</Dialog.Description>
-      <Dialog.Close>Close</Dialog.Close>
+      <Dialog.Title>Confirm action</Dialog.Title>
+      <p>Are you sure you want to proceed?</p>
+      <Dialog.Close render={<Button variant="ghost">Cancel</Button>} />
+      <Dialog.Close render={<Button variant="destructive">Confirm</Button>} />
     </Dialog.Popup>
   </Dialog.Portal>
 </Dialog.Root>
 ```
+
+---
 
 ### Field
 
@@ -72,261 +118,257 @@ import { Field } from '@developmentsnil/awake-ui/field';
 
 <Field.Root>
   <Field.Label>Email</Field.Label>
-  <Field.Control type="email" />
+  <Field.Control type="email" placeholder="you@example.com" />
 </Field.Root>
 ```
 
-### Pagination
-
-```tsx
-import { Pagination } from '@developmentsnil/awake-ui/pagination';
-import { useState } from 'react';
-
-function MyComponent() {
-  const [currentPage, setCurrentPage] = useState(1);
-  
-  return (
-    <Pagination 
-      currentPage={currentPage} 
-      totalPages={10} 
-      onPageChange={(page) => setCurrentPage(page)} 
-    />
-  );
-}
-```
-
-### Separator
-
-```tsx
-import { Separator } from '@developmentsnil/awake-ui/separator';
-
-<Separator /> {/* Horizontal */}
-<Separator orientation="vertical" /> {/* Vertical */}
-```
-
-### Table
-
-```tsx
-import * as Table from '@developmentsnil/awake-ui/table';
-
-<Table.Root>
-  <Table.Head>
-    <Table.Row>
-      <Table.HeaderCell>Name</Table.HeaderCell>
-      <Table.HeaderCell>Email</Table.HeaderCell>
-    </Table.Row>
-  </Table.Head>
-  <Table.Body>
-    <Table.Row>
-      <Table.Cell>John Doe</Table.Cell>
-      <Table.Cell>john@example.com</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table.Root>
-```
+---
 
 ### Select
 
 ```tsx
 import { Select } from '@developmentsnil/awake-ui/select';
 
-// Basic usage
 <Select.Root>
-  <Select.Label>Choose an option</Select.Label>
+  <Select.Label>Country</Select.Label>
   <Select.Trigger>
-    <Select.Value placeholder="Select" />
-    <Select.Icon>
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-        <path d="M11 10H5l3 3.5zm0-4H5l3-3.5z" />
-      </svg>
-    </Select.Icon>
+    <Select.Value placeholder="Choose one…" />
+    <Select.Icon>▾</Select.Icon>
   </Select.Trigger>
   <Select.Portal>
     <Select.Backdrop />
     <Select.Positioner>
       <Select.Popup>
         <Select.List>
-          <Select.Item value="1">
+          <Select.Item value="br">
             <Select.ItemIndicator>✓</Select.ItemIndicator>
-            <Select.ItemText>Option 1</Select.ItemText>
+            <Select.ItemText>Brazil</Select.ItemText>
           </Select.Item>
-          <Select.Item value="2">
+          <Select.Item value="us">
             <Select.ItemIndicator>✓</Select.ItemIndicator>
-            <Select.ItemText>Option 2</Select.ItemText>
+            <Select.ItemText>United States</Select.ItemText>
           </Select.Item>
         </Select.List>
-      </Select.Popup>
-    </Select.Positioner>
-  </Select.Portal>
-</Select.Root>
-
-// With groups and separators
-<Select.Root>
-  <Select.Label>Choose a category</Select.Label>
-  <Select.Trigger>
-    <Select.Value placeholder="Select" />
-    <Select.Icon>
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-        <path d="M11 10H5l3 3.5zm0-4H5l3-3.5z" />
-      </svg>
-    </Select.Icon>
-  </Select.Trigger>
-  <Select.Portal>
-    <Select.Backdrop />
-    <Select.Positioner>
-      <Select.Popup>
-        <Select.List>
-          <Select.Group>
-            <Select.GroupLabel>Fruits</Select.GroupLabel>
-            <Select.Item value="apple">
-              <Select.ItemIndicator>✓</Select.ItemIndicator>
-              <Select.ItemText>Apple</Select.ItemText>
-            </Select.Item>
-            <Select.Item value="banana">
-              <Select.ItemIndicator>✓</Select.ItemIndicator>
-              <Select.ItemText>Banana</Select.ItemText>
-            </Select.Item>
-          </Select.Group>
-          <Select.Separator />
-          <Select.Group>
-            <Select.GroupLabel>Vegetables</Select.GroupLabel>
-            <Select.Item value="carrot">
-              <Select.ItemIndicator>✓</Select.ItemIndicator>
-              <Select.ItemText>Carrot</Select.ItemText>
-            </Select.Item>
-          </Select.Group>
-        </Select.List>
-      </Select.Popup>
-    </Select.Positioner>
-  </Select.Portal>
-</Select.Root>
-
-// With scroll arrows for long lists
-<Select.Root>
-  <Select.Label>Choose a number</Select.Label>
-  <Select.Trigger>
-    <Select.Value placeholder="Select" />
-    <Select.Icon>
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-        <path d="M11 10H5l3 3.5zm0-4H5l3-3.5z" />
-      </svg>
-    </Select.Icon>
-  </Select.Trigger>
-  <Select.Portal>
-    <Select.Backdrop />
-    <Select.Positioner>
-      <Select.Popup>
-        <Select.ScrollUpArrow>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M12 10H4l4-4.5z" />
-          </svg>
-        </Select.ScrollUpArrow>
-        <Select.List>
-          {Array.from({ length: 20 }, (_, i) => (
-            <Select.Item key={i} value={String(i + 1)}>
-              <Select.ItemIndicator>✓</Select.ItemIndicator>
-              <Select.ItemText>Option {i + 1}</Select.ItemText>
-            </Select.Item>
-          ))}
-        </Select.List>
-        <Select.ScrollDownArrow>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M12 6H4l4 4.5z" />
-          </svg>
-        </Select.ScrollDownArrow>
       </Select.Popup>
     </Select.Positioner>
   </Select.Portal>
 </Select.Root>
 ```
 
+**With groups and scroll arrows** (for long lists):
+
+```tsx
+<Select.Popup>
+  <Select.ScrollUpArrow>▲</Select.ScrollUpArrow>
+  <Select.List>
+    <Select.Group>
+      <Select.GroupLabel>Fruits</Select.GroupLabel>
+      <Select.Item value="apple">
+        <Select.ItemIndicator>✓</Select.ItemIndicator>
+        <Select.ItemText>Apple</Select.ItemText>
+      </Select.Item>
+    </Select.Group>
+    <Select.Separator />
+    <Select.Group>
+      <Select.GroupLabel>Vegetables</Select.GroupLabel>
+      <Select.Item value="carrot">
+        <Select.ItemIndicator>✓</Select.ItemIndicator>
+        <Select.ItemText>Carrot</Select.ItemText>
+      </Select.Item>
+    </Select.Group>
+  </Select.List>
+  <Select.ScrollDownArrow>▼</Select.ScrollDownArrow>
+</Select.Popup>
+```
+
+---
+
 ### Switch
+
+Switch uses the compound component pattern — `Root` controls the state, `Thumb` is the visual handle:
 
 ```tsx
 import { Switch } from '@developmentsnil/awake-ui/switch';
 
-<Switch
-  checked={false}
-  onCheckedChange={(checked) => console.log(checked)}
-/>
+const [checked, setChecked] = useState(false);
+
+<Switch.Root checked={checked} onCheckedChange={setChecked}>
+  <Switch.Thumb />
+</Switch.Root>
+
+// Disabled
+<Switch.Root checked={true} disabled>
+  <Switch.Thumb />
+</Switch.Root>
 ```
+
+---
 
 ### Loading
 
 ```tsx
 import { Loading } from '@developmentsnil/awake-ui/loading';
 
+// Sizes: sm | md (default) | lg
 <Loading />
+<Loading size="sm" label="Saving…" />
+<Loading size="lg" label="Loading data" />
 ```
+
+`label` sets the accessible `aria-label` (default: `"Loading…"`).
+
+---
 
 ### Tooltip
 
 ```tsx
 import { Tooltip } from '@developmentsnil/awake-ui/tooltip';
+import { Button } from '@developmentsnil/awake-ui/button';
 
-// Basic usage
+// Wrap multiple tooltips in a single Provider
 <Tooltip.Provider>
   <Tooltip.Root>
-    <Tooltip.Trigger aria-label="Tooltip trigger">
-      <button>Hover me</button>
-    </Tooltip.Trigger>
-    <Tooltip.Portal>
-      <Tooltip.Positioner>
-        <Tooltip.Popup>
-          <Tooltip.Arrow />
-          Tooltip content
-        </Tooltip.Popup>
-      </Tooltip.Positioner>
-    </Tooltip.Portal>
-  </Tooltip.Root>
-</Tooltip.Provider>
-
-// With positioning
-<Tooltip.Provider>
-  <Tooltip.Root>
-    <Tooltip.Trigger aria-label="Top tooltip">
-      <button>Top</button>
-    </Tooltip.Trigger>
+    <Tooltip.Trigger render={<Button variant="ghost">Hover me</Button>} />
     <Tooltip.Portal>
       <Tooltip.Positioner side="top">
         <Tooltip.Popup>
+          Tooltip text
           <Tooltip.Arrow />
-          Tooltip on top
         </Tooltip.Popup>
       </Tooltip.Positioner>
     </Tooltip.Portal>
   </Tooltip.Root>
 </Tooltip.Provider>
-
-// Multiple tooltips
-<Tooltip.Provider>
-  <div style={{ display: 'flex', gap: '16px' }}>
-    <Tooltip.Root>
-      <Tooltip.Trigger aria-label="Bold">
-        <button>Bold</button>
-      </Tooltip.Trigger>
-      <Tooltip.Portal>
-        <Tooltip.Positioner>
-          <Tooltip.Popup>
-            <Tooltip.Arrow />
-            Bold text
-          </Tooltip.Popup>
-        </Tooltip.Positioner>
-      </Tooltip.Portal>
-    </Tooltip.Root>
-    <Tooltip.Root>
-      <Tooltip.Trigger aria-label="Italic">
-        <button>Italic</button>
-      </Tooltip.Trigger>
-      <Tooltip.Portal>
-        <Tooltip.Positioner>
-          <Tooltip.Popup>
-            <Tooltip.Arrow />
-            Italic text
-          </Tooltip.Popup>
-        </Tooltip.Positioner>
-      </Tooltip.Portal>
-    </Tooltip.Root>
-  </div>
-</Tooltip.Provider>
 ```
+
+`side` accepts `top` | `right` | `bottom` | `left` (default: `top`).
+
+---
+
+### Separator
+
+```tsx
+import { Separator } from '@developmentsnil/awake-ui/separator';
+
+<Separator />                          // horizontal (default)
+<Separator orientation="vertical" />  // vertical
+```
+
+---
+
+### Table
+
+```tsx
+import { Table } from '@developmentsnil/awake-ui/table';
+
+<Table.Root>
+  <Table.Head>
+    <Table.Row>
+      <Table.HeaderCell>Name</Table.HeaderCell>
+      <Table.HeaderCell>Role</Table.HeaderCell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>Alice</Table.Cell>
+      <Table.Cell>Engineer</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table.Root>
+```
+
+---
+
+### Pagination
+
+```tsx
+import { Pagination } from '@developmentsnil/awake-ui/pagination';
+
+const [page, setPage] = useState(1);
+
+<Pagination
+  currentPage={page}
+  totalPages={10}
+  onPageChange={setPage}
+/>
+```
+
+---
+
+## Customization
+
+awake-ui uses a two-layer token system:
+
+- **Raw scales** — full color palettes (`--color-awake-primary-500`, etc.)
+- **Semantic tokens** — what components actually use (`--color-awake-brand`, `--color-awake-surface`, etc.)
+
+To customize the library, **override only the semantic tokens** in your own CSS. You never need to touch the raw scales:
+
+```css
+:root {
+  /* Change the brand color to teal */
+  --color-awake-brand:       #0d9488;
+  --color-awake-brand-hover: #0f766e;
+  --color-awake-brand-subtle: #ccfbf1;
+  --color-awake-brand-focus: #0d9488;
+}
+```
+
+### Available semantic tokens
+
+| Token | Default (light) | Used for |
+|---|---|---|
+| `--color-awake-brand` | indigo-500 | Primary actions, focus rings |
+| `--color-awake-brand-hover` | indigo-600 | Hover state of brand elements |
+| `--color-awake-brand-subtle` | indigo-50 | Subtle brand backgrounds |
+| `--color-awake-surface` | #ffffff | Page / card backgrounds |
+| `--color-awake-surface-raised` | neutral-100 | Elevated surfaces (dropdowns) |
+| `--color-awake-border` | neutral-200 | Default borders |
+| `--color-awake-border-strong` | neutral-300 | Emphasized borders |
+| `--color-awake-text` | neutral-900 | Body text |
+| `--color-awake-text-muted` | neutral-600 | Secondary text |
+| `--color-awake-text-subtle` | neutral-400 | Placeholder / disabled text |
+| `--color-awake-text-on-brand` | #ffffff | Text on brand-colored backgrounds |
+
+### Per-component CSS variables
+
+Some components expose their own variables for fine-grained control:
+
+```css
+/* Separator color */
+.my-divider {
+  --awake-separator-color: #e2e8f0;
+}
+```
+
+---
+
+## Dark mode
+
+Import `dark-theme.css` once and apply `data-theme="dark"` or `.dark` to any ancestor element. Both selectors are supported out of the box:
+
+```tsx
+import '@developmentsnil/awake-ui/dark-theme.css';
+
+// Using HTML attribute (Radix / shadcn default)
+document.documentElement.setAttribute('data-theme', 'dark');
+
+// Using CSS class (Tailwind default)
+document.documentElement.classList.add('dark');
+```
+
+To support `prefers-color-scheme` instead, add this to your own CSS:
+
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* paste the same overrides from dark-theme.css here */
+  }
+}
+```
+
+---
+
+## License
+
+MIT
