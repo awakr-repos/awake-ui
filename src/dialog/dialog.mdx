@@ -5,21 +5,64 @@ import * as DialogStories from './dialog.stories';
 
 # Dialog
 
-Componente composto (`Dialog.Root`, `Dialog.Trigger`, `Dialog.Portal`, `Dialog.Popup`, `Dialog.Title`, `Dialog.Description`) para construir diálogos com overlay e conteúdo já conectados via acessibilidade nativa do Base UI.
+Compound component (`Dialog.Root`, `Dialog.Trigger`, `Dialog.Portal`, `Dialog.Backdrop`, `Dialog.Popup`, `Dialog.Title`, `Dialog.Description`, `Dialog.Close`) para construir diálogos com overlay e conteúdo já conectados via acessibilidade nativa do Base UI.
 
 ```tsx
 import { Dialog } from '@developmentsnil/awake-ui/dialog';
 import '@developmentsnil/awake-ui/style.css';
+```
+
+## Basic Usage
+
+`Dialog.Trigger` e `Dialog.Close` usam o padrão `render` prop para que qualquer componente possa abrir ou fechar o dialog:
+
+```tsx
+import { Button } from '@developmentsnil/awake-ui/button';
 
 <Dialog.Root>
-  <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+  <Dialog.Trigger render={<Button>Open Dialog</Button>} />
   <Dialog.Portal>
+    <Dialog.Backdrop />
     <Dialog.Popup>
       <Dialog.Title>Dialog Title</Dialog.Title>
       <Dialog.Description>Dialog Description</Dialog.Description>
+      <Dialog.Close render={<Button variant="secondary">Close</Button>} />
     </Dialog.Popup>
   </Dialog.Portal>
 </Dialog.Root>
 ```
 
 <Canvas of={DialogStories.Default} />
+
+## With Secondary Trigger
+
+<Canvas of={DialogStories.WithSecondaryTrigger} />
+
+## API
+
+### `Dialog.Root`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `open` | `boolean` | — | Controlled open state |
+| `onOpenChange` | `(open: boolean) => void` | — | Called when open state changes |
+| `defaultOpen` | `boolean` | `false` | Initial open state (uncontrolled) |
+| `dismissible` | `boolean` | `true` | Whether clicking the backdrop closes the dialog |
+
+### `Dialog.Trigger` / `Dialog.Close`
+
+| Prop | Type | Description |
+|---|---|---|
+| `render` | `ReactElement` | **Required.** The element to render as the trigger/close button |
+
+### `Dialog.Positioner`
+
+Rendered inside `Dialog.Portal`. Positions the popup in the viewport center by default.
+
+### `Dialog.Popup`
+
+The dialog container. Receives `data-open` / `data-closed` attributes for enter/exit animations.
+
+### `Dialog.Backdrop`
+
+Renders the semi-transparent overlay behind the popup. Place it before `Dialog.Popup` inside `Dialog.Portal`.

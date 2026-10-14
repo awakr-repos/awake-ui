@@ -7,19 +7,30 @@ import * as LoadingStories from './loading.stories';
 
 Component for displaying a loading indicator with animated dots.
 
-## Basic Usage
-
 ```tsx
 import { Loading } from '@developmentsnil/awake-ui/loading';
 import '@developmentsnil/awake-ui/style.css';
+```
 
+## Basic Usage
+
+```tsx
 <Loading />
+<Loading size="sm" />
+<Loading size="md" />
+<Loading size="lg" />
 ```
 
 <Canvas of={LoadingStories.Default} />
 
+## Sizes
+
+<Canvas of={LoadingStories.Sizes} />
+
 ## Props
 
-The Loading component doesn't require any props and renders a default loading animation.
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size of the loading indicator |
 
 <Controls />

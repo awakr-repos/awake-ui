@@ -71,7 +71,12 @@
       "require": "./dist/alert.cjs"
     },
     "./style.css": "./dist/style.css",
-    "./dark-theme.css": "./dist/dark-theme.css"
+    "./dark-theme.css": "./dist/dark-theme.css",
+    "./autocomplete": {
+      "types": "./dist/autocomplete.d.ts",
+      "import": "./dist/autocomplete.js",
+      "require": "./dist/autocomplete.cjs"
+    }
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

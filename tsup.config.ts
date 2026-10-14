@@ -12,7 +12,8 @@ export default defineConfig({
     switch: 'src/switch/index.tsx',
     loading: 'src/loading/index.tsx',
     tooltip: 'src/tooltip/index.tsx',
-    alert: 'src/alert/index.tsx'
+    alert: 'src/alert/index.tsx',
+    autocomplete: 'src/autocomplete/index.tsx'
   },
   format: ['cjs', 'esm'],
   dts: true,

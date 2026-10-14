@@ -1,0 +1,187 @@
+/* ── Autocomplete ──────────────────────────────────────────────────────────── */
+
+.awake-autocomplete-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.awake-autocomplete-input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--awake-autocomplete-text, var(--color-awake-text));
+  background-color: var(--awake-autocomplete-bg, var(--color-awake-surface));
+  border: 1px solid var(--awake-autocomplete-border, var(--color-awake-border));
+  border-radius: var(--radius-awake-md);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.awake-autocomplete-input::placeholder {
+  color: var(--color-awake-text-subtle);
+}
+
+.awake-autocomplete-input:hover:not(:disabled) {
+  border-color: var(--color-awake-border-strong);
+}
+
+.awake-autocomplete-input:focus {
+  border-color: var(--color-awake-brand-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-awake-brand-focus) 20%, transparent);
+}
+
+.awake-autocomplete-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Trigger — chevron button inside the input group */
+.awake-autocomplete-trigger {
+  position: absolute;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  color: var(--color-awake-text-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-awake-sm);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.awake-autocomplete-trigger:hover {
+  color: var(--color-awake-text);
+}
+
+/* Clear button */
+.awake-autocomplete-clear {
+  position: absolute;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  color: var(--color-awake-text-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-awake-sm);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.awake-autocomplete-clear:hover {
+  color: var(--color-awake-text);
+}
+
+/* Popup */
+.awake-autocomplete-positioner {
+  z-index: 50;
+}
+
+.awake-autocomplete-popup {
+  min-width: var(--anchor-width);
+  max-height: 320px;
+  overflow-y: auto;
+  background-color: var(--color-awake-surface-raised);
+  border: 1px solid var(--color-awake-border);
+  border-radius: var(--radius-awake-lg);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--color-awake-text) 10%, transparent);
+  padding: 4px;
+
+  /* Enter animation */
+  transform-origin: var(--transform-origin);
+  transition: opacity 0.1s, transform 0.1s;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.awake-autocomplete-popup[data-ending-style] {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.awake-autocomplete-popup[data-starting-style] {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* List */
+.awake-autocomplete-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Item */
+.awake-autocomplete-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: var(--color-awake-text);
+  border-radius: var(--radius-awake-sm);
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transition: background-color 0.1s;
+}
+
+.awake-autocomplete-item[data-highlighted] {
+  background-color: color-mix(in srgb, var(--color-awake-brand) 10%, transparent);
+  color: var(--color-awake-text);
+}
+
+.awake-autocomplete-item[data-selected] {
+  color: var(--color-awake-brand);
+  font-weight: 500;
+}
+
+.awake-autocomplete-item[data-disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Group */
+.awake-autocomplete-group {
+  padding: 4px 0;
+}
+
+.awake-autocomplete-group-label {
+  padding: 4px 10px 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-awake-text-subtle);
+}
+
+/* Separator */
+.awake-autocomplete-separator {
+  height: 1px;
+  margin: 4px 0;
+  background-color: var(--color-awake-border);
+}
+
+/* Empty state */
+.awake-autocomplete-empty {
+  padding: 12px 10px;
+  font-size: 14px;
+  color: var(--color-awake-text-muted);
+  text-align: center;
+}
+
+/* Status (screen reader / async feedback) */
+.awake-autocomplete-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}

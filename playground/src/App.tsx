@@ -1,3 +1,4 @@
+import { Autocomplete } from 'awake-ui/autocomplete';
 import { Alert } from 'awake-ui/alert';
 import { Button } from 'awake-ui/button';
 import { Dialog } from 'awake-ui/dialog';
@@ -25,6 +26,50 @@ function Section({ title, children }: { title: string; children: React.ReactNode
         {children}
       </div>
     </section>
+  );
+}
+
+
+// ── Autocomplete demo ────────────────────────────────────────────────────────
+// Needs its own component because useFilter must be called inside the tree
+function AutocompleteDemo() {
+  const FRUITS = [
+    'Apple', 'Apricot', 'Avocado', 'Banana', 'Blueberry',
+    'Cherry', 'Grape', 'Kiwi', 'Lemon', 'Mango',
+    'Orange', 'Peach', 'Pear', 'Pineapple', 'Strawberry', 'Watermelon',
+  ];
+  const { contains } = Autocomplete.useFilter({ sensitivity: 'base' });
+
+  return (
+    <div style={{ width: 280 }}>
+      <Autocomplete.Root
+        items={FRUITS}
+        filter={(item, input) => contains(item, input)}
+        autoHighlight
+      >
+        <Autocomplete.InputGroup>
+          <Autocomplete.Input placeholder="Search fruits…" />
+          <Autocomplete.Clear aria-label="Clear">✕</Autocomplete.Clear>
+          <Autocomplete.Trigger aria-label="Toggle list">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M11 10H5l3 3.5zm0-4H5l3-3.5z" />
+            </svg>
+          </Autocomplete.Trigger>
+        </Autocomplete.InputGroup>
+        <Autocomplete.Portal>
+          <Autocomplete.Positioner sideOffset={4}>
+            <Autocomplete.Popup>
+              <Autocomplete.List>
+                {FRUITS.map((f) => (
+                  <Autocomplete.Item key={f} value={f}>{f}</Autocomplete.Item>
+                ))}
+              </Autocomplete.List>
+              <Autocomplete.Empty>No results found.</Autocomplete.Empty>
+            </Autocomplete.Popup>
+          </Autocomplete.Positioner>
+        </Autocomplete.Portal>
+      </Autocomplete.Root>
+    </div>
   );
 }
 
@@ -295,6 +340,11 @@ function App() {
             </Table.Row>
           </Table.Body>
         </Table.Root>
+      </Section>
+
+      {/* ── Autocomplete ── */}
+      <Section title="Autocomplete">
+        <AutocompleteDemo />
       </Section>
 
       {/* ── Pagination ── */}
