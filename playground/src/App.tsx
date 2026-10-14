@@ -176,7 +176,9 @@ function App() {
       <Section title="Tooltip">
         <Tooltip.Provider>
           <Tooltip.Root>
-            <Tooltip.Trigger render={<Button variant="outline">Hover me</Button>} />
+            <Tooltip.Trigger aria-label="Hover me">
+              <Button variant="outline">Hover me</Button>
+            </Tooltip.Trigger>
             <Tooltip.Portal>
               <Tooltip.Positioner>
                 <Tooltip.Popup>
@@ -187,7 +189,9 @@ function App() {
             </Tooltip.Portal>
           </Tooltip.Root>
           <Tooltip.Root>
-            <Tooltip.Trigger render={<Button variant="ghost">Another</Button>} />
+            <Tooltip.Trigger aria-label="Another">
+              <Button variant="ghost">Another</Button>
+            </Tooltip.Trigger>
             <Tooltip.Portal>
               <Tooltip.Positioner side="right">
                 <Tooltip.Popup>

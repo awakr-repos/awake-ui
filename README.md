@@ -221,6 +221,8 @@ import { Loading } from '@developmentsnil/awake-ui/loading';
 
 ### Tooltip
 
+`Tooltip.Trigger` wraps any element as its child — no `render` prop needed:
+
 ```tsx
 import { Tooltip } from '@developmentsnil/awake-ui/tooltip';
 import { Button } from '@developmentsnil/awake-ui/button';
@@ -228,7 +230,9 @@ import { Button } from '@developmentsnil/awake-ui/button';
 // Wrap multiple tooltips in a single Provider
 <Tooltip.Provider>
   <Tooltip.Root>
-    <Tooltip.Trigger render={<Button variant="ghost">Hover me</Button>} />
+    <Tooltip.Trigger aria-label="More info">
+      <Button variant="ghost">Hover me</Button>
+    </Tooltip.Trigger>
     <Tooltip.Portal>
       <Tooltip.Positioner side="top">
         <Tooltip.Popup>
@@ -242,6 +246,50 @@ import { Button } from '@developmentsnil/awake-ui/button';
 ```
 
 `side` accepts `top` | `right` | `bottom` | `left` (default: `top`).
+
+---
+
+### Autocomplete
+
+A text input that filters a list of options as the user types:
+
+```tsx
+import { Autocomplete } from '@developmentsnil/awake-ui/autocomplete';
+
+function SearchInput() {
+  const FRUITS = ['Apple', 'Banana', 'Cherry', 'Mango', 'Orange'];
+  const { contains } = Autocomplete.useFilter({ sensitivity: 'base' });
+
+  return (
+    <Autocomplete.Root
+      items={FRUITS}
+      filter={(item, input) => contains(item, input)}
+      autoHighlight
+    >
+      <Autocomplete.InputGroup>
+        <Autocomplete.Input placeholder="Search fruits…" />
+        <Autocomplete.Clear aria-label="Clear">✕</Autocomplete.Clear>
+        <Autocomplete.Trigger aria-label="Toggle list">▾</Autocomplete.Trigger>
+      </Autocomplete.InputGroup>
+      <Autocomplete.Portal>
+        <Autocomplete.Positioner sideOffset={4}>
+          <Autocomplete.Popup>
+            <Autocomplete.List>
+              {FRUITS.map((f) => (
+                <Autocomplete.Item key={f} value={f}>{f}</Autocomplete.Item>
+              ))}
+            </Autocomplete.List>
+            <Autocomplete.Empty>No results found.</Autocomplete.Empty>
+          </Autocomplete.Popup>
+        </Autocomplete.Positioner>
+      </Autocomplete.Portal>
+    </Autocomplete.Root>
+  );
+}
+```
+
+`Autocomplete.useFilter` accepts `sensitivity: 'base' | 'accent' | 'case' | 'variant'`.  
+`Autocomplete.Clear` only renders when the input has a value.
 
 ---
 
