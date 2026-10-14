@@ -4,10 +4,5 @@
 
 .awake-pagination-info {
   @apply text-sm;
-  color: var(--awake-pagination-info-text, var(--color-awake-neutral-600));
-}
-
-/* Dark mode styles */
-[data-theme="dark"] .awake-pagination-info {
-  --awake-pagination-info-text: var(--color-awake-neutral-dark-400);
+  color: var(--awake-pagination-info-text, var(--color-awake-text-muted));
 }

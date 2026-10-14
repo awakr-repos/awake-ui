@@ -1,53 +1,26 @@
-@import "tailwindcss";
-
 .awake-alert {
-  @apply p-4 rounded-md;
-  background-color: var(--awake-alert-bg, var(--color-awake-neutral-100));
-  color: var(--awake-alert-text, var(--color-awake-neutral-900));
+  @apply p-4;
+  border-radius: var(--radius-awake-md);
+  background-color: var(--awake-alert-bg, var(--color-awake-surface-raised));
+  color: var(--awake-alert-text, var(--color-awake-text));
 }
 
 .awake-alert--info {
-  background-color: var(--awake-alert-info-bg, #dbeafe);
-  color: var(--awake-alert-info-text, #1e40af);
+  background-color: var(--awake-alert-info-bg, var(--color-awake-feedback-info-bg));
+  color: var(--awake-alert-info-text, var(--color-awake-feedback-info-text));
 }
 
 .awake-alert--success {
-  background-color: var(--awake-alert-success-bg, #dcfce7);
-  color: var(--awake-alert-success-text, #166534);
+  background-color: var(--awake-alert-success-bg, var(--color-awake-feedback-success-bg));
+  color: var(--awake-alert-success-text, var(--color-awake-feedback-success-text));
 }
 
 .awake-alert--warning {
-  background-color: var(--awake-alert-warning-bg, #fef3c7);
-  color: var(--awake-alert-warning-text, #92400e);
+  background-color: var(--awake-alert-warning-bg, var(--color-awake-feedback-warning-bg));
+  color: var(--awake-alert-warning-text, var(--color-awake-feedback-warning-text));
 }
 
 .awake-alert--error {
-  background-color: var(--awake-alert-error-bg, #fee2e2);
-  color: var(--awake-alert-error-text, #991b1b);
-}
-
-/* Dark mode styles */
-[data-theme="dark"] .awake-alert {
-  --awake-alert-bg: var(--color-awake-neutral-dark-800);
-  --awake-alert-text: var(--color-awake-neutral-dark-50);
-}
-
-[data-theme="dark"] .awake-alert--info {
-  --awake-alert-info-bg: #1e3a5f;
-  --awake-alert-info-text: #93c5fd;
-}
-
-[data-theme="dark"] .awake-alert--success {
-  --awake-alert-success-bg: #14532d;
-  --awake-alert-success-text: #86efac;
-}
-
-[data-theme="dark"] .awake-alert--warning {
-  --awake-alert-warning-bg: #422006;
-  --awake-alert-warning-text: #fde68a;
-}
-
-[data-theme="dark"] .awake-alert--error {
-  --awake-alert-error-bg: #450a0a;
-  --awake-alert-error-text: #fca5a5;
+  background-color: var(--awake-alert-error-bg, var(--color-awake-feedback-error-bg));
+  color: var(--awake-alert-error-text, var(--color-awake-feedback-error-text));
 }

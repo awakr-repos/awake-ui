@@ -7,22 +7,13 @@
 }
 
 .awake-tooltip-popup {
-  @apply px-2 py-1 rounded-md text-sm font-medium shadow-lg;
-  background-color: var(--awake-tooltip-bg, var(--color-awake-neutral-900));
-  color: var(--awake-tooltip-text, white);
+  @apply px-2 py-1 text-sm font-medium shadow-lg;
+  border-radius: var(--radius-awake-sm);
   max-width: 200px;
+  background-color: var(--awake-tooltip-bg, var(--color-awake-text));
+  color: var(--awake-tooltip-text, var(--color-awake-surface));
 }
 
 .awake-tooltip-arrow {
-  color: var(--awake-tooltip-bg, var(--color-awake-neutral-900));
-}
-
-/* Dark mode styles */
-[data-theme="dark"] .awake-tooltip-popup {
-  --awake-tooltip-bg: var(--color-awake-neutral-dark-50);
-  --awake-tooltip-text: var(--color-awake-neutral-dark-900);
-}
-
-[data-theme="dark"] .awake-tooltip-arrow {
-  --awake-tooltip-bg: var(--color-awake-neutral-dark-50);
+  color: var(--awake-tooltip-bg, var(--color-awake-text));
 }

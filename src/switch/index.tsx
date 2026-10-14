@@ -4,14 +4,12 @@ import { Switch as BaseUISwitch } from '@base-ui/react/switch';
 import { ComponentPropsWithoutRef } from 'react';
 import { clsx } from 'clsx';
 
-export type SwitchProps = ComponentPropsWithoutRef<typeof BaseUISwitch.Root> & {
-  className?: string;
-};
-
-export function Switch({ className, ...props }: SwitchProps) {
-  return (
-    <BaseUISwitch.Root className={clsx('awake-switch-root', className)} {...props}>
-      <BaseUISwitch.Thumb className="awake-switch-thumb" />
-    </BaseUISwitch.Root>
-  );
+function Root({ className, ...props }: ComponentPropsWithoutRef<typeof BaseUISwitch.Root>) {
+  return <BaseUISwitch.Root className={clsx('awake-switch-root', className)} {...props} />;
 }
+
+function Thumb({ className, ...props }: ComponentPropsWithoutRef<typeof BaseUISwitch.Thumb>) {
+  return <BaseUISwitch.Thumb className={clsx('awake-switch-thumb', className)} {...props} />;
+}
+
+export const Switch = { Root, Thumb };

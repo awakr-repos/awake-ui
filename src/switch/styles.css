@@ -1,40 +1,24 @@
-@import "tailwindcss";
-
 .awake-switch-root {
-  @apply flex h-5 w-9 shrink-0 border p-0.5 transition-colors duration-150 ease-[ease] focus-visible:outline-2 focus-visible:outline-offset-2;
-  background-color: white;
-  border-color: #0f172a;
-  @apply focus-visible:outline-neutral-950;
+  @apply flex h-5 w-9 shrink-0 p-0.5 transition-colors duration-150 ease-[ease];
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2;
+  border-radius: var(--radius-awake-full);
+  border: 1px solid var(--awake-switch-border, var(--color-awake-border-strong));
+  background-color: var(--awake-switch-bg, var(--color-awake-surface));
+  outline-color: var(--color-awake-brand-focus);
 }
 
 .awake-switch-root[data-checked] {
-  background-color: #0f172a;
+  background-color: var(--awake-switch-checked-bg, var(--color-awake-brand));
+  border-color: var(--awake-switch-checked-border, var(--color-awake-brand));
 }
 
 .awake-switch-thumb {
-  @apply size-3.5 rounded-full transition-[translate,background-color] duration-150 ease-[ease];
-  background-color: #0f172a;
+  @apply size-3.5 transition-[translate,background-color] duration-150 ease-[ease];
+  border-radius: var(--radius-awake-full);
+  background-color: var(--awake-switch-thumb-bg, var(--color-awake-text));
 }
 
 .awake-switch-thumb[data-checked] {
   @apply translate-x-4;
-  background-color: white;
-}
-
-/* Dark mode styles */
-[data-theme="dark"] .awake-switch-root {
-  background-color: #0f172a;
-  border-color: #f8fafc;
-}
-
-[data-theme="dark"] .awake-switch-root[data-checked] {
-  background-color: #f8fafc;
-}
-
-[data-theme="dark"] .awake-switch-thumb {
-  background-color: #f8fafc;
-}
-
-[data-theme="dark"] .awake-switch-thumb[data-checked] {
-  background-color: #0f172a;
+  background-color: var(--awake-switch-thumb-checked-bg, var(--color-awake-text-on-brand));
 }

@@ -1,26 +1,29 @@
 .awake-select-label {
   @apply block text-sm font-medium mb-1;
-  color: var(--awake-label-color, var(--color-awake-neutral-700));
+  color: var(--awake-select-label-color, var(--color-awake-text-muted));
 }
 
 .awake-select-trigger {
-  @apply flex items-center justify-between w-full px-3 py-2 rounded-md shadow-sm transition-colors cursor-pointer;
-  background-color: var(--awake-trigger-bg, white);
-  border-color: var(--awake-trigger-border, var(--color-awake-neutral-300));
-  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-awake-primary-500;
+  @apply flex items-center justify-between w-full px-3 py-2 shadow-sm transition-colors cursor-pointer;
+  border-radius: var(--radius-awake-md);
+  background-color: var(--awake-select-trigger-bg, var(--color-awake-surface));
+  border: 1px solid var(--awake-select-trigger-border, var(--color-awake-border));
+  color: var(--awake-select-trigger-text, var(--color-awake-text));
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+  outline-color: var(--color-awake-brand-focus);
 }
 
 .awake-select-trigger:hover {
-  border-color: var(--awake-trigger-hover-border, var(--color-awake-neutral-400));
+  border-color: var(--awake-select-trigger-hover-border, var(--color-awake-border-strong));
 }
 
 .awake-select-value {
-  color: var(--awake-value-color, var(--color-awake-neutral-900));
+  color: var(--awake-select-value-color, var(--color-awake-text));
 }
 
 .awake-select-icon {
   @apply ml-2 pointer-events-none;
-  color: var(--awake-icon-color, var(--color-awake-neutral-500));
+  color: var(--awake-select-icon-color, var(--color-awake-text-subtle));
 }
 
 .awake-select-positioner {
@@ -28,9 +31,10 @@
 }
 
 .awake-select-popup {
-  @apply border rounded-md shadow-lg min-w-[200px] max-h-60 overflow-auto;
-  background-color: var(--awake-popup-bg, white);
-  border-color: var(--awake-popup-border, var(--color-awake-neutral-200));
+  @apply border shadow-lg min-w-[200px] max-h-60 overflow-auto;
+  border-radius: var(--radius-awake-md);
+  background-color: var(--awake-select-popup-bg, var(--color-awake-surface));
+  border-color: var(--awake-select-popup-border, var(--color-awake-border));
 }
 
 .awake-select-list {
@@ -39,92 +43,48 @@
 
 .awake-select-item {
   @apply px-3 py-2 text-sm cursor-pointer transition-colors;
-  color: var(--awake-item-color, var(--color-awake-neutral-900));
+  color: var(--awake-select-item-color, var(--color-awake-text));
   @apply focus-visible:outline-none;
 }
 
-.awake-select-item:hover {
-  background-color: var(--awake-item-hover-bg, var(--color-awake-primary-50));
-  color: var(--awake-item-hover-text, var(--color-awake-primary-700));
-}
-
+.awake-select-item:hover,
 .awake-select-item:focus-visible {
-  background-color: var(--awake-item-focus-bg, var(--color-awake-primary-50));
-  color: var(--awake-item-focus-text, var(--color-awake-primary-700));
+  background-color: var(--awake-select-item-hover-bg, var(--color-awake-brand-subtle));
+  color: var(--awake-select-item-hover-text, var(--color-awake-brand-hover));
 }
 
 .awake-select-item-text {
-  color: var(--awake-item-text-color, var(--color-awake-neutral-900));
+  color: var(--awake-select-item-text-color, var(--color-awake-text));
 }
 
 .awake-select-item-indicator {
-  color: var(--awake-indicator-color, var(--color-awake-primary-600));
+  color: var(--awake-select-indicator-color, var(--color-awake-brand));
 }
 
 .awake-select-backdrop {
   @apply fixed inset-0 z-40;
-  background-color: var(--awake-backdrop-bg, rgba(0, 0, 0, 0.5));
+  background-color: var(--awake-select-backdrop-bg, var(--color-awake-surface-overlay));
 }
 
 .awake-select-arrow {
-  color: var(--awake-arrow-color, var(--color-awake-neutral-400));
+  color: var(--awake-select-arrow-color, var(--color-awake-border-strong));
 }
 
 .awake-select-scroll-arrow {
   @apply flex items-center justify-center py-1 cursor-pointer transition-colors;
-  color: var(--awake-scroll-arrow-color, var(--color-awake-neutral-500));
+  color: var(--awake-select-scroll-arrow-color, var(--color-awake-text-subtle));
 }
 
 .awake-select-scroll-arrow:hover {
-  background-color: var(--awake-scroll-arrow-hover-bg, var(--color-awake-neutral-100));
+  background-color: var(--awake-select-scroll-arrow-hover-bg, var(--color-awake-surface-raised));
 }
 
 .awake-select-separator {
-  @apply my-1 border-t;
-  border-color: var(--awake-separator-color, var(--color-awake-neutral-200));
-}
-
-.awake-select-group {
-  @apply py-1;
+  background-color: var(--awake-select-separator-color, var(--color-awake-border));
+  @apply my-1 h-px;
 }
 
 .awake-select-group-label {
-  @apply px-3 py-2 text-xs font-semibold uppercase tracking-wider;
-  color: var(--awake-group-label-color, var(--color-awake-neutral-500));
-}
-
-/* Dark mode styles */
-[data-theme="dark"] .awake-select-trigger {
-  --awake-trigger-bg: var(--color-awake-neutral-dark-800);
-  --awake-trigger-border: var(--color-awake-neutral-dark-600);
-  --awake-trigger-hover-border: var(--color-awake-neutral-dark-500);
-}
-
-[data-theme="dark"] .awake-select-value {
-  --awake-value-color: var(--color-awake-neutral-dark-50);
-}
-
-[data-theme="dark"] .awake-select-icon {
-  --awake-icon-color: var(--color-awake-neutral-dark-400);
-}
-
-[data-theme="dark"] .awake-select-popup {
-  --awake-popup-bg: var(--color-awake-neutral-dark-800);
-  --awake-popup-border: var(--color-awake-neutral-dark-600);
-}
-
-[data-theme="dark"] .awake-select-item {
-  --awake-item-color: var(--color-awake-neutral-dark-50);
-}
-
-[data-theme="dark"] .awake-select-item-text {
-  --awake-item-text-color: var(--color-awake-neutral-dark-50);
-}
-
-[data-theme="dark"] .awake-select-separator {
-  --awake-separator-color: var(--color-awake-neutral-dark-600);
-}
-
-[data-theme="dark"] .awake-select-group-label {
-  --awake-group-label-color: var(--color-awake-neutral-dark-400);
+  @apply px-3 py-1 text-xs font-semibold uppercase tracking-wide;
+  color: var(--awake-select-group-label-color, var(--color-awake-text-subtle));
 }

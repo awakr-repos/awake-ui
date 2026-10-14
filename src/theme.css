@@ -1,6 +1,6 @@
 @theme {
-  /* Primária — violeta/índigo */
-  --color-awake-primary-50: #eef2ff;
+  /* Primary — violet/indigo */
+  --color-awake-primary-50:  #eef2ff;
   --color-awake-primary-100: #e0e7ff;
   --color-awake-primary-200: #c7d2fe;
   --color-awake-primary-300: #a5b4fc;
@@ -11,14 +11,14 @@
   --color-awake-primary-800: #3730a3;
   --color-awake-primary-900: #312e81;
 
-  /* Destaque — âmbar/laranja */
-  --color-awake-accent-50: #fff7ed;
+  /* Accent — amber/orange */
+  --color-awake-accent-50:  #fff7ed;
   --color-awake-accent-400: #fb923c;
   --color-awake-accent-500: #f97316;
   --color-awake-accent-600: #ea580c;
 
-  /* Neutros — light mode */
-  --color-awake-neutral-50: #ffffff;
+  /* Neutrals */
+  --color-awake-neutral-50:  #ffffff;
   --color-awake-neutral-100: #F0F0F3;
   --color-awake-neutral-200: #E0E1E6;
   --color-awake-neutral-300: #c8c9ce;
@@ -29,14 +29,8 @@
   --color-awake-neutral-800: #1a1c1f;
   --color-awake-neutral-900: #000000;
 
-  /* Neutros — dark mode
-   * dark-50  = branco (texto principal)
-   * dark-400 = #B0B4BA (texto secundário)
-   * dark-600 = #2E3135 (bordas)
-   * dark-800 = #212225 (fundo de elementos/componentes)
-   * dark-900 = #000000 (fundo da página)
-   */
-  --color-awake-neutral-dark-50: #ffffff;
+  /* Neutrals dark */
+  --color-awake-neutral-dark-50:  #ffffff;
   --color-awake-neutral-dark-100: #f0f1f2;
   --color-awake-neutral-dark-200: #d0d3d8;
   --color-awake-neutral-dark-300: #c0c3c8;
@@ -47,8 +41,47 @@
   --color-awake-neutral-dark-800: #212225;
   --color-awake-neutral-dark-900: #000000;
 
-  /* Semânticas */
+  /* State colors */
   --color-awake-success: #16a34a;
-  --color-awake-error: #dc2626;
+  --color-awake-error:   #dc2626;
   --color-awake-warning: #d97706;
+
+  /*
+   * Semantic tokens (light mode)
+   * Components reference these — not the raw scales above.
+   * Override only these to customize the library in your project.
+   */
+
+  --color-awake-brand:          var(--color-awake-primary-500);
+  --color-awake-brand-hover:    var(--color-awake-primary-600);
+  --color-awake-brand-subtle:   var(--color-awake-primary-50);
+  --color-awake-brand-focus:    var(--color-awake-primary-500);
+
+  --color-awake-surface:        #ffffff;
+  --color-awake-surface-raised: var(--color-awake-neutral-100);
+  --color-awake-surface-overlay:rgba(0, 0, 0, 0.5);
+
+  --color-awake-border:         var(--color-awake-neutral-200);
+  --color-awake-border-strong:  var(--color-awake-neutral-300);
+
+  --color-awake-text:           var(--color-awake-neutral-900);
+  --color-awake-text-muted:     var(--color-awake-neutral-600);
+  --color-awake-text-subtle:    var(--color-awake-neutral-400);
+  --color-awake-text-on-brand:  #ffffff;
+
+  --color-awake-feedback-info-bg:      var(--color-awake-primary-100);
+  --color-awake-feedback-info-text:    var(--color-awake-primary-800);
+  --color-awake-feedback-success-bg:   #dcfce7;
+  --color-awake-feedback-success-text: #166534;
+  --color-awake-feedback-warning-bg:   #fef3c7;
+  --color-awake-feedback-warning-text: #92400e;
+  --color-awake-feedback-error-bg:     #fee2e2;
+  --color-awake-feedback-error-text:   #991b1b;
+
+  /* Shape tokens */
+  --radius-awake-sm:   4px;
+  --radius-awake-md:   6px;
+  --radius-awake-lg:   8px;
+  --radius-awake-xl:   12px;
+  --radius-awake-full: 9999px;
 }

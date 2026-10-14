@@ -7,46 +7,23 @@
 }
 
 .awake-table-head {
-  border-color: var(--awake-table-border, var(--color-awake-neutral-200));
-  @apply border-b;
+  border-bottom: 1px solid var(--awake-table-border, var(--color-awake-border-strong));
 }
 
 .awake-table-header-cell {
   @apply text-left font-medium px-4 py-2;
-  color: var(--awake-table-header-text, var(--color-awake-neutral-700));
+  color: var(--awake-table-header-text, var(--color-awake-text-muted));
 }
 
 .awake-table-row {
-  border-color: var(--awake-table-row-border, var(--color-awake-neutral-100));
-  @apply border-b;
+  border-bottom: 1px solid var(--awake-table-row-border, var(--color-awake-border));
 }
 
 .awake-table-row:hover {
-  background-color: var(--awake-table-row-hover-bg, var(--color-awake-neutral-50));
+  background-color: var(--awake-table-row-hover-bg, var(--color-awake-surface-raised));
 }
 
 .awake-table-cell {
   @apply px-4 py-2;
-  color: var(--awake-table-cell-text, var(--color-awake-neutral-900));
-}
-
-/* Dark mode styles */
-[data-theme="dark"] .awake-table-head {
-  --awake-table-border: var(--color-awake-neutral-dark-600);
-}
-
-[data-theme="dark"] .awake-table-header-cell {
-  --awake-table-header-text: var(--color-awake-neutral-dark-400);
-}
-
-[data-theme="dark"] .awake-table-row {
-  --awake-table-row-border: var(--color-awake-neutral-dark-700);
-}
-
-[data-theme="dark"] .awake-table-row:hover {
-  --awake-table-row-hover-bg: var(--color-awake-neutral-dark-800);
-}
-
-[data-theme="dark"] .awake-table-cell {
-  --awake-table-cell-text: var(--color-awake-neutral-dark-50);
+  color: var(--awake-table-cell-text, var(--color-awake-text));
 }

@@ -1,7 +1,14 @@
 .awake-separator[data-orientation="horizontal"] {
-  @apply h-px w-full bg-awake-accent-600;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: var(--awake-separator-color, var(--color-awake-border));
 }
 
 .awake-separator[data-orientation="vertical"] {
-  @apply w-px h-25 self-stretch bg-awake-accent-600;
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  align-self: stretch;
+  background-color: var(--awake-separator-color, var(--color-awake-border));
 }

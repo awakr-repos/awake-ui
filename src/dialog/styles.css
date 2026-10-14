@@ -1,60 +1,40 @@
-.awake-dialog-trigger {
-  @apply px-4 py-2 rounded-md font-medium transition-colors;
-  @apply bg-awake-primary-500 hover:bg-awake-primary-600 text-white;
-  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-awake-primary-500;
-}
-
 .awake-dialog-backdrop {
-  @apply fixed inset-0 bg-awake-neutral-900/50;
-  @apply transition-opacity duration-150;
+  @apply fixed inset-0 transition-opacity duration-150;
   @apply data-[starting-style]:opacity-0 data-[ending-style]:opacity-0;
+  background-color: var(--awake-dialog-backdrop-bg, var(--color-awake-surface-overlay));
 }
 
 .awake-dialog-popup {
   @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
-  @apply rounded-lg shadow-xl p-6 w-full max-w-md;
+  @apply shadow-xl p-6 w-full max-w-md;
   @apply transition-all duration-150;
   @apply data-[starting-style]:opacity-0 data-[starting-style]:scale-95;
   @apply data-[ending-style]:opacity-0 data-[ending-style]:scale-95;
-  background-color: var(--awake-dialog-popup-bg, white);
+  border-radius: var(--radius-awake-lg);
+  background-color: var(--awake-dialog-popup-bg, var(--color-awake-surface));
+  color: var(--awake-dialog-popup-text, var(--color-awake-text));
 }
 
 .awake-dialog-title {
   @apply text-lg font-semibold mb-2;
-  color: var(--awake-dialog-title-text, var(--color-awake-neutral-900));
+  color: var(--awake-dialog-title-text, var(--color-awake-text));
 }
 
 .awake-dialog-description {
   @apply text-sm mb-4;
-  color: var(--awake-dialog-description-text, var(--color-awake-neutral-600));
+  color: var(--awake-dialog-description-text, var(--color-awake-text-muted));
 }
 
 .awake-dialog-close {
-  @apply px-4 py-2 rounded-md font-medium transition-colors;
-  background-color: var(--awake-dialog-close-bg, var(--color-awake-neutral-200));
-  color: var(--awake-dialog-close-text, var(--color-awake-neutral-900));
-  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-awake-primary-500;
+  @apply px-4 py-2 font-medium transition-colors;
+  border-radius: var(--radius-awake-md);
+  background-color: var(--awake-dialog-close-bg, var(--color-awake-surface-raised));
+  color: var(--awake-dialog-close-text, var(--color-awake-text));
+  border: 1px solid var(--awake-dialog-close-border, var(--color-awake-border));
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+  outline-color: var(--color-awake-brand-focus);
 }
 
 .awake-dialog-close:hover {
-  background-color: var(--awake-dialog-close-hover-bg, var(--color-awake-neutral-300));
-}
-
-/* Dark mode styles */
-[data-theme="dark"] .awake-dialog-popup {
-  --awake-dialog-popup-bg: var(--color-awake-neutral-dark-800);
-}
-
-[data-theme="dark"] .awake-dialog-title {
-  --awake-dialog-title-text: var(--color-awake-neutral-dark-50);
-}
-
-[data-theme="dark"] .awake-dialog-description {
-  --awake-dialog-description-text: var(--color-awake-neutral-dark-400);
-}
-
-[data-theme="dark"] .awake-dialog-close {
-  --awake-dialog-close-bg: var(--color-awake-neutral-dark-700);
-  --awake-dialog-close-text: var(--color-awake-neutral-dark-50);
-  --awake-dialog-close-hover-bg: var(--color-awake-neutral-dark-600);
+  background-color: var(--awake-dialog-close-hover-bg, var(--color-awake-border));
 }

@@ -4,26 +4,17 @@
 
 .awake-field-label {
   @apply text-sm font-medium;
-  color: var(--awake-field-label-color, var(--color-awake-neutral-900));
-  @apply data-[disabled]:text-awake-neutral-400;
+  color: var(--awake-field-label-color, var(--color-awake-text));
+  @apply data-[disabled]:opacity-50;
 }
 
 .awake-field-control {
-  @apply h-10 w-full rounded-md border px-3.5 text-base;
-  background-color: var(--awake-field-control-bg, white);
-  border-color: var(--awake-field-control-border, var(--color-awake-neutral-200));
-  color: var(--awake-field-control-text, var(--color-awake-neutral-900));
-  @apply focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-awake-primary-500;
+  @apply h-10 w-full px-3.5 text-base transition-colors;
+  border-radius: var(--radius-awake-md);
+  background-color: var(--awake-field-control-bg, var(--color-awake-surface));
+  border: 1px solid var(--awake-field-control-border, var(--color-awake-border));
+  color: var(--awake-field-control-text, var(--color-awake-text));
+  @apply focus:outline focus:outline-2 focus:-outline-offset-1;
+  outline-color: var(--color-awake-brand-focus);
   @apply data-[invalid]:border-awake-error data-[invalid]:outline-awake-error;
-}
-
-/* Dark mode styles */
-[data-theme="dark"] .awake-field-label {
-  --awake-field-label-color: var(--color-awake-neutral-dark-50);
-}
-
-[data-theme="dark"] .awake-field-control {
-  --awake-field-control-bg: var(--color-awake-neutral-dark-800);
-  --awake-field-control-border: var(--color-awake-neutral-dark-600);
-  --awake-field-control-text: var(--color-awake-neutral-dark-50);
 }

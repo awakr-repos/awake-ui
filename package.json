@@ -5,7 +5,10 @@
     "access": "public"
   },
   "description": "",
-  "sideEffects": false,
+  "sideEffects": [
+    "dist/style.css",
+    "dist/dark-theme.css"
+  ],
   "type": "module",
   "files": [
     "dist",
@@ -67,15 +70,17 @@
       "import": "./dist/alert.js",
       "require": "./dist/alert.cjs"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/style.css",
+    "./dark-theme.css": "./dist/dark-theme.css"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "tailwindcss -i ./src/styles.css -o ./dist/style.css --minify",
     "build:js": "tsup",
-    "build": "pnpm build:js && pnpm build:css",
+    "build": "pnpm build:js && pnpm build:css && pnpm build:dark-css",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "build:dark-css": "tailwindcss -i ./src/dark-theme.css -o ./dist/dark-theme.css --minify"
   },
   "keywords": [],
   "author": "",

@@ -8,8 +8,17 @@ function Root(props: ComponentProps<typeof BaseUIDialog.Root>) {
   return <BaseUIDialog.Root {...props} />;
 }
 
+/**
+ * Dialog.Trigger has no visual style of its own — appearance is up to the consumer.
+ * Use the render prop to pass a Button or any other element:
+ *
+ * @example
+ * <Dialog.Trigger render={<Button>Open</Button>} />
+ * <Dialog.Trigger render={<Button variant="secondary">Open</Button>} />
+ * <Dialog.Trigger>Open</Dialog.Trigger>  // unstyled, behavior only
+ */
 function Trigger({ className, ...props }: ComponentProps<typeof BaseUIDialog.Trigger>) {
-  return <BaseUIDialog.Trigger className={clsx('awake-dialog-trigger', className)} {...props} />;
+  return <BaseUIDialog.Trigger className={clsx(className)} {...props} />;
 }
 
 function Backdrop({ className, ...props }: ComponentProps<typeof BaseUIDialog.Backdrop>) {
@@ -35,7 +44,7 @@ function Close({ className, ...props }: ComponentProps<typeof BaseUIDialog.Close
 export const Dialog = {
   Root,
   Trigger,
-  Portal: BaseUIDialog.Portal, // não precisa de estilo próprio, só reexporta
+  Portal: BaseUIDialog.Portal,
   Backdrop,
   Popup,
   Title,
