@@ -3,3 +3,5 @@ node_modules/.pnpm-workspace-state-v1.json
 doc.md
 # Keep README.md
 !README.md
+storybook-static/
+node_modules/
