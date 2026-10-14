@@ -13,7 +13,8 @@ export default defineConfig({
     loading: 'src/loading/index.tsx',
     tooltip: 'src/tooltip/index.tsx',
     alert: 'src/alert/index.tsx',
-    autocomplete: 'src/autocomplete/index.tsx'
+    autocomplete: 'src/autocomplete/index.tsx',
+    'number-field': 'src/number-field/index.tsx'
   },
   format: ['cjs', 'esm'],
   dts: true,

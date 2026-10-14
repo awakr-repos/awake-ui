@@ -1,0 +1,104 @@
+.awake-number-field-root {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Group: input + buttons side by side */
+.awake-number-field-group {
+  display: flex;
+  align-items: stretch;
+  border-radius: var(--radius-awake-md);
+  border: 1px solid var(--awake-number-field-border, var(--color-awake-border));
+  background-color: var(--awake-number-field-bg, var(--color-awake-surface));
+  transition: border-color 0.15s;
+  overflow: hidden;
+}
+
+.awake-number-field-group:focus-within {
+  border-color: var(--color-awake-brand-focus);
+  outline: 2px solid var(--color-awake-brand-focus);
+  outline-offset: -1px;
+}
+
+/* Input */
+.awake-number-field-input {
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 0.9375rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--awake-number-field-text, var(--color-awake-text));
+  text-align: center;
+}
+
+.awake-number-field-input::placeholder {
+  color: var(--color-awake-text-subtle);
+}
+
+/* Increment / Decrement buttons */
+.awake-number-field-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 40px;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--awake-number-field-button-color, var(--color-awake-text-muted));
+  font-size: 1rem;
+  line-height: 1;
+  transition: background-color 0.15s, color 0.15s;
+  user-select: none;
+}
+
+.awake-number-field-button:hover:not([data-disabled]) {
+  background-color: var(--color-awake-surface-raised);
+  color: var(--color-awake-text);
+}
+
+.awake-number-field-button:active:not([data-disabled]) {
+  background-color: var(--color-awake-brand-subtle);
+  color: var(--color-awake-brand);
+}
+
+.awake-number-field-button[data-disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.awake-number-field-decrement {
+  border-right: 1px solid var(--color-awake-border);
+  order: -1;
+}
+
+.awake-number-field-increment {
+  border-left: 1px solid var(--color-awake-border);
+}
+
+/* Scrub area */
+.awake-number-field-scrub-area {
+  cursor: ew-resize;
+  user-select: none;
+}
+
+/* Scrub cursor (pointer lock) */
+.awake-number-field-scrub-cursor {
+  width: 26px;
+  height: 26px;
+  top: calc(var(--y) * 1px);
+  left: calc(var(--x) * 1px);
+  border-radius: 50%;
+  background: var(--color-awake-brand);
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  position: fixed;
+}

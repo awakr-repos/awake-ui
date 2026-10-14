@@ -1,4 +1,5 @@
 import { Autocomplete } from 'awake-ui/autocomplete';
+import { NumberField } from 'awake-ui/number-field';
 import { Alert } from 'awake-ui/alert';
 import { Button } from 'awake-ui/button';
 import { Dialog } from 'awake-ui/dialog';
@@ -349,6 +350,49 @@ function App() {
       {/* ── Autocomplete ── */}
       <Section title="Autocomplete">
         <AutocompleteDemo />
+      </Section>
+
+
+      {/* ── NumberField ── */}
+      <Section title="NumberField">
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'flex-end' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <label style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--color-awake-text)' }}>
+              Quantity
+            </label>
+            <NumberField.Root defaultValue={1} min={0} style={{ width: 160 }}>
+              <NumberField.Group>
+                <NumberField.Decrement>−</NumberField.Decrement>
+                <NumberField.Input />
+                <NumberField.Increment>+</NumberField.Increment>
+              </NumberField.Group>
+            </NumberField.Root>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <label style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--color-awake-text)' }}>
+              Price (step 0.01)
+            </label>
+            <NumberField.Root defaultValue={9.99} step={0.01} min={0} style={{ width: 160 }}>
+              <NumberField.Group>
+                <NumberField.Decrement>−</NumberField.Decrement>
+                <NumberField.Input />
+                <NumberField.Increment>+</NumberField.Increment>
+              </NumberField.Group>
+            </NumberField.Root>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <label style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--color-awake-text-muted)', opacity: 0.5 }}>
+              Disabled
+            </label>
+            <NumberField.Root defaultValue={42} disabled style={{ width: 160 }}>
+              <NumberField.Group>
+                <NumberField.Decrement>−</NumberField.Decrement>
+                <NumberField.Input />
+                <NumberField.Increment>+</NumberField.Increment>
+              </NumberField.Group>
+            </NumberField.Root>
+          </div>
+        </div>
       </Section>
 
       {/* ── Pagination ── */}

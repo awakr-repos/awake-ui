@@ -76,6 +76,11 @@
       "types": "./dist/autocomplete.d.ts",
       "import": "./dist/autocomplete.js",
       "require": "./dist/autocomplete.cjs"
+    },
+    "./number-field": {
+      "types": "./dist/number-field.d.ts",
+      "import": "./dist/number-field.js",
+      "require": "./dist/number-field.cjs"
     }
   },
   "scripts": {
