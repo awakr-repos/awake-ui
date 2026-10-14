@@ -18,28 +18,34 @@
   --color-awake-accent-600: #ea580c;
 
   /* Neutros — light mode */
-  --color-awake-neutral-50: #f8fafc;
-  --color-awake-neutral-100: #f1f5f9;
-  --color-awake-neutral-200: #e2e8f0;
-  --color-awake-neutral-300: #cbd5e1;
-  --color-awake-neutral-400: #94a3b8;
-  --color-awake-neutral-500: #64748b;
-  --color-awake-neutral-600: #475569;
-  --color-awake-neutral-700: #334155;
-  --color-awake-neutral-800: #1e293b;
-  --color-awake-neutral-900: #0f172a;
+  --color-awake-neutral-50: #ffffff;
+  --color-awake-neutral-100: #F0F0F3;
+  --color-awake-neutral-200: #E0E1E6;
+  --color-awake-neutral-300: #c8c9ce;
+  --color-awake-neutral-400: #9ea1a8;
+  --color-awake-neutral-500: #60646C;
+  --color-awake-neutral-600: #484b52;
+  --color-awake-neutral-700: #303338;
+  --color-awake-neutral-800: #1a1c1f;
+  --color-awake-neutral-900: #000000;
 
-  /* Neutros — dark mode (prefixo dark) */
-  --color-awake-neutral-dark-50: #0f172a;
-  --color-awake-neutral-dark-100: #1e293b;
-  --color-awake-neutral-dark-200: #334155;
-  --color-awake-neutral-dark-300: #475569;
-  --color-awake-neutral-dark-400: #64748b;
-  --color-awake-neutral-dark-500: #94a3b8;
-  --color-awake-neutral-dark-600: #cbd5e1;
-  --color-awake-neutral-dark-700: #e2e8f0;
-  --color-awake-neutral-dark-800: #f1f5f9;
-  --color-awake-neutral-dark-900: #f8fafc;
+  /* Neutros — dark mode
+   * dark-50  = branco (texto principal)
+   * dark-400 = #B0B4BA (texto secundário)
+   * dark-600 = #2E3135 (bordas)
+   * dark-800 = #212225 (fundo de elementos/componentes)
+   * dark-900 = #000000 (fundo da página)
+   */
+  --color-awake-neutral-dark-50: #ffffff;
+  --color-awake-neutral-dark-100: #f0f1f2;
+  --color-awake-neutral-dark-200: #d0d3d8;
+  --color-awake-neutral-dark-300: #c0c3c8;
+  --color-awake-neutral-dark-400: #B0B4BA;
+  --color-awake-neutral-dark-500: #3a3d42;
+  --color-awake-neutral-dark-600: #2E3135;
+  --color-awake-neutral-dark-700: #272a2e;
+  --color-awake-neutral-dark-800: #212225;
+  --color-awake-neutral-dark-900: #000000;
 
   /* Semânticas */
   --color-awake-success: #16a34a;
