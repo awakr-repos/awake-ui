@@ -12,6 +12,26 @@ type Story = StoryObj;
 export const Default: Story = {
   render: () => {
     const [checked, setChecked] = useState(false);
-    return <Switch checked={checked} onCheckedChange={setChecked} />;
+    return (
+      <Switch.Root checked={checked} onCheckedChange={setChecked}>
+        <Switch.Thumb />
+      </Switch.Root>
+    );
   },
+};
+
+export const Checked: Story = {
+  render: () => (
+    <Switch.Root defaultChecked>
+      <Switch.Thumb />
+    </Switch.Root>
+  ),
+};
+
+export const Disabled: Story = {
+  render: () => (
+    <Switch.Root disabled>
+      <Switch.Thumb />
+    </Switch.Root>
+  ),
 };
