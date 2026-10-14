@@ -80,7 +80,7 @@
     "build": "pnpm build:js && pnpm build:css && pnpm build:dark-css",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build:dark-css": "tailwindcss -i ./src/dark-theme.css -o ./dist/dark-theme.css --minify"
+    "build:dark-css": "cp src/dark-theme.css dist/dark-theme.css"
   },
   "keywords": [],
   "author": "",

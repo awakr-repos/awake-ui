@@ -1,0 +1,43 @@
+/*
+ * awake-ui — dark theme
+ *
+ * Overrides the semantic tokens for dark mode.
+ * Import this file in your application and apply the selector
+ * that matches your dark mode strategy:
+ *
+ *   @import "@developmentsnil/awake-ui/dark-theme.css" layer(awake-dark);
+ *
+ * Selector examples:
+ *   [data-theme="dark"] { ... }                         ← HTML attribute (Radix/shadcn default)
+ *   .dark { ... }                                       ← CSS class (Tailwind default)
+ *   @media (prefers-color-scheme: dark) { :root { ... } } ← system preference
+ */
+
+:root[data-theme="dark"],
+:root.dark {
+  --color-awake-brand:          var(--color-awake-primary-400);
+  --color-awake-brand-hover:    var(--color-awake-primary-300);
+  --color-awake-brand-subtle:   var(--color-awake-primary-900);
+  --color-awake-brand-focus:    var(--color-awake-primary-400);
+
+  --color-awake-surface:        var(--color-awake-neutral-dark-800);
+  --color-awake-surface-raised: var(--color-awake-neutral-dark-700);
+  --color-awake-surface-overlay:rgba(0, 0, 0, 0.7);
+
+  --color-awake-border:         var(--color-awake-neutral-dark-600);
+  --color-awake-border-strong:  var(--color-awake-neutral-dark-500);
+
+  --color-awake-text:           var(--color-awake-neutral-dark-50);
+  --color-awake-text-muted:     var(--color-awake-neutral-dark-400);
+  --color-awake-text-subtle:    var(--color-awake-neutral-dark-300);
+  --color-awake-text-on-brand:  #ffffff;
+
+  --color-awake-feedback-info-bg:      #1e3a5f;
+  --color-awake-feedback-info-text:    #93c5fd;
+  --color-awake-feedback-success-bg:   #14532d;
+  --color-awake-feedback-success-text: #86efac;
+  --color-awake-feedback-warning-bg:   #422006;
+  --color-awake-feedback-warning-text: #fde68a;
+  --color-awake-feedback-error-bg:     #450a0a;
+  --color-awake-feedback-error-text:   #fca5a5;
+}
