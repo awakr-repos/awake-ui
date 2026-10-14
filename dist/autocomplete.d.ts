@@ -1,0 +1,43 @@
+import * as _base_ui_react_internals_filter from '@base-ui/react/internals/filter';
+import * as react from 'react';
+import { ComponentProps } from 'react';
+import { Autocomplete as Autocomplete$1 } from '@base-ui/react/autocomplete';
+
+declare function Root(props: ComponentProps<typeof Autocomplete$1.Root>): react.JSX.Element;
+declare function InputGroup({ className, ...props }: ComponentProps<typeof Autocomplete$1.InputGroup>): react.JSX.Element;
+declare function Input({ className, ...props }: ComponentProps<typeof Autocomplete$1.Input>): react.JSX.Element;
+declare function Trigger({ className, ...props }: ComponentProps<typeof Autocomplete$1.Trigger>): react.JSX.Element;
+declare function Clear({ className, ...props }: ComponentProps<typeof Autocomplete$1.Clear>): react.JSX.Element;
+declare function Portal(props: ComponentProps<typeof Autocomplete$1.Portal>): react.JSX.Element;
+declare function Backdrop({ className, ...props }: ComponentProps<typeof Autocomplete$1.Backdrop>): react.JSX.Element;
+declare function Positioner({ className, ...props }: ComponentProps<typeof Autocomplete$1.Positioner>): react.JSX.Element;
+declare function Popup({ className, ...props }: ComponentProps<typeof Autocomplete$1.Popup>): react.JSX.Element;
+declare function List({ className, ...props }: ComponentProps<typeof Autocomplete$1.List>): react.JSX.Element;
+declare function Item({ className, ...props }: ComponentProps<typeof Autocomplete$1.Item>): react.JSX.Element;
+declare function Group({ className, ...props }: ComponentProps<typeof Autocomplete$1.Group>): react.JSX.Element;
+declare function GroupLabel({ className, ...props }: ComponentProps<typeof Autocomplete$1.GroupLabel>): react.JSX.Element;
+declare function Separator({ className, ...props }: ComponentProps<typeof Autocomplete$1.Separator>): react.JSX.Element;
+declare function Empty({ className, ...props }: ComponentProps<typeof Autocomplete$1.Empty>): react.JSX.Element;
+declare function Status({ className, ...props }: ComponentProps<typeof Autocomplete$1.Status>): react.JSX.Element;
+declare const Autocomplete: {
+    Root: typeof Root;
+    InputGroup: typeof InputGroup;
+    Input: typeof Input;
+    Trigger: typeof Trigger;
+    Clear: typeof Clear;
+    Portal: typeof Portal;
+    Backdrop: typeof Backdrop;
+    Positioner: typeof Positioner;
+    Popup: typeof Popup;
+    List: typeof List;
+    Item: typeof Item;
+    Group: typeof Group;
+    GroupLabel: typeof GroupLabel;
+    Separator: typeof Separator;
+    Empty: typeof Empty;
+    Status: typeof Status;
+    useFilter: typeof _base_ui_react_internals_filter.getFilter;
+    useFilteredItems: typeof Autocomplete$1.useFilteredItems;
+};
+
+export { Autocomplete };
