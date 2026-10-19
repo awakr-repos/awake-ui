@@ -3,6 +3,12 @@ import { Pagination } from './index';
 
 const meta: Meta = {
   title: 'Components/Pagination',
+  argTypes: {
+    currentPage: { control: { type: 'number', min: 1 }, description: 'Current page (1-indexed)' },
+    totalPages: { control: { type: 'number', min: 1 }, description: 'Total number of pages' },
+    onPageChange: { action: 'onPageChange', description: 'Called when the user navigates to a new page' },
+    className: { control: 'text', description: 'Additional CSS class' },
+  },
 };
 
 export default meta;

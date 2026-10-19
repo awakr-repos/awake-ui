@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
+      'awake-ui': path.resolve(__dirname, '../dist'),
       '@developmentsnil/awake-ui': path.resolve(__dirname, '../dist'),
     },
   },

@@ -1,0 +1,40 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as SliderStories from './slider.stories';
+
+<Meta of={SliderStories} />
+
+# Slider
+
+```tsx
+import { Slider } from '@developmentsnil/awake-ui/slider';
+import '@developmentsnil/awake-ui/style.css';
+```
+
+## Interactive example
+
+<Canvas of={SliderStories.Default} />
+<Controls of={SliderStories.Default} />
+
+## With initial value
+
+<Canvas of={SliderStories.WithValue} />
+
+## Min / Max
+
+<Canvas of={SliderStories.WithMinMax} />
+
+## Range (two thumbs)
+
+<Canvas of={SliderStories.Range} />
+
+## With label
+
+<Canvas of={SliderStories.WithLabel} />
+
+## Disabled
+
+<Canvas of={SliderStories.Disabled} />
+
+## Props
+
+<ArgTypes of={SliderStories} />

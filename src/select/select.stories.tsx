@@ -6,6 +6,14 @@ const meta: Meta = {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    value: { control: 'text', description: 'Selected value (controlled)' },
+    defaultValue: { control: 'text', description: 'Initial value (uncontrolled)' },
+    onValueChange: { action: 'onValueChange', description: 'Called when an option is selected' },
+    open: { control: 'boolean', description: 'Dropdown open state (controlled)' },
+    disabled: { control: 'boolean', description: 'Disables the select' },
+    required: { control: 'boolean', description: 'Marks the field as required in a form' },
+  },
 };
 
 export default meta;

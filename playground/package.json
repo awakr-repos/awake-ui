@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "awake-ui": "workspace:*",
+    "@developmentsnil/awake-ui": "workspace:*",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },

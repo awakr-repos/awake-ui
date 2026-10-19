@@ -4,6 +4,14 @@ import { Switch } from './index';
 
 const meta: Meta = {
   title: 'Components/Switch',
+  argTypes: {
+    checked: { control: 'boolean', description: 'Checked state (controlled)' },
+    defaultChecked: { control: 'boolean', description: 'Initial checked state (uncontrolled)' },
+    onCheckedChange: { action: 'onCheckedChange', description: 'Called when the checked state changes' },
+    disabled: { control: 'boolean', description: 'Disables the switch' },
+    required: { control: 'boolean', description: 'Marks the field as required in a form' },
+    className: { control: 'text', description: 'Additional CSS class for Root' },
+  },
 };
 
 export default meta;

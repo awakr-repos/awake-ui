@@ -3,6 +3,12 @@ import { Field } from './index';
 
 const meta: Meta = {
   title: 'Components/Field',
+  argTypes: {
+    disabled: { control: 'boolean', description: 'Disables all field controls' },
+    invalid: { control: 'boolean', description: 'Marks the field as invalid' },
+    valid: { control: 'boolean', description: 'Marks the field as valid' },
+    className: { control: 'text', description: 'Additional CSS class for Root' },
+  },
 };
 
 export default meta;

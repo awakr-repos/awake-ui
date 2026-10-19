@@ -7,6 +7,13 @@ const meta: Meta = {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    open: { control: 'boolean', description: 'Open state (controlled)' },
+    defaultOpen: { control: 'boolean', description: 'Open by default (uncontrolled)' },
+    onOpenChange: { action: 'onOpenChange', description: 'Called when the open state changes' },
+    delay: { control: 'number', description: 'Open delay in ms (default: 600)' },
+    closeDelay: { control: 'number', description: 'Close delay in ms (default: 300)' },
+  },
 };
 
 export default meta;

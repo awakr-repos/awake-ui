@@ -4,6 +4,13 @@ import { Dialog } from './index';
 
 const meta: Meta = {
   title: 'Components/Dialog',
+  argTypes: {
+    open: { control: 'boolean', description: 'Open state (controlled)' },
+    defaultOpen: { control: 'boolean', description: 'Open by default (uncontrolled)' },
+    onOpenChange: { action: 'onOpenChange', description: 'Called when the open state changes' },
+    modal: { control: 'boolean', description: 'Modal mode (blocks interaction with the background)' },
+    dismissible: { control: 'boolean', description: 'Closes on backdrop click or Escape key' },
+  },
 };
 
 export default meta;

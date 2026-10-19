@@ -1,6 +1,6 @@
 {
   "name": "@developmentsnil/awake-ui",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "publishConfig": {
     "access": "public"
   },
@@ -81,6 +81,26 @@
       "types": "./dist/number-field.d.ts",
       "import": "./dist/number-field.js",
       "require": "./dist/number-field.cjs"
+    },
+    "./slider": {
+      "types": "./dist/slider.d.ts",
+      "import": "./dist/slider.js",
+      "require": "./dist/slider.cjs"
+    },
+    "./progress": {
+      "types": "./dist/progress.d.ts",
+      "import": "./dist/progress.js",
+      "require": "./dist/progress.cjs"
+    },
+    "./tabs": {
+      "types": "./dist/tabs.d.ts",
+      "import": "./dist/tabs.js",
+      "require": "./dist/tabs.cjs"
+    },
+    "./accordion": {
+      "types": "./dist/accordion.d.ts",
+      "import": "./dist/accordion.js",
+      "require": "./dist/accordion.cjs"
     }
   },
   "scripts": {
@@ -116,6 +136,7 @@
     "playwright": "latest",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
+    "remark-gfm": "^3.0.1",
     "storybook": "^10.6.0",
     "tailwindcss": "^4.3.3",
     "tsup": "^8.5.1",

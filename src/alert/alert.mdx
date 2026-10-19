@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as AlertStories from './alert.stories';
 
 <Meta of={AlertStories} />
@@ -8,39 +8,19 @@ import * as AlertStories from './alert.stories';
 ```tsx
 import { Alert } from '@developmentsnil/awake-ui/alert';
 import '@developmentsnil/awake-ui/style.css';
-
-<Alert variant="info">Informação</Alert>
 ```
+
+## Interactive example
 
 <Canvas of={AlertStories.Info} />
+<Controls of={AlertStories.Info} />
 
-```tsx
-import { Alert } from '@developmentsnil/awake-ui/alert';
-import '@developmentsnil/awake-ui/style.css';
-
-<Alert variant="success">Sucesso</Alert>
-```
+## Variants
 
 <Canvas of={AlertStories.Success} />
-
-```tsx
-import { Alert } from '@developmentsnil/awake-ui/alert';
-import '@developmentsnil/awake-ui/style.css';
-
-<Alert variant="warning">Aviso</Alert>
-```
-
 <Canvas of={AlertStories.Warning} />
-
-```tsx
-import { Alert } from '@developmentsnil/awake-ui/alert';
-import '@developmentsnil/awake-ui/style.css';
-
-<Alert variant="error">Erro</Alert>
-```
-
 <Canvas of={AlertStories.Error} />
 
 ## Props
 
-<Controls />
+<ArgTypes of={AlertStories} />

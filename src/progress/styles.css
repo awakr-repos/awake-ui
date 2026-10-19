@@ -1,0 +1,51 @@
+/* Progress -------------------------------------------------------- */
+
+.awake-progress-root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1, 4px);
+  width: 100%;
+}
+
+/* Label above the track */
+.awake-progress-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--awake-progress-label-color, var(--color-awake-text));
+}
+
+/* Outer container (the unfilled track) */
+.awake-progress-track {
+  position: relative;
+  width: 100%;
+  height: var(--awake-progress-height, 8px);
+  border-radius: var(--radius-awake-full, 9999px);
+  background-color: var(--awake-progress-track-bg, var(--color-awake-border));
+  overflow: hidden;
+}
+
+/* Filled portion */
+.awake-progress-indicator {
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--awake-progress-fill-bg, var(--color-awake-brand));
+  transition: width 0.3s ease;
+}
+
+/* Indeterminate animation */
+.awake-progress-root[data-status="indeterminate"] .awake-progress-indicator {
+  width: 40% !important;
+  animation: awake-progress-indeterminate 1.4s ease-in-out infinite;
+}
+
+@keyframes awake-progress-indeterminate {
+  0%   { transform: translateX(-100%); }
+  60%  { transform: translateX(250%); }
+  100% { transform: translateX(250%); }
+}
+
+/* Value label (percentage text) */
+.awake-progress-value {
+  font-size: 0.875rem;
+  color: var(--awake-progress-value-color, var(--color-awake-text-muted));
+}

@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as ButtonStories from './button.stories';
 
 <Meta of={ButtonStories} />
@@ -10,48 +10,26 @@ import { Button } from '@developmentsnil/awake-ui/button';
 import '@developmentsnil/awake-ui/style.css';
 ```
 
-## Variants
+## Interactive example
 
 <Canvas of={ButtonStories.Primary} />
+<Controls of={ButtonStories.Primary} />
+
+## Variants
+
 <Canvas of={ButtonStories.Secondary} />
 <Canvas of={ButtonStories.Ghost} />
 <Canvas of={ButtonStories.Outline} />
 <Canvas of={ButtonStories.Destructive} />
-<Canvas of={ButtonStories.Disabled} />
 
 ## Sizes
 
 <Canvas of={ButtonStories.Sizes} />
 
-## All variants
+## Disabled
 
-<Canvas of={ButtonStories.AllVariants} />
-
-## Usage
-
-```tsx
-// Variants
-<Button variant="primary">Primary</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="ghost">Ghost</Button>
-<Button variant="outline">Outline</Button>
-<Button variant="destructive">Delete</Button>
-
-// Sizes
-<Button size="sm">Small</Button>
-<Button size="md">Medium</Button>
-<Button size="lg">Large</Button>
-
-// Disabled
-<Button variant="primary" disabled>Disabled</Button>
-```
+<Canvas of={ButtonStories.Disabled} />
 
 ## Props
 
-| Prop | Type | Default | Description |
-|---|---|---|---|
-| `variant` | `'primary' \| 'secondary' \| 'ghost' \| 'outline' \| 'destructive'` | `'primary'` | Visual style |
-| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size of the button |
-| `disabled` | `boolean` | `false` | Disables the button |
-
-<Controls />
+<ArgTypes of={ButtonStories} />

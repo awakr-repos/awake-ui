@@ -1,42 +1,35 @@
-import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as NumberFieldStories from './number-field.stories';
 
 <Meta of={NumberFieldStories} />
 
 # NumberField
 
-Input numérico com botões de incremento/decremento, validação de limites e suporte a scrub. Baseado no Base UI NumberField.
-
 ```tsx
 import { NumberField } from '@developmentsnil/awake-ui/number-field';
 import '@developmentsnil/awake-ui/style.css';
-```
 
-## Basic
-
-<Canvas of={NumberFieldStories.Default} />
-
-## With min / max
-
-```tsx
-<NumberField.Root defaultValue={5} min={0} max={10}>
+<NumberField.Root>
+  <NumberField.ScrubArea>
+    <NumberField.Input />
+  </NumberField.ScrubArea>
   <NumberField.Group>
     <NumberField.Decrement>−</NumberField.Decrement>
-    <NumberField.Input />
     <NumberField.Increment>+</NumberField.Increment>
   </NumberField.Group>
 </NumberField.Root>
 ```
 
+## Interactive example
+
+<Canvas of={NumberFieldStories.Default} />
+<Controls of={NumberFieldStories.Default} />
+
+## Min / Max
+
 <Canvas of={NumberFieldStories.WithMinMax} />
 
 ## With step
-
-```tsx
-<NumberField.Root defaultValue={0} step={5}>
-  ...
-</NumberField.Root>
-```
 
 <Canvas of={NumberFieldStories.WithStep} />
 
@@ -44,67 +37,14 @@ import '@developmentsnil/awake-ui/style.css';
 
 <Canvas of={NumberFieldStories.WithLabel} />
 
+## With scrub area
+
+<Canvas of={NumberFieldStories.WithScrubArea} />
+
 ## Disabled
 
 <Canvas of={NumberFieldStories.Disabled} />
 
-## Scrub area
+## Props
 
-Arraste o label para mudar o valor — útil em ferramentas de design e dashboards:
-
-<Canvas of={NumberFieldStories.WithScrubArea} />
-
-## Usage
-
-```tsx
-import { NumberField } from '@developmentsnil/awake-ui/number-field';
-
-<NumberField.Root
-  defaultValue={1}
-  min={0}
-  max={99}
-  step={1}
-  onValueChange={(value) => console.log(value)}
->
-  <NumberField.Group>
-    <NumberField.Decrement>−</NumberField.Decrement>
-    <NumberField.Input />
-    <NumberField.Increment>+</NumberField.Increment>
-  </NumberField.Group>
-</NumberField.Root>
-```
-
-## API
-
-### `NumberField.Root`
-
-| Prop | Type | Default | Description |
-|---|---|---|---|
-| `value` | `number` | — | Controlled value |
-| `defaultValue` | `number` | — | Uncontrolled initial value |
-| `onValueChange` | `(value: number) => void` | — | Called on every change |
-| `min` | `number` | — | Minimum allowed value |
-| `max` | `number` | — | Maximum allowed value |
-| `step` | `number` | `1` | Step for buttons and arrow keys |
-| `largeStep` | `number` | `10` | Step for Page Up/Down keys |
-| `disabled` | `boolean` | `false` | Disables the field |
-| `readOnly` | `boolean` | `false` | Makes the field read-only |
-| `allowWheelScrub` | `boolean` | `false` | Enables mouse wheel scrubbing |
-
-### `NumberField.ScrubArea`
-
-| Prop | Type | Default | Description |
-|---|---|---|---|
-| `direction` | `'horizontal' \| 'vertical'` | `'horizontal'` | Drag direction |
-| `pixelSensitivity` | `number` | `2` | Pixels per value change |
-
-## Customization
-
-```css
-:root {
-  --awake-number-field-bg:           var(--color-awake-surface);
-  --awake-number-field-border:       var(--color-awake-border);
-  --awake-number-field-text:         var(--color-awake-text);
-  --awake-number-field-button-color: var(--color-awake-text-muted);
-}
-```
+<ArgTypes of={NumberFieldStories} />

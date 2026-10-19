@@ -1,169 +1,49 @@
-import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as SelectStories from './select.stories';
 
 <Meta of={SelectStories} />
 
 # Select
 
-Componente composto para criar seletores dropdown com suporte a grouping, scroll arrows, e indicators. Baseado no Base UI Select para acessibilidade e comportamento consistente.
-
-## Basic Usage
-
 ```tsx
 import { Select } from '@developmentsnil/awake-ui/select';
 import '@developmentsnil/awake-ui/style.css';
 
 <Select.Root>
-  <Select.Label>Nome</Select.Label>
   <Select.Trigger>
-    <Select.Value placeholder="Selecione" />
+    <Select.Value placeholder="Selecione..." />
+    <Select.Icon />
   </Select.Trigger>
   <Select.Portal>
     <Select.Positioner>
       <Select.Popup>
-        <Select.List>
-          <Select.Item value="1">Item 1</Select.Item>
-          <Select.Item value="2">Item 2</Select.Item>
-        </Select.List>
+        <Select.Item value="opt1">
+          <Select.ItemText>Opção 1</Select.ItemText>
+          <Select.ItemIndicator />
+        </Select.Item>
       </Select.Popup>
     </Select.Positioner>
   </Select.Portal>
 </Select.Root>
 ```
 
+## Interactive example
+
 <Canvas of={SelectStories.Default} />
+<Controls of={SelectStories.Default} />
 
-## With Icon
-
-Adicione um ícone para indicar visualmente que é um dropdown.
-
-```tsx
-<Select.Root>
-  <Select.Label>Escolha uma opção</Select.Label>
-  <Select.Trigger>
-    <Select.Value placeholder="Selecione" />
-    <Select.Icon>
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-        <path d="M11 10H5l3 3.5zm0-4H5l3-3.5z" />
-      </svg>
-    </Select.Icon>
-  </Select.Trigger>
-  {/* ... */}
-</Select.Root>
-```
+## With icon
 
 <Canvas of={SelectStories.WithIcon} />
 
-## With Item Indicator
-
-Use `ItemIndicator` para mostrar visualmente qual item está selecionado.
-
-```tsx
-<Select.Item value="1">
-  <Select.ItemIndicator>✓</Select.ItemIndicator>
-  <Select.ItemText>Opção 1</Select.ItemText>
-</Select.Item>
-```
+## With item indicator
 
 <Canvas of={SelectStories.WithItemIndicator} />
 
-## With Groups
-
-Organize items em grupos com labels e separators.
-
-```tsx
-<Select.Group>
-  <Select.GroupLabel>Cítricas</Select.GroupLabel>
-  <Select.Item value="laranja">Laranja</Select.Item>
-  <Select.Item value="limão">Limão</Select.Item>
-</Select.Group>
-<Select.Separator />
-<Select.Group>
-  <Select.GroupLabel>Outras</Select.GroupLabel>
-  <Select.Item value="maçã">Maçã</Select.Item>
-  <Select.Item value="banana">Banana</Select.Item>
-</Select.Group>
-```
+## With groups
 
 <Canvas of={SelectStories.WithGroups} />
 
-## With Scroll Arrows
-
-Para listas longas, adicione setas de scroll para melhor UX.
-
-```tsx
-<Select.ScrollUpArrow>
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-    <path d="M12 10H4l4-4.5z" />
-  </svg>
-</Select.ScrollUpArrow>
-{/* ... items ... */}
-<Select.ScrollDownArrow>
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-    <path d="M12 6H4l4 4.5z" />
-  </svg>
-</Select.ScrollDownArrow>
-```
-
-<Canvas of={SelectStories.WithScrollArrows} />
-
-## Complete Example
-
-Exemplo completo mostrando todas as funcionalidades juntas.
-
-<Canvas of={SelectStories.Complete} />
-
 ## Props
 
-### Select.Root
-
-- `items` - Array de objetos para as opções (formato: `{ value, label }`)
-- `defaultValue` - Valor inicial selecionado
-- `value` - Valor controlado
-- `onValueChange` - Callback quando valor muda
-- `multiple` - Permite seleção múltipla
-- `disabled` - Desabilita o select
-- `required` - Torna a seleção obrigatória em formulários
-- `name` - Nome do campo ao submeter um formulário
-
-### Select.Label
-
-- `className` - Classes CSS adicionais
-
-### Select.Trigger
-
-- `className` - Classes CSS adicionais
-- `disabled` - Desabilita o trigger
-
-### Select.Value
-
-- `placeholder` - Texto placeholder quando nenhum valor selecionado
-- `className` - Classes CSS adicionais
-
-### Select.Icon
-
-- `className` - Classes CSS adicionais
-
-### Select.Item
-
-- `value` - Valor do item (obrigatório)
-- `disabled` - Desabilita o item
-- `className` - Classes CSS adicionais
-
-### Select.ItemText
-
-- `className` - Classes CSS adicionais
-
-### Select.ItemIndicator
-
-- `className` - Classes CSS adicionais
-
-### Select.Group
-
-- `className` - Classes CSS adicionais
-
-### Select.GroupLabel
-
-- `className` - Classes CSS adicionais
-
-<Controls />
+<ArgTypes of={SelectStories} />

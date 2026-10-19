@@ -33,6 +33,17 @@ const meta: Meta = {
       </div>
     ),
   ],
+  argTypes: {
+    value: { control: 'text', description: 'Selected value (controlled)' },
+    defaultValue: { control: 'text', description: 'Initial value (uncontrolled)' },
+    onValueChange: { action: 'onValueChange', description: 'Called when an option is selected' },
+    inputValue: { control: 'text', description: 'Input text value (controlled)' },
+    onInputChange: { action: 'onInputChange', description: 'Called when the user types in the input' },
+    open: { control: 'boolean', description: 'Dropdown open state (controlled)' },
+    disabled: { control: 'boolean', description: 'Disables the autocomplete' },
+    readOnly: { control: 'boolean', description: 'Read-only' },
+    autoHighlight: { control: 'boolean', description: 'Automatically highlights the first option' },
+  },
 };
 
 export default meta;

@@ -1,27 +1,19 @@
-import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as LoadingStories from './loading.stories';
 
 <Meta of={LoadingStories} />
 
 # Loading
 
-Component for displaying a loading indicator with animated dots.
-
 ```tsx
 import { Loading } from '@developmentsnil/awake-ui/loading';
 import '@developmentsnil/awake-ui/style.css';
 ```
 
-## Basic Usage
-
-```tsx
-<Loading />
-<Loading size="sm" />
-<Loading size="md" />
-<Loading size="lg" />
-```
+## Interactive example
 
 <Canvas of={LoadingStories.Default} />
+<Controls of={LoadingStories.Default} />
 
 ## Sizes
 
@@ -29,8 +21,4 @@ import '@developmentsnil/awake-ui/style.css';
 
 ## Props
 
-| Prop | Type | Default | Description |
-|---|---|---|---|
-| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size of the loading indicator |
-
-<Controls />
+<ArgTypes of={LoadingStories} />

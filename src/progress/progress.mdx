@@ -1,0 +1,37 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as ProgressStories from './progress.stories';
+
+<Meta of={ProgressStories} />
+
+# Progress
+
+```tsx
+import { Progress } from '@developmentsnil/awake-ui/progress';
+import '@developmentsnil/awake-ui/style.css';
+```
+
+## Interactive example
+
+<Canvas of={ProgressStories.Default} />
+<Controls of={ProgressStories.Default} />
+
+## With value
+
+<Canvas of={ProgressStories.WithValue} />
+
+## With label
+
+<Canvas of={ProgressStories.WithLabel} />
+
+## Indeterminate
+
+<Canvas of={ProgressStories.Indeterminate} />
+
+## Zero and Complete
+
+<Canvas of={ProgressStories.Zero} />
+<Canvas of={ProgressStories.Complete} />
+
+## Props
+
+<ArgTypes of={ProgressStories} />

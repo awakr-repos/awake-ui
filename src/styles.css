@@ -16,3 +16,8 @@
 
 @import './autocomplete/styles.css';
 @import './number-field/styles.css';
+
+@import './slider/styles.css';
+@import './progress/styles.css';
+@import './tabs/styles.css';
+@import './accordion/styles.css';

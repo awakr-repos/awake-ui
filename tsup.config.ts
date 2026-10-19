@@ -14,7 +14,11 @@ export default defineConfig({
     tooltip: 'src/tooltip/index.tsx',
     alert: 'src/alert/index.tsx',
     autocomplete: 'src/autocomplete/index.tsx',
-    'number-field': 'src/number-field/index.tsx'
+    'number-field': 'src/number-field/index.tsx',
+    slider: 'src/slider/index.tsx',
+    progress: 'src/progress/index.tsx',
+    tabs: 'src/tabs/index.tsx',
+    accordion: 'src/accordion/index.tsx'
   },
   format: ['cjs', 'esm'],
   dts: true,

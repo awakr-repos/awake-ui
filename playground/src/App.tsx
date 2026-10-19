@@ -1,5 +1,9 @@
 import { Autocomplete } from 'awake-ui/autocomplete';
 import { NumberField } from 'awake-ui/number-field';
+import { Slider } from 'awake-ui/slider';
+import { Progress } from 'awake-ui/progress';
+import { Tabs } from 'awake-ui/tabs';
+import { Accordion } from 'awake-ui/accordion';
 import { Alert } from 'awake-ui/alert';
 import { Button } from 'awake-ui/button';
 import { Dialog } from 'awake-ui/dialog';
@@ -395,6 +399,40 @@ function App() {
         </div>
       </Section>
 
+
+      {/* ── Slider ── */}
+      <Section title="Slider">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '400px' }}>
+          <Slider.Root defaultValue={40}>
+            <Slider.Control>
+              <Slider.Track>
+                <Slider.Indicator />
+                <Slider.Thumb />
+              </Slider.Track>
+            </Slider.Control>
+          </Slider.Root>
+
+          <Slider.Root defaultValue={[20, 75]}>
+            <Slider.Control>
+              <Slider.Track>
+                <Slider.Indicator />
+                <Slider.Thumb />
+                <Slider.Thumb />
+              </Slider.Track>
+            </Slider.Control>
+          </Slider.Root>
+
+          <Slider.Root defaultValue={50} disabled>
+            <Slider.Control>
+              <Slider.Track>
+                <Slider.Indicator />
+                <Slider.Thumb />
+              </Slider.Track>
+            </Slider.Control>
+          </Slider.Root>
+        </div>
+      </Section>
+
       {/* ── Pagination ── */}
       <Section title="Pagination">
         <Pagination
@@ -402,6 +440,74 @@ function App() {
           totalPages={10}
           onPageChange={setCurrentPage}
         />
+      </Section>
+
+      {/* ── Progress ── */}
+      <Section title="Progress">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%', maxWidth: '400px' }}>
+          <Progress.Root value={60}>
+            <Progress.Track>
+              <Progress.Indicator />
+            </Progress.Track>
+          </Progress.Root>
+          <Progress.Root value={30}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
+              <Progress.Label>Uploading…</Progress.Label>
+              <Progress.Value />
+            </div>
+            <Progress.Track>
+              <Progress.Indicator />
+            </Progress.Track>
+          </Progress.Root>
+          <Progress.Root>
+            <Progress.Track>
+              <Progress.Indicator />
+            </Progress.Track>
+          </Progress.Root>
+        </div>
+      </Section>
+
+      {/* ── Tabs ── */}
+      <Section title="Tabs">
+        <div style={{ width: '100%', maxWidth: '480px' }}>
+          <Tabs.Root defaultValue="account">
+            <Tabs.List>
+              <Tabs.Tab value="account">Account</Tabs.Tab>
+              <Tabs.Tab value="password">Password</Tabs.Tab>
+              <Tabs.Tab value="settings">Settings</Tabs.Tab>
+              <Tabs.Indicator />
+            </Tabs.List>
+            <Tabs.Panel value="account">Make changes to your account here.</Tabs.Panel>
+            <Tabs.Panel value="password">Change your password here.</Tabs.Panel>
+            <Tabs.Panel value="settings">Manage your notification settings.</Tabs.Panel>
+          </Tabs.Root>
+        </div>
+      </Section>
+
+      {/* ── Accordion ── */}
+      <Section title="Accordion">
+        <div style={{ width: '100%', maxWidth: '480px' }}>
+          <Accordion.Root>
+            <Accordion.Item value="a1">
+              <Accordion.Header>
+                <Accordion.Trigger>What is awake-ui?</Accordion.Trigger>
+              </Accordion.Header>
+              <Accordion.Panel>awake-ui is a React component library built on Base UI primitives, with a Tailwind CSS v4 token system and full dark mode support.</Accordion.Panel>
+            </Accordion.Item>
+            <Accordion.Item value="a2">
+              <Accordion.Header>
+                <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
+              </Accordion.Header>
+              <Accordion.Panel>Yes. All interactive components follow WAI-ARIA patterns and are keyboard and screen-reader friendly.</Accordion.Panel>
+            </Accordion.Item>
+            <Accordion.Item value="a3">
+              <Accordion.Header>
+                <Accordion.Trigger>Can I customize the styles?</Accordion.Trigger>
+              </Accordion.Header>
+              <Accordion.Panel>Override CSS custom properties (semantic tokens) on :root or a wrapper to change colours, spacing and radius globally or per-instance.</Accordion.Panel>
+            </Accordion.Item>
+          </Accordion.Root>
+        </div>
       </Section>
     </div>
   );

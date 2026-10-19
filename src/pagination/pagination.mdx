@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as PaginationStories from './pagination.stories';
 
 <Meta of={PaginationStories} />
@@ -8,23 +8,13 @@ import * as PaginationStories from './pagination.stories';
 ```tsx
 import { Pagination } from '@developmentsnil/awake-ui/pagination';
 import '@developmentsnil/awake-ui/style.css';
-import { useState } from 'react';
-
-function MyComponent() {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  return (
-    <Pagination
-      currentPage={currentPage}
-      totalPages={10}
-      onPageChange={(page) => setCurrentPage(page)}
-    />
-  );
-}
 ```
 
+## Interactive example
+
 <Canvas of={PaginationStories.Default} />
+<Controls of={PaginationStories.Default} />
 
 ## Props
 
-<Controls />
+<ArgTypes of={PaginationStories} />

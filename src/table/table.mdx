@@ -1,11 +1,9 @@
-import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as TableStories from './table.stories';
 
 <Meta of={TableStories} />
 
 # Table
-
-Componente composto (`Table.Root`, `Table.Head`, `Table.Body`, `Table.Row`, `Table.HeaderCell`, `Table.Cell`) para construir tabelas com elementos HTML semânticos nativos (`<table>`, `<thead>`, `<th>`, etc.), garantindo acessibilidade sem depender de nenhuma lógica adicional de JavaScript.
 
 ```tsx
 import { Table } from '@developmentsnil/awake-ui/table';
@@ -15,16 +13,21 @@ import '@developmentsnil/awake-ui/style.css';
   <Table.Head>
     <Table.Row>
       <Table.HeaderCell>Nome</Table.HeaderCell>
-      <Table.HeaderCell>Email</Table.HeaderCell>
     </Table.Row>
   </Table.Head>
   <Table.Body>
     <Table.Row>
-      <Table.Cell>John Doe</Table.Cell>
-      <Table.Cell>john.doe@example.com</Table.Cell>
+      <Table.Cell>Valor</Table.Cell>
     </Table.Row>
   </Table.Body>
 </Table.Root>
 ```
 
+## Interactive example
+
 <Canvas of={TableStories.Default} />
+<Controls of={TableStories.Default} />
+
+## Props
+
+<ArgTypes of={TableStories} />

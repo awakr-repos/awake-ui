@@ -1,0 +1,61 @@
+/* src/tabs/styles.css */
+.awake-tabs-root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2, 8px);
+}
+.awake-tabs-list {
+  position: relative;
+  display: flex;
+  gap: var(--spacing-1, 4px);
+  border-bottom: 1px solid var(--color-awake-border);
+  padding-bottom: 0;
+}
+.awake-tabs-tab {
+  position: relative;
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-awake-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-awake-sm, 4px) var(--radius-awake-sm, 4px) 0 0;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+.awake-tabs-tab:hover:not([data-disabled]) {
+  color: var(--color-awake-text);
+}
+.awake-tabs-tab[data-selected] {
+  color: var(--color-awake-brand);
+}
+.awake-tabs-tab[data-disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.awake-tabs-tab:focus-visible {
+  outline: 2px solid var(--color-awake-brand);
+  outline-offset: 2px;
+}
+.awake-tabs-indicator {
+  position: absolute;
+  bottom: -1px;
+  height: 2px;
+  background-color: var(--awake-tabs-indicator-color, var(--color-awake-brand));
+  border-radius: var(--radius-awake-full, 9999px);
+  transition: left 0.2s ease, width 0.2s ease;
+}
+.awake-tabs-panel {
+  padding: var(--spacing-3, 12px) 0;
+  font-size: 0.875rem;
+  color: var(--color-awake-text);
+  outline: none;
+}
+.awake-tabs-panel:focus-visible {
+  outline: 2px solid var(--color-awake-brand);
+  outline-offset: 2px;
+  border-radius: var(--radius-awake-sm, 4px);
+}
+/*# sourceMappingURL=tabs.css.map */

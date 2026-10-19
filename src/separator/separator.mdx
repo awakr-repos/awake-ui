@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as SeparatorStories from './separator.stories';
 
 <Meta of={SeparatorStories} />
@@ -8,21 +8,17 @@ import * as SeparatorStories from './separator.stories';
 ```tsx
 import { Separator } from '@developmentsnil/awake-ui/separator';
 import '@developmentsnil/awake-ui/style.css';
-
-<Separator orientation="horizontal" />
 ```
+
+## Interactive example
 
 <Canvas of={SeparatorStories.Horizontal} />
+<Controls of={SeparatorStories.Horizontal} />
 
-```tsx
-import { Separator } from '@developmentsnil/awake-ui/separator';
-import '@developmentsnil/awake-ui/style.css';
-
-<Separator orientation="vertical" />
-```
+## Vertical
 
 <Canvas of={SeparatorStories.Vertical} />
 
 ## Props
 
-<Controls />
+<ArgTypes of={SeparatorStories} />

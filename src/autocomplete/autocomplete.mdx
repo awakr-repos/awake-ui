@@ -1,160 +1,36 @@
-import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as AutocompleteStories from './autocomplete.stories';
 
 <Meta of={AutocompleteStories} />
 
 # Autocomplete
 
-A text input that filters a list of options as the user types. Built on [`@base-ui/react/autocomplete`](https://base-ui.com/react/components/autocomplete).
-
 ```tsx
 import { Autocomplete } from '@developmentsnil/awake-ui/autocomplete';
 import '@developmentsnil/awake-ui/style.css';
 ```
 
-## Basic
+## Interactive example
 
 <Canvas of={AutocompleteStories.Basic} />
+<Controls of={AutocompleteStories.Basic} />
 
 ## With trigger and clear
-
-Shows a chevron button to toggle the list and a clear button to reset the value.
 
 <Canvas of={AutocompleteStories.WithTriggerAndClear} />
 
 ## Grouped
 
-Use `Autocomplete.Group` and `Autocomplete.GroupLabel` to organize items into sections, with optional `Autocomplete.Separator` between groups.
-
 <Canvas of={AutocompleteStories.Grouped} />
 
 ## Controlled
-
-Bind `value` and `onValueChange` to control the selected value externally.
 
 <Canvas of={AutocompleteStories.Controlled} />
 
 ## Auto highlight
 
-With `autoHighlight`, the first matching item is highlighted automatically as the user types.
-
 <Canvas of={AutocompleteStories.AutoHighlight} />
 
-## Usage
+## Props
 
-### Filtering
-
-Use `Autocomplete.useFilter` for built-in string matching:
-
-```tsx
-const { contains } = Autocomplete.useFilter({ sensitivity: 'base' });
-
-<Autocomplete.Root
-  items={items}
-  filter={(item, inputValue) => contains(item, inputValue)}
->
-  ...
-</Autocomplete.Root>
-```
-
-`sensitivity` options: `'base'` (case + accent insensitive), `'accent'`, `'case'`, `'variant'`.
-
-### With trigger and clear buttons
-
-```tsx
-<Autocomplete.InputGroup>
-  <Autocomplete.Input placeholder="Search…" />
-  <Autocomplete.Clear aria-label="Clear">✕</Autocomplete.Clear>
-  <Autocomplete.Trigger aria-label="Toggle list">▾</Autocomplete.Trigger>
-</Autocomplete.InputGroup>
-```
-
-`Autocomplete.Clear` only renders when the input has a value. `Autocomplete.Trigger` toggles the popup.
-
-### Grouped items
-
-```tsx
-<Autocomplete.List>
-  <Autocomplete.Group items={fruits}>
-    <Autocomplete.GroupLabel>Fruits</Autocomplete.GroupLabel>
-    {fruits.map((item) => (
-      <Autocomplete.Item key={item} value={item}>{item}</Autocomplete.Item>
-    ))}
-  </Autocomplete.Group>
-  <Autocomplete.Separator />
-  <Autocomplete.Group items={vegetables}>
-    <Autocomplete.GroupLabel>Vegetables</Autocomplete.GroupLabel>
-    {vegetables.map((item) => (
-      <Autocomplete.Item key={item} value={item}>{item}</Autocomplete.Item>
-    ))}
-  </Autocomplete.Group>
-</Autocomplete.List>
-```
-
-### Async search
-
-```tsx
-const [items, setItems] = useState<string[]>([]);
-
-<Autocomplete.Root
-  items={items}
-  filter={null} // disable built-in filter — results already filtered server-side
-  onValueChange={async (value) => {
-    const results = await fetchSuggestions(value);
-    setItems(results);
-  }}
->
-  ...
-  <Autocomplete.Status /> {/* screen reader announcements */}
-</Autocomplete.Root>
-```
-
-## API
-
-### `Autocomplete.Root`
-
-| Prop | Type | Default | Description |
-|---|---|---|---|
-| `items` | `string[]` | — | Full list of options |
-| `filteredItems` | `string[]` | — | Pre-filtered list (use when filtering server-side) |
-| `filter` | `(item, input) => boolean \| null` | — | Filter function. Pass `null` to disable |
-| `value` | `string` | — | Controlled selected value |
-| `defaultValue` | `string` | — | Uncontrolled initial value |
-| `onValueChange` | `(value: string) => void` | — | Called when selection changes |
-| `autoHighlight` | `boolean \| 'always'` | `false` | Highlight first match automatically |
-| `keepHighlight` | `boolean` | `false` | Keep highlight when list closes |
-| `limit` | `number` | `-1` | Max items to display (`-1` = unlimited) |
-| `mode` | `'list' \| 'both' \| 'inline' \| 'none'` | `'list'` | Autocomplete mode |
-| `open` | `boolean` | — | Controlled open state |
-| `onOpenChange` | `(open: boolean) => void` | — | Called when open state changes |
-| `disabled` | `boolean` | `false` | Disables the entire component |
-
-### `Autocomplete.Input`
-
-Renders `<input>`. Accepts all native input props plus `className` and `render`.
-
-### `Autocomplete.Positioner`
-
-| Prop | Type | Default | Description |
-|---|---|---|---|
-| `side` | `'top' \| 'bottom' \| 'left' \| 'right'` | `'bottom'` | Side where the popup appears |
-| `sideOffset` | `number` | `4` | Gap in px between popup and anchor |
-| `align` | `'start' \| 'center' \| 'end'` | `'start'` | Alignment relative to the anchor |
-
-### `Autocomplete.Item`
-
-| Prop | Type | Description |
-|---|---|---|
-| `value` | `string` | **Required.** The option value |
-
-## Customization
-
-Override these CSS variables to style the component:
-
-```css
-:root {
-  --awake-autocomplete-text:   var(--color-awake-text);
-  --awake-autocomplete-bg:     var(--color-awake-surface);
-  --awake-autocomplete-border: var(--color-awake-border);
-}
-```
+<ArgTypes of={AutocompleteStories} />

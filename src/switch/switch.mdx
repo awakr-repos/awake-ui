@@ -1,68 +1,32 @@
-import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as SwitchStories from './switch.stories';
 
 <Meta of={SwitchStories} />
 
 # Switch
 
-Compound component (`Switch.Root`, `Switch.Thumb`) para criar toggle buttons com suporte a estados checked e disabled. Baseado no Base UI Switch.
-
 ```tsx
 import { Switch } from '@developmentsnil/awake-ui/switch';
 import '@developmentsnil/awake-ui/style.css';
-```
 
-## Basic Usage
-
-```tsx
-import { useState } from 'react';
-
-function Example() {
-  const [checked, setChecked] = useState(false);
-  return (
-    <Switch.Root checked={checked} onCheckedChange={setChecked}>
-      <Switch.Thumb />
-    </Switch.Root>
-  );
-}
-```
-
-<Canvas of={SwitchStories.Default} />
-
-## Default Checked
-
-```tsx
-<Switch.Root defaultChecked>
+<Switch.Root>
   <Switch.Thumb />
 </Switch.Root>
 ```
+
+## Interactive example
+
+<Canvas of={SwitchStories.Default} />
+<Controls of={SwitchStories.Default} />
+
+## Checked
 
 <Canvas of={SwitchStories.Checked} />
 
 ## Disabled
 
-```tsx
-<Switch.Root disabled>
-  <Switch.Thumb />
-</Switch.Root>
-```
-
 <Canvas of={SwitchStories.Disabled} />
 
-## API
+## Props
 
-### `Switch.Root`
-
-| Prop | Type | Default | Description |
-|---|---|---|---|
-| `checked` | `boolean` | — | Controlled checked state |
-| `onCheckedChange` | `(checked: boolean) => void` | — | Called when state changes |
-| `defaultChecked` | `boolean` | `false` | Initial state (uncontrolled) |
-| `disabled` | `boolean` | `false` | Disables the switch |
-| `name` | `string` | — | Form field name |
-
-### `Switch.Thumb`
-
-Renders the sliding indicator. Inherits the state from `Switch.Root` via context.
-
-<Controls />
+<ArgTypes of={SwitchStories} />

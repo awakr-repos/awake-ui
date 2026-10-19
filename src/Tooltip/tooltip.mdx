@@ -1,13 +1,9 @@
-import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as TooltipStories from './tooltip.stories';
 
 <Meta of={TooltipStories} />
 
 # Tooltip
-
-A popup that appears when an element is hovered or focused, showing a hint for sighted users. Based on Base UI Tooltip for accessibility and consistent behavior.
-
-## Basic Usage
 
 ```tsx
 import { Tooltip } from '@developmentsnil/awake-ui/tooltip';
@@ -15,14 +11,12 @@ import '@developmentsnil/awake-ui/style.css';
 
 <Tooltip.Provider>
   <Tooltip.Root>
-    <Tooltip.Trigger aria-label="Bold">
-      <button>Hover me</button>
-    </Tooltip.Trigger>
+    <Tooltip.Trigger render={<button>Hover me</button>} />
     <Tooltip.Portal>
       <Tooltip.Positioner>
         <Tooltip.Popup>
+          Texto do tooltip
           <Tooltip.Arrow />
-          Tooltip content
         </Tooltip.Popup>
       </Tooltip.Positioner>
     </Tooltip.Portal>
@@ -30,153 +24,27 @@ import '@developmentsnil/awake-ui/style.css';
 </Tooltip.Provider>
 ```
 
+## Interactive example
+
 <Canvas of={TooltipStories.Default} />
+<Controls of={TooltipStories.Default} />
 
-## Multiple Tooltips
-
-Coordinate multiple tooltips with a single Provider.
-
-```tsx
-<Tooltip.Provider>
-  <div style={{ display: 'flex', gap: '16px' }}>
-    <Tooltip.Root>
-      <Tooltip.Trigger aria-label="Bold">
-        <button>Bold</button>
-      </Tooltip.Trigger>
-      <Tooltip.Portal>
-        <Tooltip.Positioner>
-          <Tooltip.Popup>
-            <Tooltip.Arrow />
-            Bold text
-          </Tooltip.Popup>
-        </Tooltip.Positioner>
-      </Tooltip.Portal>
-    </Tooltip.Root>
-    <Tooltip.Root>
-      <Tooltip.Trigger aria-label="Italic">
-        <button>Italic</button>
-      </Tooltip.Trigger>
-      <Tooltip.Portal>
-        <Tooltip.Positioner>
-          <Tooltip.Popup>
-            <Tooltip.Arrow />
-            Italic text
-          </Tooltip.Popup>
-        </Tooltip.Positioner>
-      </Tooltip.Portal>
-    </Tooltip.Root>
-  </div>
-</Tooltip.Provider>
-```
+## Multiple
 
 <Canvas of={TooltipStories.Multiple} />
 
 ## Positioning
 
-Control tooltip position with the `side` prop.
-
-```tsx
-<Tooltip.Positioner side="top">
-  {/* popup */}
-</Tooltip.Positioner>
-```
-
-Available positions: `top`, `bottom`, `left`, `right`
-
 <Canvas of={TooltipStories.Positioning} />
 
-## Controlled Mode
-
-Control tooltip open/close state programmatically.
-
-```tsx
-const [open, setOpen] = useState(false);
-
-<Tooltip.Root open={open} onOpenChange={setOpen}>
-  {/* trigger and popup */}
-</Tooltip.Root>
-```
+## Controlled
 
 <Canvas of={TooltipStories.Controlled} />
 
-## With Viewport
-
-Ensure tooltip stays within viewport boundaries.
-
-```tsx
-<Tooltip.Portal>
-  <Tooltip.Viewport>
-    <Tooltip.Positioner>
-      <Tooltip.Popup>
-        <Tooltip.Arrow />
-        Tooltip stays within viewport
-      </Tooltip.Popup>
-    </Tooltip.Positioner>
-  </Tooltip.Viewport>
-</Tooltip.Portal>
-```
-
-<Canvas of={TooltipStories.WithViewport} />
-
-## Long Content
-
-Tooltip handles text wrapping and maximum width constraints.
+## Long content
 
 <Canvas of={TooltipStories.LongContent} />
 
-## Complete Example
-
-Complete tooltip with all features combined.
-
-<Canvas of={TooltipStories.Complete} />
-
 ## Props
 
-### Tooltip.Provider
-
-- `children` - Tooltip Root components to coordinate
-- `delay` - Delay before tooltip appears (in milliseconds)
-- `delayClose` - Delay before tooltip closes (in milliseconds)
-
-### Tooltip.Root
-
-- `open` - Controlled open state (boolean)
-- `onOpenChange` - Callback when open state changes `(open: boolean) => void`
-- `defaultOpen` - Default open state for uncontrolled usage
-- `closeDelay` - Delay before closing (in milliseconds)
-
-### Tooltip.Trigger
-
-- `aria-label` - Accessible label for the trigger (required for accessibility)
-- `className` - Additional CSS classes
-- `disabled` - Disables the trigger and tooltip
-
-### Tooltip.Positioner
-
-- `side` - Position relative to trigger: `"top" | "bottom" | "left" | "right"`
-- `align` - Alignment on the specified side
-- `sideOffset` - Distance from the trigger (in pixels)
-- `alignOffset` - Offset from the alignment point
-
-### Tooltip.Portal
-
-- `container` - Container element for portal rendering
-- `disabled` - Disable portal rendering
-
-### Tooltip.Popup
-
-- `className` - Additional CSS classes
-- `id` - Unique identifier for the popup
-
-### Tooltip.Arrow
-
-- `className` - Additional CSS classes
-- `width` - Arrow width
-- `height` - Arrow height
-
-### Tooltip.Viewport
-
-- `className` - Additional CSS classes
-- `padding` - Padding from viewport edges
-
-<Controls />
+<ArgTypes of={TooltipStories} />

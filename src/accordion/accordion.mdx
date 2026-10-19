@@ -1,0 +1,37 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as AccordionStories from './accordion.stories';
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+```tsx
+import { Accordion } from '@developmentsnil/awake-ui/accordion';
+import '@developmentsnil/awake-ui/style.css';
+
+<Accordion.Root>
+  <Accordion.Item value="item1">
+    <Accordion.Header>
+      <Accordion.Trigger>Título</Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Panel>Conteúdo do painel</Accordion.Panel>
+  </Accordion.Item>
+</Accordion.Root>
+```
+
+## Interactive example
+
+<Canvas of={AccordionStories.Default} />
+<Controls of={AccordionStories.Default} />
+
+## Multiple open
+
+<Canvas of={AccordionStories.MultipleOpen} />
+
+## Default open
+
+<Canvas of={AccordionStories.DefaultOpen} />
+
+## Props
+
+<ArgTypes of={AccordionStories} />

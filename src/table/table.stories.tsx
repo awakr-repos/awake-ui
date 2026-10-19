@@ -3,6 +3,9 @@ import { Table } from './index';
 
 const meta: Meta = {
   title: 'Components/Table',
+  argTypes: {
+    className: { control: 'text', description: 'Additional CSS class for Root' },
+  },
 };
 
 export default meta;

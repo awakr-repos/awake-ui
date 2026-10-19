@@ -3,6 +3,17 @@ import { NumberField } from './index';
 
 const meta: Meta = {
   title: 'Components/NumberField',
+  argTypes: {
+    value: { control: 'number', description: 'Current value (controlled)' },
+    defaultValue: { control: 'number', description: 'Initial value (uncontrolled)' },
+    onValueChange: { action: 'onValueChange', description: 'Called when the value changes' },
+    min: { control: 'number', description: 'Minimum allowed value' },
+    max: { control: 'number', description: 'Maximum allowed value' },
+    step: { control: 'number', description: 'Step increment (default: 1)' },
+    largeStep: { control: 'number', description: 'Large step increment (PageUp/PageDown)' },
+    disabled: { control: 'boolean', description: 'Disables the field' },
+    readOnly: { control: 'boolean', description: 'Read-only' },
+  },
 };
 
 export default meta;

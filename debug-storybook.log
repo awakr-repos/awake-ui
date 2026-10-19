@@ -1,95 +1,31 @@
-[23:47:20.938] [INFO] [36mInitializing Storybook[39m
-[23:47:21.023] [DEBUG] Getting package.json info for /Users/nil/projects/awake-ui/package.json...
-[23:47:21.023] [INFO] Package manager: pnpm
-[23:47:21.024] [DEBUG] Getting CLI versions from NPM for storybook...
-[23:47:21.024] [DEBUG] Executing command: pnpm info storybook version
-[23:47:21.377] [INFO] Adding Storybook version 10.6.0 to your project
-[23:47:21.377] [DEBUG] Executing command: pnpm config get minimumReleaseAge
-[23:47:21.388] [DEBUG] Using cached package.json for /Users/nil/projects/awake-ui/package.json...
-[23:47:21.388] [DEBUG] Project type detected: react
-[23:47:21.388] [DEBUG] Using cached package.json for /Users/nil/projects/awake-ui/package.json...
-[23:47:21.389] [DEBUG] Using cached package.json for /Users/nil/projects/awake-ui/package.json...
-[23:47:38.480] [PROMPT] We were not able to detect the right builder for your project. Please select one: {"choice":"vite"}
-[23:47:38.480] [INFO] Framework detected: react-vite
-[23:47:38.480] [DEBUG] Getting installed version for vitest...
-[23:47:38.481] [DEBUG] Executing command: pnpm list "vitest" --json --depth=99
-[23:47:38.517] [DEBUG] No installations found for vitest
-[23:47:38.517] [DEBUG] Getting installed version for msw...
-[23:47:38.517] [DEBUG] Executing command: pnpm list "msw" --json --depth=99
-[23:47:38.546] [DEBUG] No installations found for msw
-[23:47:47.035] [PROMPT] New to Storybook? {"choice":true}
-[23:47:47.036] [INFO] Storybook collects completely anonymous usage telemetry. We use it to shape Storybook's roadmap and prioritize features. You can learn more, including how to opt out, at https://storybook.js.org/telemetry
-[23:47:54.017] [PROMPT] Would you like to install AI features (MCP addon and prompt suggestions)? {"choice":false}
-[23:47:54.019] [INFO] base-generator-task-start: Generating Storybook configuration
-[23:47:54.020] [DEBUG] Using cached package.json for /Users/nil/projects/awake-ui/package.json...
-[23:47:54.020] [DEBUG] Using cached package.json for /Users/nil/projects/awake-ui/package.json...
-[23:47:54.020] [DEBUG] Using cached package.json for /Users/nil/projects/awake-ui/package.json...
-[23:47:54.020] [DEBUG] Getting CLI versions from NPM for @storybook/react-vite...
-[23:47:54.020] [DEBUG] Executing command: pnpm info @storybook/react-vite version
-[23:47:54.022] [DEBUG] Getting CLI versions from NPM for @storybook/addon-vitest...
-[23:47:54.022] [DEBUG] Executing command: pnpm info @storybook/addon-vitest version
-[23:47:54.023] [DEBUG] Getting CLI versions from NPM for @storybook/addon-a11y...
-[23:47:54.023] [DEBUG] Executing command: pnpm info @storybook/addon-a11y version
-[23:47:54.024] [DEBUG] Getting CLI versions from NPM for @storybook/addon-docs...
-[23:47:54.024] [DEBUG] Executing command: pnpm info @storybook/addon-docs version
-[23:47:54.025] [DEBUG] Getting CLI versions from NPM for @storybook/addon-onboarding...
-[23:47:54.025] [DEBUG] Executing command: pnpm info @storybook/addon-onboarding version
-[23:47:54.844] [INFO] base-generator-task: - Configuring main.ts
-[23:47:54.844] [INFO] base-generator-task: - Configuring preview.ts
-[23:47:54.845] [INFO] base-generator-task: - Adding Storybook command to package.json
-[23:47:54.845] [DEBUG] Getting package.json info for /Users/nil/projects/awake-ui/package.json...
-[23:47:54.845] [DEBUG] Using cached package.json for /Users/nil/projects/awake-ui/package.json...
-[23:47:54.845] [DEBUG] Using cached package.json for /Users/nil/projects/awake-ui/package.json...
-[23:47:54.845] [INFO] base-generator-task: - Copying framework templates
-[23:47:54.857] [DEBUG] Executing command: npm config get registry --workspaces=false --include-workspace-root
-[23:47:54.966] [ERROR] [38;2;241;97;97mError: Cannot find @storybook/react-vite/package.json, Error: Cannot find module '@storybook/react-vite/package.json'
-Require stack:
-- .
-    at Module._resolveFilename (node:internal/modules/cjs/loader:1369:15)
-    at require.resolve (node:internal/modules/helpers:145:19)
-    at resolvePackageDir (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/storybook@10.6.0_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-5G6TGQDE.js:728:26)
-    at getRendererDir (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/storybook@10.6.0_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-XGT335GY.js:5368:12)
-    at templatePath (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/storybook@10.6.0_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-XGT335GY.js:5451:25)
-    at copyTemplateFiles (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/storybook@10.6.0_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-XGT335GY.js:5466:23)
-    at async baseGenerator (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/create-storybook@10.6.0_react@19.3.0/node_modules/create-storybook/dist/_node-chunks/chunk-UODPQVMU.js:1459:152)
-    at async GeneratorExecutionCommand.executeProjectGenerator (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/create-storybook@10.6.0_react@19.3.0/node_modules/create-storybook/dist/_node-chunks/chunk-UODPQVMU.js:1532:101)
-    at async GeneratorExecutionCommand.execute (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/create-storybook@10.6.0_react@19.3.0/node_modules/create-storybook/dist/_node-chunks/chunk-UODPQVMU.js:1555:61)
-    at async doInitiate (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/create-storybook@10.6.0_react@19.3.0/node_modules/create-storybook/dist/_node-chunks/chunk-UODPQVMU.js:3788:95)
-
-SB_CLI_0003 (ExecaCommandFailedError): Command failed: npm config get registry --workspaces=false --include-workspace-root
-
-Command failed with exit code 1: npm config get registry '--workspaces=false' --include-workspace-root
-npm error code EBADDEVENGINES
-npm error EBADDEVENGINES The developer of this package has specified the following through devEngines
-npm error EBADDEVENGINES Invalid engine "packageManager"
-npm error EBADDEVENGINES Invalid name "pnpm" does not match "npm" for "packageManager"
-npm error EBADDEVENGINES {
-npm error EBADDEVENGINES   current: { name: 'npm', version: '11.4.2' },
-npm error EBADDEVENGINES   required: { name: 'pnpm', version: '12.4.2', onFail: 'download' }
-npm error EBADDEVENGINES }
-npm error A complete log of this run can be found in: /Users/nil/.npm/_logs/2026-09-16T02_47_54_923Z-debug-0.log
-Command failed with exit code 1: npm config get registry '--workspaces=false' --include-workspace-root
-
-npm error code EBADDEVENGINES
-npm error EBADDEVENGINES The developer of this package has specified the following through devEngines
-npm error EBADDEVENGINES Invalid engine "packageManager"
-npm error EBADDEVENGINES Invalid name "pnpm" does not match "npm" for "packageManager"
-npm error EBADDEVENGINES {
-npm error EBADDEVENGINES   current: { name: 'npm', version: '11.4.2' },
-npm error EBADDEVENGINES   required: { name: 'pnpm', version: '12.4.2', onFail: 'download' }
-npm error EBADDEVENGINES }
-npm error A complete log of this run can be found in: /Users/nil/.npm/_logs/2026-09-16T02_47_54_923Z-debug-0.log
-    at categorizeExecaError (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/storybook@10.6.0_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-IQHYYTFR.js:15540:874)
-    at categorize (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/storybook@10.6.0_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-IQHYYTFR.js:15550:31)
-    at file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/storybook@10.6.0_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-IQHYYTFR.js:15553:61[39m
-    at getRendererDir (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/storybook@10.6.0_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-XGT335GY.js:5377:9)
-    at async templatePath (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/storybook@10.6.0_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-XGT335GY.js:5451:19)
-    at async copyTemplateFiles (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/storybook@10.6.0_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-XGT335GY.js:5466:17)
-    at async baseGenerator (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/create-storybook@10.6.0_react@19.3.0/node_modules/create-storybook/dist/_node-chunks/chunk-UODPQVMU.js:1459:152)
-    at async GeneratorExecutionCommand.executeProjectGenerator (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/create-storybook@10.6.0_react@19.3.0/node_modules/create-storybook/dist/_node-chunks/chunk-UODPQVMU.js:1532:101)
-    at async GeneratorExecutionCommand.execute (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/create-storybook@10.6.0_react@19.3.0/node_modules/create-storybook/dist/_node-chunks/chunk-UODPQVMU.js:1555:61)
-    at async doInitiate (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/create-storybook@10.6.0_react@19.3.0/node_modules/create-storybook/dist/_node-chunks/chunk-UODPQVMU.js:3788:95)
-    at async file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/create-storybook@10.6.0_react@19.3.0/node_modules/create-storybook/dist/_node-chunks/chunk-UODPQVMU.js:3852:20
-    at async withTelemetry (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/storybook@10.6.0_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-FTP3QZ7O.js:142:12)
-    at async initiate (file:///Users/nil/Library/Caches/pnpm/dlx/34bc86a3c6e41d722c18e9ec09266a57/mu3i2q4e-qqc/node_modules/.pacquet/create-storybook@10.6.0_react@19.3.0/node_modules/create-storybook/dist/_node-chunks/chunk-UODPQVMU.js:3843:24)
-[23:48:00.398] [PROMPT] Would you like to send anonymous crash reports to improve Storybook and fix bugs faster? {"choice":false}
+[17:45:03.468] [INFO] storybook v10.6.0
+[17:45:03.673] [DEBUG] Getting package.json info for /Users/nil/projects/awake-ui/package.json...
+[17:45:03.744] [DEBUG] Could not determine @babel/preset-env version in use. In case of runtime errors with @babel/preset-env, you may need to set the babelRemoveBugfixes feature flag in your `main.ts` file.
+[17:45:03.887] [INFO] Starting...
+[17:45:03.997] [DEBUG] Starting preview..
+[17:45:04.023] [WARN] 🚨 Unable to index ./src/slider/slider.mdx,./src/slider/slider.stories.tsx:
+  Error: You created a component docs page for 'Components/Slider', but also tagged the CSF file with 'autodocs'. This is probably a mistake.
+    at _StoryIndexGenerator.chooseDuplicate (file:///Users/nil/projects/awake-ui/node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_react@19.3.0/node_modules/storybook/dist/core-server/index.js:16794:15)
+    at file:///Users/nil/projects/awake-ui/node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_react@19.3.0/node_modules/storybook/dist/core-server/index.js:16833:52
+    at Array.forEach (<anonymous>)
+    at _StoryIndexGenerator.getIndexAndStats (file:///Users/nil/projects/awake-ui/node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_react@19.3.0/node_modules/storybook/dist/core-server/index.js:16830:23)
+    at async _StoryIndexGenerator.getIndex (file:///Users/nil/projects/awake-ui/node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_react@19.3.0/node_modules/storybook/dist/core-server/index.js:16817:13)
+    at async BasicMinimalPluginContext.config (file:///Users/nil/projects/awake-ui/node_modules/.pnpm/@storybook+builder-vite@10.6.0_storybook@10.6.0_@types+react@19.3.0_react@19.3.0__vite@_879dd8e455cf065a84ece591728f96b1/node_modules/@storybook/builder-vite/dist/_node-chunks/chunk-P2UGKA2Z.js:188:19)
+    at async runConfigHook (file:///Users/nil/projects/awake-ui/node_modules/.pnpm/vite@8.3.0_@types+node@24.13.4_esbuild@0.27.7_jiti@2.7.0/node_modules/vite/dist/node/chunks/node.js:37527:15)
+    at async resolveConfig (file:///Users/nil/projects/awake-ui/node_modules/.pnpm/vite@8.3.0_@types+node@24.13.4_esbuild@0.27.7_jiti@2.7.0/node_modules/vite/dist/node/chunks/node.js:36933:11)
+    at async _createServer (file:///Users/nil/projects/awake-ui/node_modules/.pnpm/vite@8.3.0_@types+node@24.13.4_esbuild@0.27.7_jiti@2.7.0/node_modules/vite/dist/node/chunks/node.js:24268:65)
+    at async Module.start (file:///Users/nil/projects/awake-ui/node_modules/.pnpm/@storybook+builder-vite@10.6.0_storybook@10.6.0_@types+react@19.3.0_react@19.3.0__vite@_879dd8e455cf065a84ece591728f96b1/node_modules/@storybook/builder-vite/dist/index.js:1800:17)
+[17:45:04.025] [ERROR] Failed to build the preview
+[17:45:04.025] [ERROR] Error: Unable to index ./src/slider/slider.mdx,./src/slider/slider.stories.tsx
+    at _StoryIndexGenerator.getIndexAndStats (file://./node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_react@19.3.0/node_modules/storybook/dist/core-server/index.js:16838:15)
+    at async _StoryIndexGenerator.getIndex (file://./node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_react@19.3.0/node_modules/storybook/dist/core-server/index.js:16817:13)
+    at async BasicMinimalPluginContext.config (file://./node_modules/.pnpm/@storybook+builder-vite@10.6.0_storybook@10.6.0_@types+react@19.3.0_react@19.3.0__vite@_879dd8e455cf065a84ece591728f96b1/node_modules/@storybook/builder-vite/dist/_node-chunks/chunk-P2UGKA2Z.js:188:19)
+    at async runConfigHook (file://./node_modules/.pnpm/vite@8.3.0_@types+node@24.13.4_esbuild@0.27.7_jiti@2.7.0/node_modules/vite/dist/node/chunks/node.js:37527:15)
+    at async resolveConfig (file://./node_modules/.pnpm/vite@8.3.0_@types+node@24.13.4_esbuild@0.27.7_jiti@2.7.0/node_modules/vite/dist/node/chunks/node.js:36933:11)
+    at async _createServer (file://./node_modules/.pnpm/vite@8.3.0_@types+node@24.13.4_esbuild@0.27.7_jiti@2.7.0/node_modules/vite/dist/node/chunks/node.js:24268:65)
+    at async Module.start (file://./node_modules/.pnpm/@storybook+builder-vite@10.6.0_storybook@10.6.0_@types+react@19.3.0_react@19.3.0__vite@_879dd8e455cf065a84ece591728f96b1/node_modules/@storybook/builder-vite/dist/index.js:1800:17)
+    at async storybookDevServer (file://./node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_react@19.3.0/node_modules/storybook/dist/core-server/index.js:8495:59)
+    at async buildOrThrow (file://./node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_react@19.3.0/node_modules/storybook/dist/core-server/index.js:7270:12)
+    at async buildDevStandalone (file://./node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_react@19.3.0/node_modules/storybook/dist/core-server/index.js:9320:41)
+[17:45:04.026] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.
