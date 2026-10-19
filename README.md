@@ -420,3 +420,138 @@ To support `prefers-color-scheme` instead, add this to your own CSS:
 ## License
 
 MIT
+
+---
+
+### Slider
+
+```tsx
+import { Slider } from '@developmentsnil/awake-ui/slider';
+
+// Uncontrolled
+<Slider.Root defaultValue={[40]}>
+  <Slider.Track>
+    <Slider.Indicator />
+    <Slider.Thumb />
+  </Slider.Track>
+</Slider.Root>
+
+// With min, max and step
+<Slider.Root defaultValue={[50]} min={0} max={200} step={10}>
+  <Slider.Track>
+    <Slider.Indicator />
+    <Slider.Thumb />
+  </Slider.Track>
+</Slider.Root>
+
+// Range (two thumbs)
+<Slider.Root defaultValue={[20, 80]}>
+  <Slider.Track>
+    <Slider.Indicator />
+    <Slider.Thumb />
+    <Slider.Thumb />
+  </Slider.Track>
+</Slider.Root>
+```
+
+---
+
+### Progress
+
+```tsx
+import { Progress } from '@developmentsnil/awake-ui/progress';
+
+// Basic
+<Progress.Root value={60}>
+  <Progress.Track>
+    <Progress.Indicator />
+  </Progress.Track>
+</Progress.Root>
+
+// With label and value display
+<Progress.Root value={40}>
+  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+    <Progress.Label>Uploading file…</Progress.Label>
+    <Progress.Value />
+  </div>
+  <Progress.Track>
+    <Progress.Indicator />
+  </Progress.Track>
+</Progress.Root>
+
+// Indeterminate (omit value)
+<Progress.Root>
+  <Progress.Track>
+    <Progress.Indicator />
+  </Progress.Track>
+</Progress.Root>
+```
+
+---
+
+### Tabs
+
+```tsx
+import { Tabs } from '@developmentsnil/awake-ui/tabs';
+
+<Tabs.Root defaultValue="account">
+  <Tabs.List>
+    <Tabs.Tab value="account">Account</Tabs.Tab>
+    <Tabs.Tab value="password">Password</Tabs.Tab>
+    <Tabs.Tab value="settings">Settings</Tabs.Tab>
+    <Tabs.Indicator />
+  </Tabs.List>
+  <Tabs.Panel value="account">Account content</Tabs.Panel>
+  <Tabs.Panel value="password">Password content</Tabs.Panel>
+  <Tabs.Panel value="settings">Settings content</Tabs.Panel>
+</Tabs.Root>
+
+// With a disabled tab
+<Tabs.Root defaultValue="one">
+  <Tabs.List>
+    <Tabs.Tab value="one">Tab one</Tabs.Tab>
+    <Tabs.Tab value="two" disabled>Disabled</Tabs.Tab>
+    <Tabs.Indicator />
+  </Tabs.List>
+  <Tabs.Panel value="one">Content</Tabs.Panel>
+</Tabs.Root>
+```
+
+`Tabs.Indicator` renders an animated underline that follows the active tab.
+
+---
+
+### Accordion
+
+```tsx
+import { Accordion } from '@developmentsnil/awake-ui/accordion';
+
+<Accordion.Root>
+  <Accordion.Item value="item-1">
+    <Accordion.Header>
+      <Accordion.Trigger>What is awake-ui?</Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Panel>
+      A React component library built on Base UI primitives.
+    </Accordion.Panel>
+  </Accordion.Item>
+  <Accordion.Item value="item-2">
+    <Accordion.Header>
+      <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Panel>
+      Yes — all interactive components follow WAI-ARIA patterns.
+    </Accordion.Panel>
+  </Accordion.Item>
+</Accordion.Root>
+
+// Allow multiple items open at once
+<Accordion.Root openMultiple>
+  {/* ... */}
+</Accordion.Root>
+
+// Open a specific item by default
+<Accordion.Root defaultValue={['item-1']}>
+  {/* ... */}
+</Accordion.Root>
+```

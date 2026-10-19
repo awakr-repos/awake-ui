@@ -14,7 +14,8 @@ awake-ui/
 │   ├── <component>/
 │   │   ├── index.tsx
 │   │   ├── styles.css
-│   │   └── <component>.stories.tsx
+│   │   ├── <component>.stories.tsx
+│   │   └── <component>.mdx
 │   └── global.d.ts       # CSS module declarations
 ├── dist/                 # Build output (committed — published to npm)
 ├── playground/           # Vite app for manual testing (workspace: *)
@@ -52,7 +53,7 @@ Components **must** reference semantic tokens, never raw scales directly. This k
 Centralized in `src/dark-theme.css` — a single file that overrides the semantic tokens. No `[data-theme="dark"]` blocks inside individual component CSS files.
 
 ### Component patterns
-- **Compound components** — Dialog, Select, Table, Field, Tooltip, Switch all use the `{ Root, Trigger, … }` object export pattern.
+- **Compound components** — Dialog, Select, Table, Field, Tooltip, Switch, Tabs, Accordion, Progress, Slider, NumberField all use the `{ Root, Trigger, … }` object export pattern.
 - **`render` prop** — unstyled wrappers (Dialog.Trigger, Dialog.Close, Tooltip.Trigger) use Base UI's `render` prop for composition. They carry no visual style of their own.
 - **CSS variable fallback** — components use `var(--awake-component-prop, var(--color-awake-semantic-token))` to allow per-instance overrides without losing the theme default.
 - **`clsx`** — used for all className merging. No `cn()` utility.
@@ -62,6 +63,16 @@ Centralized in `src/dark-theme.css` — a single file that overrides the semanti
 - No `@apply` — explicit CSS properties only
 - All class names are namespaced: `.awake-<component>-<element>`
 
+### Storybook documentation (MDX)
+Each component has a `<name>.mdx` file. Rules:
+- Import from `@storybook/addon-docs/blocks` (not `@storybook/blocks`).
+- Use `<Canvas of={Stories.X} />` for live previews.
+- Use `<Controls of={Stories.X} />` for the interactive props panel.
+- Use `<ArgTypes of={Stories} />` for the static props table.
+- **Do not use `tags: ['autodocs']`** in stories files that already have an MDX — it causes conflicts.
+- `<ArgTypes>` requires either `Meta<typeof Component>` or explicit `argTypes` in the meta object. For compound components (which use `Meta` without a generic type), always define `argTypes` explicitly in the stories file.
+- All MDX section headings and `argTypes` descriptions must be in **English**.
+
 ## Adding a new component
 
 1. Create `src/<name>/index.tsx` and `src/<name>/styles.css`
@@ -69,9 +80,10 @@ Centralized in `src/dark-theme.css` — a single file that overrides the semanti
 3. Add the entry to `tsup.config.ts` (`entry` array)
 4. Add the export to `package.json` (`exports` map)
 5. Import the component CSS in `src/styles.css`
-6. Create `src/<name>/<name>.stories.tsx`
-7. Add the component to `playground/src/App.tsx`
-8. Run `pnpm build` and verify `dist/` output
+6. Create `src/<name>/<name>.stories.tsx` — include explicit `argTypes` in the meta
+7. Create `src/<name>/<name>.mdx` — use `<Canvas>`, `<Controls>`, `<ArgTypes>`
+8. Add the component to `playground/src/App.tsx`
+9. Run `pnpm build` and verify `dist/` output
 
 ## What not to touch
 
