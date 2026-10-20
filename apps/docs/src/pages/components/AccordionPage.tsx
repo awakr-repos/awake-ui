@@ -41,12 +41,12 @@ export function AccordionPage() {
       </ComponentPreview>
 
       <h2 className="text-lg font-semibold mb-4">Multiple open</h2>
-      <ComponentPreview code={`<Accordion.Root openMultiple>
+      <ComponentPreview code={`<Accordion.Root multiple>
   <Accordion.Item value="1">...</Accordion.Item>
   <Accordion.Item value="2">...</Accordion.Item>
 </Accordion.Root>`}>
         <div className="w-full max-w-sm">
-          <Accordion.Root openMultiple>
+          <Accordion.Root multiple>
             <Accordion.Item value="1">
               <Accordion.Trigger>Can open multiple</Accordion.Trigger>
               <Accordion.Panel>This accordion allows multiple panels open simultaneously.</Accordion.Panel>

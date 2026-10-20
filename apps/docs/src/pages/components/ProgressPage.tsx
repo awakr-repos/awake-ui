@@ -94,11 +94,11 @@ export function ProgressPage() {
 
       <h2 className="text-lg font-semibold mb-4">Indeterminate</h2>
       <ComponentPreview code={`{/* Omit value for indeterminate state */}
-<Progress.Root>
+<Progress.Root value={null}>
   <Progress.Track><Progress.Indicator /></Progress.Track>
 </Progress.Root>`}>
         <div style={{ width: '100%', maxWidth: 360 }}>
-          <Progress.Root>
+          <Progress.Root value={null}>
             <Progress.Track><Progress.Indicator /></Progress.Track>
           </Progress.Root>
         </div>

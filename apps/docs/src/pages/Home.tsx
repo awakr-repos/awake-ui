@@ -76,7 +76,7 @@ export function Home() {
           {/* Alert */}
           <div className="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-6">
             <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-4">Alert</p>
-            <Alert variant="info" title="Heads up" description="This is an informational alert." />
+            <Alert variant="info">Heads up — This is an informational alert.</Alert>
           </div>
 
           {/* Switch */}
