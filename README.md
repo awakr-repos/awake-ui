@@ -50,6 +50,105 @@ const [isDark, setIsDark] = useState(false);
 
 ## Components
 
+### Accordion
+
+```tsx
+import { Accordion } from '@developmentsnil/awake-ui/accordion';
+
+<Accordion.Root>
+  <Accordion.Item value="item-1">
+    <Accordion.Header>
+      <Accordion.Trigger>What is awake-ui?</Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Panel>
+      A React component library built on Base UI primitives.
+    </Accordion.Panel>
+  </Accordion.Item>
+  <Accordion.Item value="item-2">
+    <Accordion.Header>
+      <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Panel>
+      Yes — all interactive components follow WAI-ARIA patterns.
+    </Accordion.Panel>
+  </Accordion.Item>
+</Accordion.Root>
+
+// Allow multiple items open at once
+<Accordion.Root openMultiple>
+  {/* ... */}
+</Accordion.Root>
+
+// Open a specific item by default
+<Accordion.Root defaultValue={['item-1']}>
+  {/* ... */}
+</Accordion.Root>
+```
+
+---
+
+### Alert
+
+```tsx
+import { Alert } from '@developmentsnil/awake-ui/alert';
+
+// Variants: info (default) | success | warning | error
+<Alert variant="info">Your session will expire in 5 minutes.</Alert>
+<Alert variant="success">Profile saved successfully.</Alert>
+<Alert variant="warning">This action cannot be undone.</Alert>
+<Alert variant="error">Failed to save changes.</Alert>
+```
+
+---
+
+---
+
+### Autocomplete
+
+A text input that filters a list of options as the user types:
+
+```tsx
+import { Autocomplete } from '@developmentsnil/awake-ui/autocomplete';
+
+function SearchInput() {
+  const FRUITS = ['Apple', 'Banana', 'Cherry', 'Mango', 'Orange'];
+  const { contains } = Autocomplete.useFilter({ sensitivity: 'base' });
+
+  return (
+    <Autocomplete.Root
+      items={FRUITS}
+      filter={(item, input) => contains(item, input)}
+      autoHighlight
+    >
+      <Autocomplete.InputGroup>
+        <Autocomplete.Input placeholder="Search fruits…" />
+        <Autocomplete.Clear aria-label="Clear">✕</Autocomplete.Clear>
+        <Autocomplete.Trigger aria-label="Toggle list">▾</Autocomplete.Trigger>
+      </Autocomplete.InputGroup>
+      <Autocomplete.Portal>
+        <Autocomplete.Positioner sideOffset={4}>
+          <Autocomplete.Popup>
+            <Autocomplete.List>
+              {FRUITS.map((f) => (
+                <Autocomplete.Item key={f} value={f}>{f}</Autocomplete.Item>
+              ))}
+            </Autocomplete.List>
+            <Autocomplete.Empty>No results found.</Autocomplete.Empty>
+          </Autocomplete.Popup>
+        </Autocomplete.Positioner>
+      </Autocomplete.Portal>
+    </Autocomplete.Root>
+  );
+}
+```
+
+`Autocomplete.useFilter` accepts `sensitivity: 'base' | 'accent' | 'case' | 'variant'`.  
+`Autocomplete.Clear` only renders when the input has a value.
+
+---
+
+---
+
 ### Button
 
 ```tsx
@@ -72,18 +171,6 @@ import { Button } from '@developmentsnil/awake-ui/button';
 ```
 
 ---
-
-### Alert
-
-```tsx
-import { Alert } from '@developmentsnil/awake-ui/alert';
-
-// Variants: info (default) | success | warning | error
-<Alert variant="info">Your session will expire in 5 minutes.</Alert>
-<Alert variant="success">Profile saved successfully.</Alert>
-<Alert variant="warning">This action cannot be undone.</Alert>
-<Alert variant="error">Failed to save changes.</Alert>
-```
 
 ---
 
@@ -111,6 +198,8 @@ import { Button } from '@developmentsnil/awake-ui/button';
 
 ---
 
+---
+
 ### Field
 
 ```tsx
@@ -121,6 +210,78 @@ import { Field } from '@developmentsnil/awake-ui/field';
   <Field.Control type="email" placeholder="you@example.com" />
 </Field.Root>
 ```
+
+---
+
+---
+
+### Loading
+
+```tsx
+import { Loading } from '@developmentsnil/awake-ui/loading';
+
+// Sizes: sm | md (default) | lg
+<Loading />
+<Loading size="sm" label="Saving…" />
+<Loading size="lg" label="Loading data" />
+```
+
+`label` sets the accessible `aria-label` (default: `"Loading…"`).
+
+---
+
+---
+
+### Pagination
+
+```tsx
+import { Pagination } from '@developmentsnil/awake-ui/pagination';
+
+const [page, setPage] = useState(1);
+
+<Pagination
+  currentPage={page}
+  totalPages={10}
+  onPageChange={setPage}
+/>
+```
+
+---
+
+---
+
+### Progress
+
+```tsx
+import { Progress } from '@developmentsnil/awake-ui/progress';
+
+// Basic
+<Progress.Root value={60}>
+  <Progress.Track>
+    <Progress.Indicator />
+  </Progress.Track>
+</Progress.Root>
+
+// With label and value display
+<Progress.Root value={40}>
+  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+    <Progress.Label>Uploading file…</Progress.Label>
+    <Progress.Value />
+  </div>
+  <Progress.Track>
+    <Progress.Indicator />
+  </Progress.Track>
+</Progress.Root>
+
+// Indeterminate (omit value)
+<Progress.Root>
+  <Progress.Track>
+    <Progress.Indicator />
+  </Progress.Track>
+</Progress.Root>
+```
+
+---
 
 ---
 
@@ -183,6 +344,56 @@ import { Select } from '@developmentsnil/awake-ui/select';
 
 ---
 
+---
+
+### Separator
+
+```tsx
+import { Separator } from '@developmentsnil/awake-ui/separator';
+
+<Separator />                          // horizontal (default)
+<Separator orientation="vertical" />  // vertical
+```
+
+---
+
+---
+
+### Slider
+
+```tsx
+import { Slider } from '@developmentsnil/awake-ui/slider';
+
+// Uncontrolled
+<Slider.Root defaultValue={[40]}>
+  <Slider.Track>
+    <Slider.Indicator />
+    <Slider.Thumb />
+  </Slider.Track>
+</Slider.Root>
+
+// With min, max and step
+<Slider.Root defaultValue={[50]} min={0} max={200} step={10}>
+  <Slider.Track>
+    <Slider.Indicator />
+    <Slider.Thumb />
+  </Slider.Track>
+</Slider.Root>
+
+// Range (two thumbs)
+<Slider.Root defaultValue={[20, 80]}>
+  <Slider.Track>
+    <Slider.Indicator />
+    <Slider.Thumb />
+    <Slider.Thumb />
+  </Slider.Track>
+</Slider.Root>
+```
+
+---
+
+---
+
 ### Switch
 
 Switch uses the compound component pattern — `Root` controls the state, `Thumb` is the visual handle:
@@ -204,18 +415,64 @@ const [checked, setChecked] = useState(false);
 
 ---
 
-### Loading
+---
+
+### Table
 
 ```tsx
-import { Loading } from '@developmentsnil/awake-ui/loading';
+import { Table } from '@developmentsnil/awake-ui/table';
 
-// Sizes: sm | md (default) | lg
-<Loading />
-<Loading size="sm" label="Saving…" />
-<Loading size="lg" label="Loading data" />
+<Table.Root>
+  <Table.Head>
+    <Table.Row>
+      <Table.HeaderCell>Name</Table.HeaderCell>
+      <Table.HeaderCell>Role</Table.HeaderCell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>Alice</Table.Cell>
+      <Table.Cell>Engineer</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table.Root>
 ```
 
-`label` sets the accessible `aria-label` (default: `"Loading…"`).
+---
+
+---
+
+### Tabs
+
+```tsx
+import { Tabs } from '@developmentsnil/awake-ui/tabs';
+
+<Tabs.Root defaultValue="account">
+  <Tabs.List>
+    <Tabs.Tab value="account">Account</Tabs.Tab>
+    <Tabs.Tab value="password">Password</Tabs.Tab>
+    <Tabs.Tab value="settings">Settings</Tabs.Tab>
+    <Tabs.Indicator />
+  </Tabs.List>
+  <Tabs.Panel value="account">Account content</Tabs.Panel>
+  <Tabs.Panel value="password">Password content</Tabs.Panel>
+  <Tabs.Panel value="settings">Settings content</Tabs.Panel>
+</Tabs.Root>
+
+// With a disabled tab
+<Tabs.Root defaultValue="one">
+  <Tabs.List>
+    <Tabs.Tab value="one">Tab one</Tabs.Tab>
+    <Tabs.Tab value="two" disabled>Disabled</Tabs.Tab>
+    <Tabs.Indicator />
+  </Tabs.List>
+  <Tabs.Panel value="one">Content</Tabs.Panel>
+</Tabs.Root>
+```
+
+`Tabs.Indicator` renders an animated underline that follows the active tab.
+
+---
 
 ---
 
@@ -246,100 +503,6 @@ import { Button } from '@developmentsnil/awake-ui/button';
 ```
 
 `side` accepts `top` | `right` | `bottom` | `left` (default: `top`).
-
----
-
-### Autocomplete
-
-A text input that filters a list of options as the user types:
-
-```tsx
-import { Autocomplete } from '@developmentsnil/awake-ui/autocomplete';
-
-function SearchInput() {
-  const FRUITS = ['Apple', 'Banana', 'Cherry', 'Mango', 'Orange'];
-  const { contains } = Autocomplete.useFilter({ sensitivity: 'base' });
-
-  return (
-    <Autocomplete.Root
-      items={FRUITS}
-      filter={(item, input) => contains(item, input)}
-      autoHighlight
-    >
-      <Autocomplete.InputGroup>
-        <Autocomplete.Input placeholder="Search fruits…" />
-        <Autocomplete.Clear aria-label="Clear">✕</Autocomplete.Clear>
-        <Autocomplete.Trigger aria-label="Toggle list">▾</Autocomplete.Trigger>
-      </Autocomplete.InputGroup>
-      <Autocomplete.Portal>
-        <Autocomplete.Positioner sideOffset={4}>
-          <Autocomplete.Popup>
-            <Autocomplete.List>
-              {FRUITS.map((f) => (
-                <Autocomplete.Item key={f} value={f}>{f}</Autocomplete.Item>
-              ))}
-            </Autocomplete.List>
-            <Autocomplete.Empty>No results found.</Autocomplete.Empty>
-          </Autocomplete.Popup>
-        </Autocomplete.Positioner>
-      </Autocomplete.Portal>
-    </Autocomplete.Root>
-  );
-}
-```
-
-`Autocomplete.useFilter` accepts `sensitivity: 'base' | 'accent' | 'case' | 'variant'`.  
-`Autocomplete.Clear` only renders when the input has a value.
-
----
-
-### Separator
-
-```tsx
-import { Separator } from '@developmentsnil/awake-ui/separator';
-
-<Separator />                          // horizontal (default)
-<Separator orientation="vertical" />  // vertical
-```
-
----
-
-### Table
-
-```tsx
-import { Table } from '@developmentsnil/awake-ui/table';
-
-<Table.Root>
-  <Table.Head>
-    <Table.Row>
-      <Table.HeaderCell>Name</Table.HeaderCell>
-      <Table.HeaderCell>Role</Table.HeaderCell>
-    </Table.Row>
-  </Table.Head>
-  <Table.Body>
-    <Table.Row>
-      <Table.Cell>Alice</Table.Cell>
-      <Table.Cell>Engineer</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table.Root>
-```
-
----
-
-### Pagination
-
-```tsx
-import { Pagination } from '@developmentsnil/awake-ui/pagination';
-
-const [page, setPage] = useState(1);
-
-<Pagination
-  currentPage={page}
-  totalPages={10}
-  onPageChange={setPage}
-/>
-```
 
 ---
 
@@ -420,138 +583,3 @@ To support `prefers-color-scheme` instead, add this to your own CSS:
 ## License
 
 MIT
-
----
-
-### Slider
-
-```tsx
-import { Slider } from '@developmentsnil/awake-ui/slider';
-
-// Uncontrolled
-<Slider.Root defaultValue={[40]}>
-  <Slider.Track>
-    <Slider.Indicator />
-    <Slider.Thumb />
-  </Slider.Track>
-</Slider.Root>
-
-// With min, max and step
-<Slider.Root defaultValue={[50]} min={0} max={200} step={10}>
-  <Slider.Track>
-    <Slider.Indicator />
-    <Slider.Thumb />
-  </Slider.Track>
-</Slider.Root>
-
-// Range (two thumbs)
-<Slider.Root defaultValue={[20, 80]}>
-  <Slider.Track>
-    <Slider.Indicator />
-    <Slider.Thumb />
-    <Slider.Thumb />
-  </Slider.Track>
-</Slider.Root>
-```
-
----
-
-### Progress
-
-```tsx
-import { Progress } from '@developmentsnil/awake-ui/progress';
-
-// Basic
-<Progress.Root value={60}>
-  <Progress.Track>
-    <Progress.Indicator />
-  </Progress.Track>
-</Progress.Root>
-
-// With label and value display
-<Progress.Root value={40}>
-  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-    <Progress.Label>Uploading file…</Progress.Label>
-    <Progress.Value />
-  </div>
-  <Progress.Track>
-    <Progress.Indicator />
-  </Progress.Track>
-</Progress.Root>
-
-// Indeterminate (omit value)
-<Progress.Root>
-  <Progress.Track>
-    <Progress.Indicator />
-  </Progress.Track>
-</Progress.Root>
-```
-
----
-
-### Tabs
-
-```tsx
-import { Tabs } from '@developmentsnil/awake-ui/tabs';
-
-<Tabs.Root defaultValue="account">
-  <Tabs.List>
-    <Tabs.Tab value="account">Account</Tabs.Tab>
-    <Tabs.Tab value="password">Password</Tabs.Tab>
-    <Tabs.Tab value="settings">Settings</Tabs.Tab>
-    <Tabs.Indicator />
-  </Tabs.List>
-  <Tabs.Panel value="account">Account content</Tabs.Panel>
-  <Tabs.Panel value="password">Password content</Tabs.Panel>
-  <Tabs.Panel value="settings">Settings content</Tabs.Panel>
-</Tabs.Root>
-
-// With a disabled tab
-<Tabs.Root defaultValue="one">
-  <Tabs.List>
-    <Tabs.Tab value="one">Tab one</Tabs.Tab>
-    <Tabs.Tab value="two" disabled>Disabled</Tabs.Tab>
-    <Tabs.Indicator />
-  </Tabs.List>
-  <Tabs.Panel value="one">Content</Tabs.Panel>
-</Tabs.Root>
-```
-
-`Tabs.Indicator` renders an animated underline that follows the active tab.
-
----
-
-### Accordion
-
-```tsx
-import { Accordion } from '@developmentsnil/awake-ui/accordion';
-
-<Accordion.Root>
-  <Accordion.Item value="item-1">
-    <Accordion.Header>
-      <Accordion.Trigger>What is awake-ui?</Accordion.Trigger>
-    </Accordion.Header>
-    <Accordion.Panel>
-      A React component library built on Base UI primitives.
-    </Accordion.Panel>
-  </Accordion.Item>
-  <Accordion.Item value="item-2">
-    <Accordion.Header>
-      <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
-    </Accordion.Header>
-    <Accordion.Panel>
-      Yes — all interactive components follow WAI-ARIA patterns.
-    </Accordion.Panel>
-  </Accordion.Item>
-</Accordion.Root>
-
-// Allow multiple items open at once
-<Accordion.Root openMultiple>
-  {/* ... */}
-</Accordion.Root>
-
-// Open a specific item by default
-<Accordion.Root defaultValue={['item-1']}>
-  {/* ... */}
-</Accordion.Root>
-```
