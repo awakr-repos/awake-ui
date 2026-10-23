@@ -1,4 +1,4 @@
-import { Slider } from '@developmentsnil/awake-ui/slider'
+import { Slider } from '@awakr/awake-ui/slider'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

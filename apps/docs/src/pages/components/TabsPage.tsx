@@ -1,4 +1,4 @@
-import { Tabs } from '@developmentsnil/awake-ui/tabs'
+import { Tabs } from '@awakr/awake-ui/tabs'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

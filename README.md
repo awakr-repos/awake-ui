@@ -1,13 +1,13 @@
-# @developmentsnil/awake-ui
+# @awakr/awake-ui
 
 A React component library built on [Base UI](https://base-ui.com/) with Tailwind CSS v4. Unstyled primitives with a pre-built token system — easy to drop in, easy to customize.
 
 ## Installation
 
 ```bash
-npm install @developmentsnil/awake-ui
+npm install @awakr/awake-ui
 # or
-pnpm add @developmentsnil/awake-ui
+pnpm add @awakr/awake-ui
 ```
 
 **Peer dependencies:** React 19+
@@ -21,13 +21,13 @@ pnpm add @developmentsnil/awake-ui
 In your application root (e.g. `main.tsx`):
 
 ```tsx
-import '@developmentsnil/awake-ui/style.css';
+import '@awakr/awake-ui/style.css';
 ```
 
 ### 2. (Optional) Import dark mode styles
 
 ```tsx
-import '@developmentsnil/awake-ui/dark-theme.css';
+import '@awakr/awake-ui/dark-theme.css';
 ```
 
 Then apply `data-theme="dark"` or the `.dark` class to a parent element to activate dark mode:
@@ -53,7 +53,7 @@ const [isDark, setIsDark] = useState(false);
 ### Accordion
 
 ```tsx
-import { Accordion } from '@developmentsnil/awake-ui/accordion';
+import { Accordion } from '@awakr/awake-ui/accordion';
 
 <Accordion.Root>
   <Accordion.Item value="item-1">
@@ -90,7 +90,7 @@ import { Accordion } from '@developmentsnil/awake-ui/accordion';
 ### Alert
 
 ```tsx
-import { Alert } from '@developmentsnil/awake-ui/alert';
+import { Alert } from '@awakr/awake-ui/alert';
 
 // Variants: info (default) | success | warning | error
 <Alert variant="info">Your session will expire in 5 minutes.</Alert>
@@ -108,7 +108,7 @@ import { Alert } from '@developmentsnil/awake-ui/alert';
 A text input that filters a list of options as the user types:
 
 ```tsx
-import { Autocomplete } from '@developmentsnil/awake-ui/autocomplete';
+import { Autocomplete } from '@awakr/awake-ui/autocomplete';
 
 function SearchInput() {
   const FRUITS = ['Apple', 'Banana', 'Cherry', 'Mango', 'Orange'];
@@ -152,7 +152,7 @@ function SearchInput() {
 ### Button
 
 ```tsx
-import { Button } from '@developmentsnil/awake-ui/button';
+import { Button } from '@awakr/awake-ui/button';
 
 // Variants: primary | secondary | ghost | outline | destructive
 <Button variant="primary">Save</Button>
@@ -179,8 +179,8 @@ import { Button } from '@developmentsnil/awake-ui/button';
 `Dialog.Trigger` has no visual style — pass any element via the `render` prop:
 
 ```tsx
-import { Dialog } from '@developmentsnil/awake-ui/dialog';
-import { Button } from '@developmentsnil/awake-ui/button';
+import { Dialog } from '@awakr/awake-ui/dialog';
+import { Button } from '@awakr/awake-ui/button';
 
 <Dialog.Root>
   <Dialog.Trigger render={<Button variant="primary">Open</Button>} />
@@ -203,7 +203,7 @@ import { Button } from '@developmentsnil/awake-ui/button';
 ### Field
 
 ```tsx
-import { Field } from '@developmentsnil/awake-ui/field';
+import { Field } from '@awakr/awake-ui/field';
 
 <Field.Root>
   <Field.Label>Email</Field.Label>
@@ -218,7 +218,7 @@ import { Field } from '@developmentsnil/awake-ui/field';
 ### Loading
 
 ```tsx
-import { Loading } from '@developmentsnil/awake-ui/loading';
+import { Loading } from '@awakr/awake-ui/loading';
 
 // Sizes: sm | md (default) | lg
 <Loading />
@@ -235,7 +235,7 @@ import { Loading } from '@developmentsnil/awake-ui/loading';
 ### Pagination
 
 ```tsx
-import { Pagination } from '@developmentsnil/awake-ui/pagination';
+import { Pagination } from '@awakr/awake-ui/pagination';
 
 const [page, setPage] = useState(1);
 
@@ -253,7 +253,7 @@ const [page, setPage] = useState(1);
 ### Progress
 
 ```tsx
-import { Progress } from '@developmentsnil/awake-ui/progress';
+import { Progress } from '@awakr/awake-ui/progress';
 
 // Basic
 <Progress.Root value={60}>
@@ -288,7 +288,7 @@ import { Progress } from '@developmentsnil/awake-ui/progress';
 ### Select
 
 ```tsx
-import { Select } from '@developmentsnil/awake-ui/select';
+import { Select } from '@awakr/awake-ui/select';
 
 <Select.Root>
   <Select.Label>Country</Select.Label>
@@ -349,7 +349,7 @@ import { Select } from '@developmentsnil/awake-ui/select';
 ### Separator
 
 ```tsx
-import { Separator } from '@developmentsnil/awake-ui/separator';
+import { Separator } from '@awakr/awake-ui/separator';
 
 <Separator />                          // horizontal (default)
 <Separator orientation="vertical" />  // vertical
@@ -362,7 +362,7 @@ import { Separator } from '@developmentsnil/awake-ui/separator';
 ### Slider
 
 ```tsx
-import { Slider } from '@developmentsnil/awake-ui/slider';
+import { Slider } from '@awakr/awake-ui/slider';
 
 // Uncontrolled
 <Slider.Root defaultValue={[40]}>
@@ -399,7 +399,7 @@ import { Slider } from '@developmentsnil/awake-ui/slider';
 Switch uses the compound component pattern — `Root` controls the state, `Thumb` is the visual handle:
 
 ```tsx
-import { Switch } from '@developmentsnil/awake-ui/switch';
+import { Switch } from '@awakr/awake-ui/switch';
 
 const [checked, setChecked] = useState(false);
 
@@ -420,7 +420,7 @@ const [checked, setChecked] = useState(false);
 ### Table
 
 ```tsx
-import { Table } from '@developmentsnil/awake-ui/table';
+import { Table } from '@awakr/awake-ui/table';
 
 <Table.Root>
   <Table.Head>
@@ -445,7 +445,7 @@ import { Table } from '@developmentsnil/awake-ui/table';
 ### Tabs
 
 ```tsx
-import { Tabs } from '@developmentsnil/awake-ui/tabs';
+import { Tabs } from '@awakr/awake-ui/tabs';
 
 <Tabs.Root defaultValue="account">
   <Tabs.List>
@@ -481,8 +481,8 @@ import { Tabs } from '@developmentsnil/awake-ui/tabs';
 `Tooltip.Trigger` wraps any element as its child — no `render` prop needed:
 
 ```tsx
-import { Tooltip } from '@developmentsnil/awake-ui/tooltip';
-import { Button } from '@developmentsnil/awake-ui/button';
+import { Tooltip } from '@awakr/awake-ui/tooltip';
+import { Button } from '@awakr/awake-ui/button';
 
 // Wrap multiple tooltips in a single Provider
 <Tooltip.Provider>
@@ -559,7 +559,7 @@ Some components expose their own variables for fine-grained control:
 Import `dark-theme.css` once and apply `data-theme="dark"` or `.dark` to any ancestor element. Both selectors are supported out of the box:
 
 ```tsx
-import '@developmentsnil/awake-ui/dark-theme.css';
+import '@awakr/awake-ui/dark-theme.css';
 
 // Using HTML attribute (Radix / shadcn default)
 document.documentElement.setAttribute('data-theme', 'dark');

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { Button } from '@developmentsnil/awake-ui/button'
-import { Alert } from '@developmentsnil/awake-ui/alert'
-import { Switch } from '@developmentsnil/awake-ui/switch'
-import { Progress } from '@developmentsnil/awake-ui/progress'
+import { Button } from '@awakr/awake-ui/button'
+import { Alert } from '@awakr/awake-ui/alert'
+import { Switch } from '@awakr/awake-ui/switch'
+import { Progress } from '@awakr/awake-ui/progress'
 
 export function Home() {
   return (
@@ -18,7 +18,7 @@ export function Home() {
             <Link to="/docs/components/button" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
               Components
             </Link>
-            <a href="https://github.com/developmentsnil/awake-ui" target="_blank" rel="noreferrer"
+            <a href="https://github.com/awakr-repos/awake-ui" target="_blank" rel="noreferrer"
               className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
               GitHub
             </a>
@@ -52,7 +52,7 @@ export function Home() {
       <section className="max-w-screen-xl mx-auto px-6 pb-20">
         <div className="max-w-xl mx-auto">
           <pre className="px-5 py-4 rounded-xl bg-neutral-950 text-neutral-100 text-sm overflow-x-auto">
-            <code>npm install @developmentsnil/awake-ui</code>
+            <code>npm install @awakr/awake-ui</code>
           </pre>
         </div>
       </section>

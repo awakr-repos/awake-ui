@@ -242,7 +242,7 @@ importers:
 
   apps/docs:
     dependencies:
-      '@developmentsnil/awake-ui':
+      '@awakr/awake-ui':
         specifier: workspace:*
         version: link:../..
       highlight.js:
@@ -282,7 +282,7 @@ importers:
 
   playground:
     dependencies:
-      '@developmentsnil/awake-ui':
+      '@awakr/awake-ui':
         specifier: workspace:*
         version: link:..
       react:

@@ -17,18 +17,18 @@ export function GettingStarted() {
       />
 
       <h2 className="text-xl font-semibold mb-3">Installation</h2>
-      <CodeBlock>npm install @developmentsnil/awake-ui</CodeBlock>
+      <CodeBlock>npm install @awakr/awake-ui</CodeBlock>
 
       <h2 className="text-xl font-semibold mb-3">Import styles</h2>
       <p className="text-neutral-600 dark:text-neutral-400 mb-3">
         Add the stylesheet to your app's entry point (e.g. <code className="text-sm bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">main.tsx</code>):
       </p>
-      <CodeBlock>{`import '@developmentsnil/awake-ui/style.css'`}</CodeBlock>
+      <CodeBlock>{`import '@awakr/awake-ui/style.css'`}</CodeBlock>
 
       <p className="text-neutral-600 dark:text-neutral-400 mb-3">
         Optionally, import the dark theme:
       </p>
-      <CodeBlock>{`import '@developmentsnil/awake-ui/dark-theme.css'`}</CodeBlock>
+      <CodeBlock>{`import '@awakr/awake-ui/dark-theme.css'`}</CodeBlock>
 
       <h2 className="text-xl font-semibold mb-3 mt-8">Tailwind CSS setup</h2>
       <p className="text-neutral-600 dark:text-neutral-400 mb-3">
@@ -42,7 +42,7 @@ export default {
 }`}</CodeBlock>
 
       <h2 className="text-xl font-semibold mb-3 mt-8">Usage</h2>
-      <CodeBlock>{`import { Button } from '@developmentsnil/awake-ui/button'
+      <CodeBlock>{`import { Button } from '@awakr/awake-ui/button'
 
 export function App() {
   return <Button>Hello world</Button>

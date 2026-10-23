@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@developmentsnil/awake-ui": "workspace:*",
+    "@awakr/awake-ui": "workspace:*",
     "highlight.js": "^11.10.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

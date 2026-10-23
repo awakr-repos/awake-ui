@@ -1,4 +1,4 @@
-import { Button } from '@developmentsnil/awake-ui/button'
+import { Button } from '@awakr/awake-ui/button'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

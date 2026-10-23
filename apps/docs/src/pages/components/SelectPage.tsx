@@ -1,4 +1,4 @@
-import { Select } from '@developmentsnil/awake-ui/select'
+import { Select } from '@awakr/awake-ui/select'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

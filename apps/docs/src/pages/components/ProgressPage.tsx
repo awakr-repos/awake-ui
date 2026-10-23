@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Progress } from '@developmentsnil/awake-ui/progress'
-import { Button } from '@developmentsnil/awake-ui/button'
+import { Progress } from '@awakr/awake-ui/progress'
+import { Button } from '@awakr/awake-ui/button'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "highlight.js/styles/github-dark.css";
-@import "@developmentsnil/awake-ui/style.css";
-@import "@developmentsnil/awake-ui/dark-theme.css";
+@import "@awakr/awake-ui/style.css";
+@import "@awakr/awake-ui/dark-theme.css";
 
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;

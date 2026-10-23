@@ -1,4 +1,4 @@
-import { Loading } from '@developmentsnil/awake-ui/loading'
+import { Loading } from '@awakr/awake-ui/loading'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

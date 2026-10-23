@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Dialog } from '@developmentsnil/awake-ui/dialog'
-import { Button } from '@developmentsnil/awake-ui/button'
+import { Dialog } from '@awakr/awake-ui/dialog'
+import { Button } from '@awakr/awake-ui/button'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

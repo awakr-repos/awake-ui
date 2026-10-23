@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Pagination } from '@developmentsnil/awake-ui/pagination'
+import { Pagination } from '@awakr/awake-ui/pagination'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

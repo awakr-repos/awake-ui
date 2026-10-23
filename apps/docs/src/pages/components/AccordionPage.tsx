@@ -1,4 +1,4 @@
-import { Accordion } from '@developmentsnil/awake-ui/accordion'
+import { Accordion } from '@awakr/awake-ui/accordion'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

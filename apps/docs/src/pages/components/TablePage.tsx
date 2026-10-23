@@ -1,4 +1,4 @@
-import { Table } from '@developmentsnil/awake-ui/table'
+import { Table } from '@awakr/awake-ui/table'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

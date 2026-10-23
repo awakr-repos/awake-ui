@@ -1,4 +1,4 @@
-import { Separator } from '@developmentsnil/awake-ui/separator'
+import { Separator } from '@awakr/awake-ui/separator'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

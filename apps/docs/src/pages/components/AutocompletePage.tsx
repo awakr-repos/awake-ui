@@ -1,4 +1,4 @@
-import { Autocomplete } from '@developmentsnil/awake-ui/autocomplete'
+import { Autocomplete } from '@awakr/awake-ui/autocomplete'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

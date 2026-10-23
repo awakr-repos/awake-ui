@@ -1,6 +1,6 @@
 # awake-ui — Claude Code context
 
-React component library published to npm as `@developmentsnil/awake-ui`.
+React component library published to npm as `@awakr/awake-ui`.
 Monorepo managed with **pnpm workspaces**.
 
 ## Structure

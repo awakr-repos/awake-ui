@@ -1,4 +1,4 @@
-import { Switch } from '@developmentsnil/awake-ui/switch'
+import { Switch } from '@awakr/awake-ui/switch'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

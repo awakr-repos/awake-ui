@@ -34,7 +34,7 @@ export function Navbar() {
             Components
           </Link>
           <a
-            href="https://github.com/developmentsnil/awake-ui"
+            href="https://github.com/awakr-repos/awake-ui"
             target="_blank"
             rel="noreferrer"
             className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"

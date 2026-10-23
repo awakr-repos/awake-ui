@@ -1,4 +1,4 @@
-import { Alert } from '@developmentsnil/awake-ui/alert'
+import { Alert } from '@awakr/awake-ui/alert'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

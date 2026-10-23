@@ -5,7 +5,7 @@
  * Import this file in your application and apply the selector
  * that matches your dark mode strategy:
  *
- *   @import "@developmentsnil/awake-ui/dark-theme.css" layer(awake-dark);
+ *   @import "@awakr/awake-ui/dark-theme.css" layer(awake-dark);
  *
  * Selector examples:
  *   [data-theme="dark"] { ... }                         ← HTML attribute (Radix/shadcn default)

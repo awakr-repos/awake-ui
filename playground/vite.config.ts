@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       'awake-ui': path.resolve(__dirname, '../dist'),
-      '@developmentsnil/awake-ui': path.resolve(__dirname, '../dist'),
+      '@awakr/awake-ui': path.resolve(__dirname, '../dist'),
     },
   },
 });

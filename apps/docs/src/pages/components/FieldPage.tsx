@@ -1,4 +1,4 @@
-import { Field } from '@developmentsnil/awake-ui/field'
+import { Field } from '@awakr/awake-ui/field'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 

@@ -1,4 +1,4 @@
-import { NumberField } from '@developmentsnil/awake-ui/number-field'
+import { NumberField } from '@awakr/awake-ui/number-field'
 import { PageHeader } from '../../components/PageHeader'
 import { ComponentPreview } from '../../components/ComponentPreview'
 
