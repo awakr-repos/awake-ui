@@ -26,7 +26,7 @@
   width: 100%;
   height: 4px;
   border-radius: var(--radius-full);
-  background-color: var(--color-awake-border-default);
+  background-color: var(--color-awake-border);
 }
 .awake-slider-indicator {
   position: absolute;
@@ -34,7 +34,7 @@
   left: 0;
   height: 100%;
   border-radius: var(--radius-full);
-  background-color: var(--color-awake-brand-default);
+  background-color: var(--color-awake-brand);
   .awake-slider-root[data-disabled] & {
     background-color: var(--color-awake-text-disabled);
   }
@@ -43,8 +43,8 @@
   width: 18px;
   height: 18px;
   border-radius: var(--radius-full);
-  background-color: var(--color-awake-surface-default);
-  border: 2px solid var(--color-awake-brand-default);
+  background-color: var(--color-awake-surface);
+  border: 2px solid var(--color-awake-brand);
   box-shadow: var(--shadow-sm);
   outline: none;
   transition: border-color 120ms ease, box-shadow 120ms ease;
@@ -54,12 +54,12 @@
     box-shadow: var(--shadow-md);
   }
   &:focus-visible {
-    outline: 2px solid var(--color-awake-brand-default);
+    outline: 2px solid var(--color-awake-brand);
     outline-offset: 2px;
   }
   &[data-dragging] {
     cursor: grabbing;
-    border-color: var(--color-awake-brand-active);
+    border-color: var(--color-awake-brand-hover);
   }
   .awake-slider-root[data-disabled] & {
     border-color: var(--color-awake-text-disabled);
@@ -68,7 +68,7 @@
 }
 .awake-slider-value {
   font-size: var(--font-size-sm);
-  color: var(--color-awake-text-secondary);
+  color: var(--color-awake-text-muted);
   min-width: 2ch;
   text-align: right;
 }
