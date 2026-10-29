@@ -17,6 +17,12 @@ import 'awake-ui/dark-theme.css';
 import { Switch } from 'awake-ui/switch';
 import { Table } from 'awake-ui/table';
 import { Tooltip } from 'awake-ui/tooltip';
+import { Avatar } from 'awake-ui/avatar';
+import { Badge } from 'awake-ui/badge';
+import { Card } from 'awake-ui/card';
+import { Toast, useToast } from 'awake-ui/toast';
+import { BottomNav } from 'awake-ui/bottom-nav';
+import { WeekStrip } from 'awake-ui/week-strip';
 import { useState } from 'react';
 import './App.css';
 
@@ -84,6 +90,9 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [switchChecked, setSwitchChecked] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [weekSelected, setWeekSelected] = useState<Date>(new Date());
+  const [bottomNavActive, setBottomNavActive] = useState('home');
+  const { toast } = useToast();
 
   return (
     <div
@@ -509,8 +518,90 @@ function App() {
           </Accordion.Root>
         </div>
       </Section>
+
+      {/* ── Avatar ── */}
+      <Section title="Avatar">
+        <Avatar size="sm" alt="AB" />
+        <Avatar size="md" alt="CD" />
+        <Avatar size="lg" alt="EF" />
+        <Avatar size="md" src="https://i.pravatar.cc/150?img=47" alt="Ana Lima" />
+        <Avatar size="md" src="https://i.pravatar.cc/150?img=12" alt="Carlos" />
+      </Section>
+
+      {/* ── Badge ── */}
+      <Section title="Badge">
+        <Badge variant="default">Default</Badge>
+        <Badge variant="info">Novo</Badge>
+        <Badge variant="success">Ativo</Badge>
+        <Badge variant="warning">Pendente</Badge>
+        <Badge variant="error">Inativo</Badge>
+      </Section>
+
+      {/* ── Card ── */}
+      <Section title="Card">
+        <Card.Root style={{ width: 300 }}>
+          <Card.Header>
+            <Card.Title>Resumo do mês</Card.Title>
+            <Card.Description>Janeiro 2025</Card.Description>
+          </Card.Header>
+          <Card.Content>
+            <p style={{ margin: 0, fontSize: 14 }}>R$ 3.240,00 em receitas esse mês.</p>
+          </Card.Content>
+          <Card.Footer>
+            <Badge variant="success">No prazo</Badge>
+          </Card.Footer>
+        </Card.Root>
+      </Section>
+
+      {/* ── Toast ── */}
+      <Section title="Toast">
+        <Button variant="secondary" onClick={() => toast({ message: 'Operação realizada!', variant: 'default' })}>Default</Button>
+        <Button variant="secondary" onClick={() => toast({ message: 'Salvo com sucesso.', variant: 'success' })}>Success</Button>
+        <Button variant="secondary" onClick={() => toast({ message: 'Atenção: verifique os dados.', variant: 'warning' })}>Warning</Button>
+        <Button variant="secondary" onClick={() => toast({ message: 'Erro ao processar.', variant: 'error' })}>Error</Button>
+        <Button variant="secondary" onClick={() => toast({ message: 'Nova versão disponível.', variant: 'info' })}>Info</Button>
+      </Section>
+
+      {/* ── Week Strip ── */}
+      <Section title="WeekStrip">
+        <div style={{ width: '100%', maxWidth: 480 }}>
+          <WeekStrip today={new Date()} selected={weekSelected} onSelect={setWeekSelected} />
+          <p style={{ marginTop: 12, fontSize: 14, color: 'var(--color-awake-text-muted)' }}>
+            Selecionado: {weekSelected.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' })}
+          </p>
+        </div>
+      </Section>
+
+      {/* ── Bottom Nav ── */}
+      <Section title="BottomNav">
+        <div style={{ position: 'relative', width: '100%', maxWidth: 480, height: 80 }}>
+          <BottomNav.Root style={{ position: 'absolute', left: 0, right: 0, bottom: 0, borderRadius: 'var(--radius-awake-md)', overflow: 'hidden' }}>
+            {[
+              { id: 'home', label: 'Início', icon: '🏠' },
+              { id: 'explore', label: 'Explorar', icon: '🔍' },
+              { id: 'profile', label: 'Perfil', icon: '👤' },
+            ].map(item => (
+              <BottomNav.Item
+                key={item.id}
+                icon={item.icon}
+                label={item.label}
+                active={bottomNavActive === item.id}
+                onClick={() => setBottomNavActive(item.id)}
+              />
+            ))}
+          </BottomNav.Root>
+        </div>
+      </Section>
     </div>
   );
 }
 
-export default App;
+function AppWithProviders() {
+  return (
+    <Toast.Provider>
+      <App />
+    </Toast.Provider>
+  );
+}
+
+export default AppWithProviders;

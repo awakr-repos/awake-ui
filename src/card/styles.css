@@ -1,0 +1,32 @@
+.awake-card {
+  border-radius: var(--awake-card-radius, var(--radius-awake-lg, 12px));
+  background-color: var(--awake-card-bg, var(--color-awake-surface));
+  border: 1px solid var(--awake-card-border, var(--color-awake-border));
+  box-shadow: var(--awake-card-shadow, 0 1px 4px 0 rgba(0,0,0,.06));
+  overflow: hidden;
+}
+
+.awake-card__header {
+  @apply flex flex-col gap-1 p-5;
+  border-bottom: 1px solid var(--awake-card-border, var(--color-awake-border));
+}
+
+.awake-card__title {
+  @apply m-0 text-base font-semibold leading-snug;
+  color: var(--awake-card-title-text, var(--color-awake-text));
+}
+
+.awake-card__description {
+  @apply m-0 text-sm;
+  color: var(--awake-card-description-text, var(--color-awake-text-muted));
+}
+
+.awake-card__content {
+  @apply p-5;
+}
+
+.awake-card__footer {
+  @apply flex items-center gap-3 px-5 py-4;
+  border-top: 1px solid var(--awake-card-border, var(--color-awake-border));
+  background-color: var(--awake-card-footer-bg, var(--color-awake-surface-raised));
+}

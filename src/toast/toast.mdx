@@ -1,0 +1,44 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as ToastStories from './toast.stories';
+
+<Meta of={ToastStories} />
+
+# Toast
+
+Notificações temporárias exibidas no canto inferior direito.
+
+```tsx
+import { Toast, useToast } from '@awakr/awake-ui/toast';
+import '@awakr/awake-ui/style.css';
+
+function App() {
+  return (
+    <Toast.Provider>
+      <MyContent />
+    </Toast.Provider>
+  );
+}
+
+function MyContent() {
+  const { toast } = useToast();
+  return (
+    <button onClick={() => toast({ message: 'Salvo!', variant: 'success' })}>
+      Salvar
+    </button>
+  );
+}
+```
+
+## Playground
+
+<Canvas of={ToastStories.Playground} />
+
+## Variantes
+
+| Variante | Uso |
+|---|---|
+| `default` | Notificações neutras |
+| `success` | Ação concluída com êxito |
+| `warning` | Atenção requerida |
+| `error` | Falha ou erro |
+| `info` | Informação geral |

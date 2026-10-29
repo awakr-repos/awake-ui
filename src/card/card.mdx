@@ -1,0 +1,32 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as CardStories from './card.stories';
+
+<Meta of={CardStories} />
+
+# Card
+
+Contêiner com superfície elevada para agrupar conteúdo relacionado.
+
+```tsx
+import { Card } from '@awakr/awake-ui/card';
+import '@awakr/awake-ui/style.css';
+```
+
+## Exemplo completo
+
+<Canvas of={CardStories.Default} />
+
+## Card simples
+
+<Canvas of={CardStories.Simple} />
+
+## Anatomia
+
+| Sub-componente | Elemento | Descrição |
+|---|---|---|
+| `Card.Root` | `<div>` | Contêiner raiz |
+| `Card.Header` | `<div>` | Área de cabeçalho |
+| `Card.Title` | `<h3>` | Título |
+| `Card.Description` | `<p>` | Descrição |
+| `Card.Content` | `<div>` | Conteúdo principal |
+| `Card.Footer` | `<div>` | Rodapé |

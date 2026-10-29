@@ -1,0 +1,26 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as BadgeStories from './badge.stories';
+
+<Meta of={BadgeStories} />
+
+# Badge
+
+Rótulo compacto para indicar status ou categorias.
+
+```tsx
+import { Badge } from '@awakr/awake-ui/badge';
+import '@awakr/awake-ui/style.css';
+```
+
+## Exemplo interativo
+
+<Canvas of={BadgeStories.Default} />
+<Controls of={BadgeStories.Default} />
+
+## Variantes
+
+<Canvas of={BadgeStories.All} />
+
+## Props
+
+<ArgTypes of={BadgeStories} />

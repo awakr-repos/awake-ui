@@ -1,0 +1,33 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as BottomNavStories from './bottom-nav.stories';
+
+<Meta of={BottomNavStories} />
+
+# BottomNav
+
+Barra de navegação fixa na parte inferior, adequada para mobile.
+
+```tsx
+import { BottomNav } from '@awakr/awake-ui/bottom-nav';
+import '@awakr/awake-ui/style.css';
+```
+
+## Exemplo
+
+<Canvas of={BottomNavStories.Playground} />
+
+## Anatomia
+
+| Sub-componente | Elemento | Descrição |
+|---|---|---|
+| `BottomNav.Root` | `<nav>` | Contêiner da barra |
+| `BottomNav.Item` | `<button>` | Item de navegação com ícone e rótulo |
+
+## Props — Item
+
+| Prop | Tipo | Padrão | Descrição |
+|---|---|---|---|
+| `icon` | `ReactNode` | — | Ícone do item |
+| `label` | `string` | — | Rótulo visível |
+| `active` | `boolean` | `false` | Item selecionado |
+| `onClick` | `() => void` | — | Callback ao clicar |

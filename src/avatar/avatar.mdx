@@ -1,0 +1,24 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as AvatarStories from './avatar.stories';
+
+<Meta of={AvatarStories} />
+
+# Avatar
+
+Exibe a foto de perfil de um usuário ou uma inicial como fallback.
+
+```tsx
+import { Avatar } from '@awakr/awake-ui/avatar';
+import '@awakr/awake-ui/style.css';
+```
+
+## Exemplos
+
+<Canvas of={AvatarStories.WithFallback} />
+<Controls of={AvatarStories.WithFallback} />
+
+<Canvas of={AvatarStories.Sizes} />
+
+## Props
+
+<ArgTypes of={AvatarStories} />

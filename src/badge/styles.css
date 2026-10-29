@@ -1,0 +1,32 @@
+.awake-badge {
+  @apply inline-flex items-center font-medium;
+  @apply px-2 py-0.5 text-xs;
+  border-radius: var(--awake-badge-radius, var(--radius-awake-md));
+  background-color: var(--awake-badge-bg, var(--color-awake-surface-raised));
+  color: var(--awake-badge-text, var(--color-awake-text-muted));
+}
+
+.awake-badge--default {
+  background-color: var(--awake-badge-default-bg, var(--color-awake-surface-raised));
+  color: var(--awake-badge-default-text, var(--color-awake-text-muted));
+}
+
+.awake-badge--success {
+  background-color: var(--awake-badge-success-bg, var(--color-awake-feedback-success-bg));
+  color: var(--awake-badge-success-text, var(--color-awake-feedback-success-text));
+}
+
+.awake-badge--warning {
+  background-color: var(--awake-badge-warning-bg, var(--color-awake-feedback-warning-bg));
+  color: var(--awake-badge-warning-text, var(--color-awake-feedback-warning-text));
+}
+
+.awake-badge--error {
+  background-color: var(--awake-badge-error-bg, var(--color-awake-feedback-error-bg));
+  color: var(--awake-badge-error-text, var(--color-awake-feedback-error-text));
+}
+
+.awake-badge--info {
+  background-color: var(--awake-badge-info-bg, var(--color-awake-feedback-info-bg));
+  color: var(--awake-badge-info-text, var(--color-awake-feedback-info-text));
+}

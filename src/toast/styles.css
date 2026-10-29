@@ -1,0 +1,57 @@
+.awake-toast-region {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 9999;
+  max-width: 360px;
+  width: calc(100vw - 32px);
+  pointer-events: none;
+}
+
+.awake-toast {
+  @apply flex items-center justify-between gap-3 px-4 py-3 text-sm font-medium;
+  pointer-events: all;
+  border-radius: var(--awake-toast-radius, var(--radius-awake-md));
+  background-color: var(--awake-toast-bg, var(--color-awake-neutral-800, #1a1c1f));
+  color: var(--awake-toast-text, #ffffff);
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  animation: awake-toast-in 0.2s ease;
+}
+
+@keyframes awake-toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.awake-toast--success {
+  background-color: var(--awake-toast-success-bg, var(--color-awake-feedback-success-bg));
+  color: var(--awake-toast-success-text, var(--color-awake-feedback-success-text));
+}
+.awake-toast--warning {
+  background-color: var(--awake-toast-warning-bg, var(--color-awake-feedback-warning-bg));
+  color: var(--awake-toast-warning-text, var(--color-awake-feedback-warning-text));
+}
+.awake-toast--error {
+  background-color: var(--awake-toast-error-bg, var(--color-awake-feedback-error-bg));
+  color: var(--awake-toast-error-text, var(--color-awake-feedback-error-text));
+}
+.awake-toast--info {
+  background-color: var(--awake-toast-info-bg, var(--color-awake-feedback-info-bg));
+  color: var(--awake-toast-info-text, var(--color-awake-feedback-info-text));
+}
+
+.awake-toast__message { flex: 1; }
+
+.awake-toast__close {
+  @apply flex items-center justify-center shrink-0 text-xs cursor-pointer;
+  background: transparent;
+  border: none;
+  color: inherit;
+  opacity: 0.7;
+  line-height: 1;
+  padding: 2px;
+}
+.awake-toast__close:hover { opacity: 1; }

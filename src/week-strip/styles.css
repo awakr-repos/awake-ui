@@ -1,0 +1,55 @@
+.awake-week-strip {
+  @apply flex items-stretch;
+  background-color: var(--awake-week-strip-bg, var(--color-awake-surface));
+  border-bottom: 1px solid var(--awake-week-strip-border, var(--color-awake-border));
+  gap: var(--awake-week-strip-gap, 0px);
+}
+
+.awake-week-strip__day {
+  @apply flex flex-col items-center justify-center flex-1 cursor-pointer gap-1;
+  @apply py-3 px-1;
+  background: transparent;
+  border: none;
+  border-radius: var(--awake-week-strip-day-radius, var(--radius-awake-md));
+  color: var(--awake-week-strip-text, var(--color-awake-text-muted));
+  transition: background-color 0.15s, color 0.15s;
+  position: relative;
+}
+
+.awake-week-strip__day:focus-visible {
+  outline: 2px solid var(--color-awake-brand-focus);
+  outline-offset: -2px;
+}
+
+.awake-week-strip__day:hover:not(.awake-week-strip__day--selected) {
+  background-color: var(--awake-week-strip-hover-bg, var(--color-awake-surface-raised));
+}
+
+.awake-week-strip__day--today {
+  color: var(--awake-week-strip-today-text, var(--color-awake-brand));
+}
+
+.awake-week-strip__day--selected {
+  background-color: var(--awake-week-strip-selected-bg, var(--color-awake-brand));
+  color: var(--awake-week-strip-selected-text, var(--color-awake-text-on-brand));
+  border-radius: var(--awake-week-strip-day-radius, var(--radius-awake-md));
+}
+
+.awake-week-strip__weekday {
+  @apply text-xs font-medium uppercase leading-none;
+}
+
+.awake-week-strip__number {
+  @apply text-base font-semibold leading-none;
+}
+
+.awake-week-strip__dot {
+  @apply block rounded-full;
+  width: 4px;
+  height: 4px;
+  background-color: currentColor;
+}
+
+.awake-week-strip__day--selected .awake-week-strip__dot {
+  background-color: var(--color-awake-text-on-brand);
+}

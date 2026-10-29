@@ -1,0 +1,26 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as WeekStripStories from './week-strip.stories';
+
+<Meta of={WeekStripStories} />
+
+# WeekStrip
+
+Seletor visual dos 7 dias da semana atual.
+
+```tsx
+import { WeekStrip } from '@awakr/awake-ui/week-strip';
+import '@awakr/awake-ui/style.css';
+```
+
+## Exemplo
+
+<Canvas of={WeekStripStories.Playground} />
+
+## Props
+
+| Prop | Tipo | Descrição |
+|---|---|---|
+| `selected` | `Date \| string` | Dia selecionado |
+| `today` | `Date \| string` | Dia atual (padrão: hoje) |
+| `days` | `WeekStripDay[]` | Dias customizados (7 itens) |
+| `onSelect` | `(date: Date) => void` | Callback ao selecionar |

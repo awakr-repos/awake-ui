@@ -21,3 +21,10 @@
 @import './progress/styles.css';
 @import './tabs/styles.css';
 @import './accordion/styles.css';
+
+@import './avatar/styles.css';
+@import './badge/styles.css';
+@import './card/styles.css';
+@import './toast/styles.css';
+@import './bottom-nav/styles.css';
+@import './week-strip/styles.css';

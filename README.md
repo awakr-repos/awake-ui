@@ -583,3 +583,97 @@ To support `prefers-color-scheme` instead, add this to your own CSS:
 ## License
 
 MIT
+
+---
+
+## New components
+
+### Avatar
+
+```tsx
+import { Avatar } from '@awakr/awake-ui/avatar';
+
+// With image
+<Avatar src="https://..." alt="Ana Lima" size="md" />
+
+// Fallback (shows first letter of alt)
+<Avatar alt="Ana Lima" size="lg" />
+
+// Sizes: sm | md (default) | lg
+```
+
+### Badge
+
+```tsx
+import { Badge } from '@awakr/awake-ui/badge';
+
+<Badge variant="success">Ativo</Badge>
+<Badge variant="warning">Pendente</Badge>
+<Badge variant="error">Inativo</Badge>
+<Badge variant="info">Novo</Badge>
+<Badge variant="default">Default</Badge>
+```
+
+### Card
+
+```tsx
+import { Card } from '@awakr/awake-ui/card';
+
+<Card.Root>
+  <Card.Header>
+    <Card.Title>Título</Card.Title>
+    <Card.Description>Descrição opcional</Card.Description>
+  </Card.Header>
+  <Card.Content>Conteúdo principal</Card.Content>
+  <Card.Footer>Rodapé</Card.Footer>
+</Card.Root>
+```
+
+### Toast
+
+```tsx
+import { Toast, useToast } from '@awakr/awake-ui/toast';
+
+// Wrap your app
+<Toast.Provider>
+  <App />
+</Toast.Provider>
+
+// Inside any component
+function MyComponent() {
+  const { toast } = useToast();
+  return (
+    <button onClick={() => toast({ message: 'Salvo!', variant: 'success' })}>
+      Salvar
+    </button>
+  );
+}
+// Variants: default | success | warning | error | info
+// duration: ms (default 4000)
+```
+
+### BottomNav
+
+```tsx
+import { BottomNav } from '@awakr/awake-ui/bottom-nav';
+
+<BottomNav.Root>
+  <BottomNav.Item icon="🏠" label="Início" active onClick={() => {}} />
+  <BottomNav.Item icon="🔍" label="Explorar" onClick={() => {}} />
+  <BottomNav.Item icon="👤" label="Perfil" onClick={() => {}} />
+</BottomNav.Root>
+```
+
+### WeekStrip
+
+```tsx
+import { WeekStrip } from '@awakr/awake-ui/week-strip';
+
+const [selected, setSelected] = useState(new Date());
+
+<WeekStrip
+  today={new Date()}
+  selected={selected}
+  onSelect={setSelected}
+/>
+```

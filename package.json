@@ -101,6 +101,36 @@
       "types": "./dist/accordion.d.ts",
       "import": "./dist/accordion.js",
       "require": "./dist/accordion.cjs"
+    },
+    "./avatar": {
+      "types": "./dist/avatar.d.ts",
+      "import": "./dist/avatar.js",
+      "require": "./dist/avatar.cjs"
+    },
+    "./badge": {
+      "types": "./dist/badge.d.ts",
+      "import": "./dist/badge.js",
+      "require": "./dist/badge.cjs"
+    },
+    "./card": {
+      "types": "./dist/card.d.ts",
+      "import": "./dist/card.js",
+      "require": "./dist/card.cjs"
+    },
+    "./toast": {
+      "types": "./dist/toast.d.ts",
+      "import": "./dist/toast.js",
+      "require": "./dist/toast.cjs"
+    },
+    "./bottom-nav": {
+      "types": "./dist/bottom-nav.d.ts",
+      "import": "./dist/bottom-nav.js",
+      "require": "./dist/bottom-nav.cjs"
+    },
+    "./week-strip": {
+      "types": "./dist/week-strip.d.ts",
+      "import": "./dist/week-strip.js",
+      "require": "./dist/week-strip.cjs"
     }
   },
   "scripts": {
