@@ -4,7 +4,11 @@ const components = [
   { name: 'Accordion', path: 'accordion' },
   { name: 'Alert', path: 'alert' },
   { name: 'Autocomplete', path: 'autocomplete' },
+  { name: 'Avatar', path: 'avatar' },
+  { name: 'Badge', path: 'badge' },
+  { name: 'Bottom Nav', path: 'bottom-nav' },
   { name: 'Button', path: 'button' },
+  { name: 'Card', path: 'card' },
   { name: 'Dialog', path: 'dialog' },
   { name: 'Field', path: 'field' },
   { name: 'Loading', path: 'loading' },
@@ -17,7 +21,9 @@ const components = [
   { name: 'Switch', path: 'switch' },
   { name: 'Table', path: 'table' },
   { name: 'Tabs', path: 'tabs' },
+  { name: 'Toast', path: 'toast' },
   { name: 'Tooltip', path: 'tooltip' },
+  { name: 'Week Strip', path: 'week-strip' },
 ]
 
 const linkClass = ({ isActive }: { isActive: boolean }) =>
