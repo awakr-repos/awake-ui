@@ -6,3 +6,6 @@ doc.md
 storybook-static/
 node_modules/
 node_modules/
+apps/docs/dist/
+apps/docs/tsconfig.tsbuildinfo
+apps/docs/tailwind.config.js
