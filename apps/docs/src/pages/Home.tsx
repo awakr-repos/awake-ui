@@ -135,7 +135,7 @@ export function Home() {
                 Accordion, Alert, Autocomplete, Button, Dialog, Field, Loading, Number Field, Pagination, Progress, Select, Separator, Slider, Switch, Table, Tabs, Tooltip.
               </p>
             </div>
-            <Link to="/docs/components/button" className="mt-6 self-start">
+            <Link to="/docs/components/accordion" className="mt-6 self-start">
               <Button size="sm">Browse all components →</Button>
             </Link>
           </div>
