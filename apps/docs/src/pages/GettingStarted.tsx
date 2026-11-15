@@ -55,6 +55,52 @@ export function App() {
       <CodeBlock>{`<html data-theme="dark">
   ...
 </html>`}</CodeBlock>
+
+      <h2 className="text-xl font-semibold mb-3 mt-8">Customization</h2>
+      <p className="docs-text-muted mb-3">
+        Awake UI uses a two-layer token system: raw color scales and semantic tokens. Components reference only the semantic layer, so you can retheme the entire library by overriding a handful of CSS variables — no need to touch the raw scales.
+      </p>
+      <CodeBlock>{`/* your global CSS */
+:root {
+  --color-awake-brand:        #0d9488; /* teal instead of indigo */
+  --color-awake-brand-hover:  #0f766e;
+  --color-awake-brand-subtle: #ccfbf1;
+}`}</CodeBlock>
+      <p className="docs-text-muted mb-3">Key semantic tokens:</p>
+      <table className="w-full text-sm border-collapse mb-6">
+        <thead>
+          <tr className="border-b docs-border">
+            <th className="text-left py-2 pr-4 font-medium docs-text-muted">Token</th>
+            <th className="text-left py-2 font-medium docs-text-muted">Used for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">--color-awake-brand</td>
+            <td className="py-2 docs-text-muted">Primary actions, focus rings</td>
+          </tr>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">--color-awake-surface</td>
+            <td className="py-2 docs-text-muted">Page / card backgrounds</td>
+          </tr>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">--color-awake-surface-raised</td>
+            <td className="py-2 docs-text-muted">Elevated surfaces (dropdowns, popups)</td>
+          </tr>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">--color-awake-border</td>
+            <td className="py-2 docs-text-muted">Default borders</td>
+          </tr>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">--color-awake-text</td>
+            <td className="py-2 docs-text-muted">Body text</td>
+          </tr>
+          <tr>
+            <td className="py-2 pr-4 font-mono text-xs">--color-awake-text-muted</td>
+            <td className="py-2 docs-text-muted">Secondary / helper text</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }

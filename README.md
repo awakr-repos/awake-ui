@@ -101,8 +101,6 @@ import { Alert } from '@awakr/awake-ui/alert';
 
 ---
 
----
-
 ### Autocomplete
 
 A text input that filters a list of options as the user types:
@@ -147,6 +145,49 @@ function SearchInput() {
 
 ---
 
+### Avatar
+
+```tsx
+import { Avatar } from '@awakr/awake-ui/avatar';
+
+// With image
+<Avatar src="https://..." alt="Ana Lima" size="md" />
+
+// Fallback (shows first letter of alt)
+<Avatar alt="Ana Lima" size="lg" />
+
+// Sizes: sm | md (default) | lg
+```
+
+---
+
+### Badge
+
+```tsx
+import { Badge } from '@awakr/awake-ui/badge';
+
+// Variants: default | success | warning | error | info
+<Badge variant="success">Active</Badge>
+<Badge variant="warning">Pending</Badge>
+<Badge variant="error">Inactive</Badge>
+<Badge variant="info">New</Badge>
+<Badge variant="default">Default</Badge>
+```
+
+---
+
+### BottomNav
+
+```tsx
+import { BottomNav } from '@awakr/awake-ui/bottom-nav';
+
+<BottomNav.Root>
+  <BottomNav.Item icon="🏠" label="Home" active onClick={() => {}} />
+  <BottomNav.Item icon="🔍" label="Explore" onClick={() => {}} />
+  <BottomNav.Item icon="👤" label="Profile" onClick={() => {}} />
+</BottomNav.Root>
+```
+
 ---
 
 ### Button
@@ -171,6 +212,21 @@ import { Button } from '@awakr/awake-ui/button';
 ```
 
 ---
+
+### Card
+
+```tsx
+import { Card } from '@awakr/awake-ui/card';
+
+<Card.Root>
+  <Card.Header>
+    <Card.Title>Title</Card.Title>
+    <Card.Description>Optional description</Card.Description>
+  </Card.Header>
+  <Card.Content>Main content</Card.Content>
+  <Card.Footer>Footer</Card.Footer>
+</Card.Root>
+```
 
 ---
 
@@ -198,8 +254,6 @@ import { Button } from '@awakr/awake-ui/button';
 
 ---
 
----
-
 ### Field
 
 ```tsx
@@ -210,8 +264,6 @@ import { Field } from '@awakr/awake-ui/field';
   <Field.Control type="email" placeholder="you@example.com" />
 </Field.Root>
 ```
-
----
 
 ---
 
@@ -230,8 +282,6 @@ import { Loading } from '@awakr/awake-ui/loading';
 
 ---
 
----
-
 ### Pagination
 
 ```tsx
@@ -245,8 +295,6 @@ const [page, setPage] = useState(1);
   onPageChange={setPage}
 />
 ```
-
----
 
 ---
 
@@ -280,8 +328,6 @@ import { Progress } from '@awakr/awake-ui/progress';
   </Progress.Track>
 </Progress.Root>
 ```
-
----
 
 ---
 
@@ -344,8 +390,6 @@ import { Select } from '@awakr/awake-ui/select';
 
 ---
 
----
-
 ### Separator
 
 ```tsx
@@ -354,8 +398,6 @@ import { Separator } from '@awakr/awake-ui/separator';
 <Separator />                          // horizontal (default)
 <Separator orientation="vertical" />  // vertical
 ```
-
----
 
 ---
 
@@ -392,8 +434,6 @@ import { Slider } from '@awakr/awake-ui/slider';
 
 ---
 
----
-
 ### Switch
 
 Switch uses the compound component pattern — `Root` controls the state, `Thumb` is the visual handle:
@@ -412,8 +452,6 @@ const [checked, setChecked] = useState(false);
   <Switch.Thumb />
 </Switch.Root>
 ```
-
----
 
 ---
 
@@ -437,8 +475,6 @@ import { Table } from '@awakr/awake-ui/table';
   </Table.Body>
 </Table.Root>
 ```
-
----
 
 ---
 
@@ -474,6 +510,29 @@ import { Tabs } from '@awakr/awake-ui/tabs';
 
 ---
 
+### Toast
+
+```tsx
+import { Toast, useToast } from '@awakr/awake-ui/toast';
+
+// Wrap your app
+<Toast.Provider>
+  <App />
+</Toast.Provider>
+
+// Inside any component
+function MyComponent() {
+  const { toast } = useToast();
+  return (
+    <button onClick={() => toast({ message: 'Saved!', variant: 'success' })}>
+      Save
+    </button>
+  );
+}
+// Variants: default | success | warning | error | info
+// duration: ms (default 4000)
+```
+
 ---
 
 ### Tooltip
@@ -506,6 +565,22 @@ import { Button } from '@awakr/awake-ui/button';
 
 ---
 
+### WeekStrip
+
+```tsx
+import { WeekStrip } from '@awakr/awake-ui/week-strip';
+
+const [selected, setSelected] = useState(new Date());
+
+<WeekStrip
+  today={new Date()}
+  selected={selected}
+  onSelect={setSelected}
+/>
+```
+
+---
+
 ## Customization
 
 awake-ui uses a two-layer token system:
@@ -518,10 +593,10 @@ To customize the library, **override only the semantic tokens** in your own CSS.
 ```css
 :root {
   /* Change the brand color to teal */
-  --color-awake-brand:       #0d9488;
-  --color-awake-brand-hover: #0f766e;
+  --color-awake-brand:        #0d9488;
+  --color-awake-brand-hover:  #0f766e;
   --color-awake-brand-subtle: #ccfbf1;
-  --color-awake-brand-focus: #0d9488;
+  --color-awake-brand-focus:  #0d9488;
 }
 ```
 
@@ -583,97 +658,3 @@ To support `prefers-color-scheme` instead, add this to your own CSS:
 ## License
 
 MIT
-
----
-
-## New components
-
-### Avatar
-
-```tsx
-import { Avatar } from '@awakr/awake-ui/avatar';
-
-// With image
-<Avatar src="https://..." alt="Ana Lima" size="md" />
-
-// Fallback (shows first letter of alt)
-<Avatar alt="Ana Lima" size="lg" />
-
-// Sizes: sm | md (default) | lg
-```
-
-### Badge
-
-```tsx
-import { Badge } from '@awakr/awake-ui/badge';
-
-<Badge variant="success">Ativo</Badge>
-<Badge variant="warning">Pendente</Badge>
-<Badge variant="error">Inativo</Badge>
-<Badge variant="info">Novo</Badge>
-<Badge variant="default">Default</Badge>
-```
-
-### Card
-
-```tsx
-import { Card } from '@awakr/awake-ui/card';
-
-<Card.Root>
-  <Card.Header>
-    <Card.Title>Título</Card.Title>
-    <Card.Description>Descrição opcional</Card.Description>
-  </Card.Header>
-  <Card.Content>Conteúdo principal</Card.Content>
-  <Card.Footer>Rodapé</Card.Footer>
-</Card.Root>
-```
-
-### Toast
-
-```tsx
-import { Toast, useToast } from '@awakr/awake-ui/toast';
-
-// Wrap your app
-<Toast.Provider>
-  <App />
-</Toast.Provider>
-
-// Inside any component
-function MyComponent() {
-  const { toast } = useToast();
-  return (
-    <button onClick={() => toast({ message: 'Salvo!', variant: 'success' })}>
-      Salvar
-    </button>
-  );
-}
-// Variants: default | success | warning | error | info
-// duration: ms (default 4000)
-```
-
-### BottomNav
-
-```tsx
-import { BottomNav } from '@awakr/awake-ui/bottom-nav';
-
-<BottomNav.Root>
-  <BottomNav.Item icon="🏠" label="Início" active onClick={() => {}} />
-  <BottomNav.Item icon="🔍" label="Explorar" onClick={() => {}} />
-  <BottomNav.Item icon="👤" label="Perfil" onClick={() => {}} />
-</BottomNav.Root>
-```
-
-### WeekStrip
-
-```tsx
-import { WeekStrip } from '@awakr/awake-ui/week-strip';
-
-const [selected, setSelected] = useState(new Date());
-
-<WeekStrip
-  today={new Date()}
-  selected={selected}
-  onSelect={setSelected}
-/>
-```
