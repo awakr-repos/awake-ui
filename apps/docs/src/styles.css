@@ -8,7 +8,7 @@
 }
 
 /* Dark mode via data-theme attribute (same as awake-ui) */
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 /* hljs blends with code blocks */
 .hljs {
