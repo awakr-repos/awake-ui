@@ -4,7 +4,7 @@ import { Navbar } from './Navbar'
 
 export function Layout() {
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+    <div className="min-h-screen docs-bg docs-text">
       <Navbar />
       <div className="flex">
         <Sidebar />

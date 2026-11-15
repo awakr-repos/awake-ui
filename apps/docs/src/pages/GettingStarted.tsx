@@ -20,18 +20,18 @@ export function GettingStarted() {
       <CodeBlock>npm install @awakr/awake-ui</CodeBlock>
 
       <h2 className="text-xl font-semibold mb-3">Import styles</h2>
-      <p className="text-neutral-600 dark:text-neutral-400 mb-3">
-        Add the stylesheet to your app's entry point (e.g. <code className="text-sm bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">main.tsx</code>):
+      <p className="docs-text-muted mb-3">
+        Add the stylesheet to your app's entry point (e.g. <code className="text-sm docs-code-inline-bg px-1.5 py-0.5 rounded">main.tsx</code>):
       </p>
       <CodeBlock>{`import '@awakr/awake-ui/style.css'`}</CodeBlock>
 
-      <p className="text-neutral-600 dark:text-neutral-400 mb-3">
+      <p className="docs-text-muted mb-3">
         Optionally, import the dark theme:
       </p>
       <CodeBlock>{`import '@awakr/awake-ui/dark-theme.css'`}</CodeBlock>
 
       <h2 className="text-xl font-semibold mb-3 mt-8">Tailwind CSS setup</h2>
-      <p className="text-neutral-600 dark:text-neutral-400 mb-3">
+      <p className="docs-text-muted mb-3">
         Awake UI is built with Tailwind CSS v4. Make sure your project has Tailwind configured, then add the library source to your content paths so its classes are not purged:
       </p>
       <CodeBlock>{`// vite.config.ts
@@ -49,8 +49,8 @@ export function App() {
 }`}</CodeBlock>
 
       <h2 className="text-xl font-semibold mb-3 mt-8">Dark mode</h2>
-      <p className="text-neutral-600 dark:text-neutral-400 mb-3">
-        Add <code className="text-sm bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">data-theme="dark"</code> to your <code className="text-sm bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">&lt;html&gt;</code> element to activate dark mode:
+      <p className="docs-text-muted mb-3">
+        Add <code className="text-sm docs-code-inline-bg px-1.5 py-0.5 rounded">data-theme="dark"</code> to your <code className="text-sm docs-code-inline-bg px-1.5 py-0.5 rounded">&lt;html&gt;</code> element to activate dark mode:
       </p>
       <CodeBlock>{`<html data-theme="dark">
   ...

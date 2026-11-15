@@ -21,30 +21,30 @@ export function Navbar() {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-200 dark:border-neutral-800 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b docs-border docs-nav-bg backdrop-blur-sm">
       <div className="max-w-screen-xl mx-auto px-6 h-14 flex items-center justify-between">
-        <Link to="/" className="font-semibold text-lg tracking-tight text-neutral-900 dark:text-neutral-100">
+        <Link to="/" className="font-semibold text-lg tracking-tight docs-text">
           Awake UI
         </Link>
-        <nav className="flex items-center gap-6 text-sm text-neutral-600 dark:text-neutral-400">
-          <Link to="/docs/getting-started" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+        <nav className="flex items-center gap-6 text-sm docs-text-muted">
+          <Link to="/docs/getting-started" className="docs-hover-text transition-colors">
             Docs
           </Link>
-          <Link to="/docs/components/button" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+          <Link to="/docs/components/accordion" className="docs-hover-text transition-colors">
             Components
           </Link>
           <a
             href="https://github.com/awakr-repos/awake-ui"
             target="_blank"
             rel="noreferrer"
-            className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+            className="docs-hover-text transition-colors"
           >
             GitHub
           </a>
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="p-2 rounded-md text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+            className="p-2 rounded-md docs-text-subtle docs-hover-text docs-hover-nav-bg transition-colors"
           >
             {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
           </button>

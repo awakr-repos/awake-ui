@@ -30,25 +30,25 @@ export function ComponentPreview({ children, code }: ComponentPreviewProps) {
   }
 
   return (
-    <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 mb-8">
+    <div className="rounded-xl border docs-border mb-8">
       {/* Preview: w-full para que filhos com width:100% tenham referência de largura */}
-      <div className="p-8 flex items-center justify-center bg-neutral-50 dark:bg-neutral-950 min-h-32 rounded-t-xl w-full">
+      <div className="p-8 flex items-center justify-center docs-bg-alt min-h-32 rounded-t-xl w-full">
         <div className="w-full flex items-center justify-center">
           {children}
         </div>
       </div>
 
       {/* Toolbar */}
-      <div className="flex items-center justify-between px-4 py-2 border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
+      <div className="flex items-center justify-between px-4 py-2 border-t docs-border docs-bg">
         <button
           onClick={() => setShowCode((v) => !v)}
-          className="text-xs text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+          className="text-xs docs-text-subtle docs-hover-text transition-colors"
         >
           {showCode ? 'Hide code' : 'View code'}
         </button>
         <button
           onClick={handleCopy}
-          className="text-xs text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+          className="text-xs docs-text-subtle docs-hover-text transition-colors"
         >
           {copied ? '✓ Copied' : 'Copy'}
         </button>
