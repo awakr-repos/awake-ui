@@ -43,6 +43,50 @@ export function ButtonPage() {
           <Button variant="destructive" disabled>Destructive</Button>
         </div>
       </ComponentPreview>
+
+      <h2 className="text-lg font-semibold mb-4">Props</h2>
+      <table className="w-full text-sm border-collapse">
+        <thead>
+          <tr className="border-b docs-border">
+            <th className="text-left py-2 pr-4 font-medium docs-text-muted">Prop</th>
+            <th className="text-left py-2 pr-4 font-medium docs-text-muted">Type</th>
+            <th className="text-left py-2 pr-4 font-medium docs-text-muted">Default</th>
+            <th className="text-left py-2 font-medium docs-text-muted">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">variant</td>
+            <td className="py-2 pr-4 docs-text-muted">"primary" | "secondary" | "ghost" | "outline" | "destructive"</td>
+            <td className="py-2 pr-4 docs-text-muted">"primary"</td>
+            <td className="py-2 docs-text-muted">Visual style of the button.</td>
+          </tr>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">size</td>
+            <td className="py-2 pr-4 docs-text-muted">"sm" | "md" | "lg"</td>
+            <td className="py-2 pr-4 docs-text-muted">"md"</td>
+            <td className="py-2 docs-text-muted">Size of the button.</td>
+          </tr>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">disabled</td>
+            <td className="py-2 pr-4 docs-text-muted">boolean</td>
+            <td className="py-2 pr-4 docs-text-muted">false</td>
+            <td className="py-2 docs-text-muted">Disables the button.</td>
+          </tr>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">children</td>
+            <td className="py-2 pr-4 docs-text-muted">ReactNode</td>
+            <td className="py-2 pr-4 docs-text-muted">—</td>
+            <td className="py-2 docs-text-muted">Button label content.</td>
+          </tr>
+          <tr>
+            <td className="py-2 pr-4 font-mono text-xs">className</td>
+            <td className="py-2 pr-4 docs-text-muted">string</td>
+            <td className="py-2 pr-4 docs-text-muted">—</td>
+            <td className="py-2 docs-text-muted">Additional CSS class. Also accepts all native <code className="docs-code-inline-bg px-1 rounded">button</code> props.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }

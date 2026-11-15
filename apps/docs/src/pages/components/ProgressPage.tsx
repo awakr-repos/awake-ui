@@ -103,6 +103,41 @@ export function ProgressPage() {
           </Progress.Root>
         </div>
       </ComponentPreview>
+
+      <h2 className="text-lg font-semibold mb-4">Props</h2>
+      <p className="docs-text-muted text-sm mb-4">
+        All sub-components accept <code className="docs-code-inline-bg px-1 rounded">className</code> and their underlying Base UI props.
+      </p>
+      <table className="w-full text-sm border-collapse">
+        <thead>
+          <tr className="border-b docs-border">
+            <th className="text-left py-2 pr-4 font-medium docs-text-muted">Component</th>
+            <th className="text-left py-2 font-medium docs-text-muted">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">Progress.Root</td>
+            <td className="py-2 docs-text-muted">Root context. Accepts <code className="docs-code-inline-bg px-1 rounded">value</code> (number 0–100, or <code className="docs-code-inline-bg px-1 rounded">null</code> for indeterminate).</td>
+          </tr>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">Progress.Track</td>
+            <td className="py-2 docs-text-muted">The background bar track.</td>
+          </tr>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">Progress.Indicator</td>
+            <td className="py-2 docs-text-muted">The filled bar that grows with the value.</td>
+          </tr>
+          <tr className="border-b docs-border">
+            <td className="py-2 pr-4 font-mono text-xs">Progress.Label</td>
+            <td className="py-2 docs-text-muted">Accessible label text for the progress bar.</td>
+          </tr>
+          <tr>
+            <td className="py-2 pr-4 font-mono text-xs">Progress.Value</td>
+            <td className="py-2 docs-text-muted">Displays the current value as a percentage string (e.g. "30%").</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }
