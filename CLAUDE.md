@@ -117,7 +117,7 @@ Each component has a `<name>.mdx` file. Rules:
 | `Drawer` | `src/drawer/index.tsx` | Compound built on Dialog; Popup has `side` prop: `left` \| `right` (default) \| `bottom` |
 | `PreviewCard` | `src/preview-card/index.tsx` | Compound: Root/Trigger/Portal/Positioner/Popup/Arrow — link hover preview |
 | `Combobox` | `src/combobox/index.tsx` | Compound: Root/InputWrapper/Input/Trigger/Portal/Positioner/Popup/Item/Empty/Group/GroupLabel |
-| `Menu` | `src/menu/index.tsx` | Compound: Root/Trigger/Portal/Positioner/Popup/Item/CheckboxItem/RadioGroup/RadioItem/Separator/Group/GroupLabel/SubmenuTrigger |
+| `Menu` | `src/menu/index.tsx` | Compound: Root/Trigger/Portal/Positioner/Popup/Item/CheckboxItem/RadioGroup/RadioItem/Separator/Group/GroupLabel/SubmenuTrigger/ItemIndicator |
 | `ContextMenu` | `src/context-menu/index.tsx` | Compound: Root/Trigger/Portal/Positioner/Popup/Item/Separator/Group/GroupLabel |
 | `NavigationMenu` | `src/navigation-menu/index.tsx` | Compound: Root/List/Item/Trigger/Link/Portal/Positioner/Popup/Viewport/Arrow |
 | `Menubar` | `src/menubar/index.tsx` | Compound: Root wraps Base UI Menubar; Menu/Trigger/Portal/Positioner/Popup/Item/Separator/GroupLabel delegate to @base-ui/react/menu |
