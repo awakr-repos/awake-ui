@@ -1,0 +1,44 @@
+/* src/scroll-area/styles.css */
+.awake-scroll-area {
+  overflow: hidden;
+}
+.awake-scroll-area-viewport {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.awake-scroll-area-viewport::-webkit-scrollbar {
+  display: none;
+}
+.awake-scroll-area-scrollbar {
+  display: flex;
+  user-select: none;
+  touch-action: none;
+  padding: 2px;
+  background: transparent;
+  transition: background 0.15s;
+}
+.awake-scroll-area-scrollbar:hover {
+  background: var(--color-awake-surface-raised);
+}
+.awake-scroll-area-scrollbar[data-orientation=vertical] {
+  flex-direction: column;
+  width: 10px;
+}
+.awake-scroll-area-scrollbar--horizontal {
+  flex-direction: row;
+  height: 10px;
+}
+.awake-scroll-area-thumb {
+  flex: 1;
+  background: var(--color-awake-border-strong);
+  border-radius: 9999px;
+  position: relative;
+}
+.awake-scroll-area-thumb::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+}
+/*# sourceMappingURL=scroll-area.css.map */

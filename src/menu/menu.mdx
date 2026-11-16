@@ -1,0 +1,21 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as Stories from './menu.stories';
+
+<Meta of={Stories} />
+
+# Menu
+
+A dropdown list of actions triggered by a button.
+
+## Default
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+## With groups
+
+<Canvas of={Stories.WithGroups} />
+
+## Props
+
+<ArgTypes of={Stories} />

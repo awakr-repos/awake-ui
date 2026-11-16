@@ -1,34 +1,34 @@
 "use client";
 
 // src/toggle/index.tsx
-import { clsx } from "clsx";
+import { Toggle as BaseToggle } from "@base-ui/react/toggle";
+import { ToggleGroup as BaseToggleGroup } from "@base-ui/react/toggle-group";
+import clsx from "clsx";
 import { jsx } from "react/jsx-runtime";
-function Toggle({
-  checked = false,
-  onCheckedChange,
-  disabled = false,
-  className,
-  ...props
-}) {
+function Root({ className, size = "md", variant = "default", ...props }) {
   return /* @__PURE__ */ jsx(
-    "button",
+    BaseToggle,
     {
-      type: "button",
-      role: "switch",
-      "aria-checked": checked,
-      disabled,
-      onClick: () => onCheckedChange?.(!checked),
       className: clsx(
-        "toggle-switch",
-        checked && "toggle-switch--checked",
-        disabled && "toggle-switch--disabled",
+        "awake-toggle",
+        `awake-toggle--${size}`,
+        `awake-toggle--${variant}`,
         className
       ),
-      ...props,
-      children: /* @__PURE__ */ jsx("span", { className: "toggle-switch-thumb" })
+      ...props
     }
   );
 }
+function Group({ className, size = "md", ...props }) {
+  return /* @__PURE__ */ jsx(
+    BaseToggleGroup,
+    {
+      className: clsx("awake-toggle-group", `awake-toggle-group--${size}`, className),
+      ...props
+    }
+  );
+}
+var Toggle = { Root, Group };
 export {
   Toggle
 };

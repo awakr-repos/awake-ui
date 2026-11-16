@@ -1,0 +1,60 @@
+.awake-collapsible-root {
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+.awake-collapsible-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-awake-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--color-awake-border);
+  transition: color 0.15s;
+  box-sizing: border-box;
+}
+
+.awake-collapsible-trigger:hover {
+  color: var(--color-awake-brand);
+}
+
+.awake-collapsible-trigger[data-panel-open]::after {
+  content: '▲';
+  font-size: 0.625rem;
+  color: var(--color-awake-text-muted);
+  flex-shrink: 0;
+}
+
+.awake-collapsible-trigger:not([data-panel-open])::after {
+  content: '▼';
+  font-size: 0.625rem;
+  color: var(--color-awake-text-muted);
+  flex-shrink: 0;
+}
+
+.awake-collapsible-panel {
+  overflow: hidden;
+  font-size: 0.875rem;
+  color: var(--color-awake-text-muted);
+  transition: height 0.2s ease;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+.awake-collapsible-panel[data-open] {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}

@@ -1,0 +1,21 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as Stories from './preview-card.stories';
+
+<Meta of={Stories} />
+
+# PreviewCard
+
+A floating card that appears on hover to preview linked content.
+
+## Default
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+## With avatar
+
+<Canvas of={Stories.WithAvatar} />
+
+## Props
+
+<ArgTypes of={Stories} />

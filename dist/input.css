@@ -1,0 +1,42 @@
+/* src/input/styles.css */
+.awake-input {
+  height: 2.5rem;
+  width: 100%;
+  padding: 0 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: var(--radius-awake-md, 6px);
+  background-color: var(--awake-input-bg, var(--color-awake-surface));
+  border: 1px solid var(--awake-input-border, var(--color-awake-border));
+  color: var(--awake-input-text, var(--color-awake-text));
+  transition: border-color 0.15s, outline-color 0.15s;
+  outline: none;
+}
+.awake-input::placeholder {
+  color: var(--color-awake-text-subtle);
+}
+.awake-input:focus {
+  border-color: var(--color-awake-brand);
+  outline: 2px solid var(--color-awake-brand);
+  outline-offset: -1px;
+}
+.awake-input[data-invalid] {
+  border-color: var(--color-awake-error);
+  outline-color: var(--color-awake-error);
+}
+.awake-input[disabled],
+.awake-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.awake-input--sm {
+  height: 2rem;
+  padding: 0 0.625rem;
+  font-size: 0.8125rem;
+}
+.awake-input--lg {
+  height: 3rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+/*# sourceMappingURL=input.css.map */

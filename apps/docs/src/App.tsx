@@ -26,6 +26,19 @@ import { TabsPage } from './pages/components/TabsPage'
 import { ToastPage } from './pages/components/ToastPage'
 import { TooltipPage } from './pages/components/TooltipPage'
 import { WeekStripPage } from './pages/components/WeekStripPage'
+import { InputPage } from './pages/components/InputPage'
+import { TogglePage } from './pages/components/TogglePage'
+import { CollapsiblePage } from './pages/components/CollapsiblePage'
+import { RadioGroupPage } from './pages/components/RadioGroupPage'
+import { ScrollAreaPage } from './pages/components/ScrollAreaPage'
+import { PopoverPage } from './pages/components/PopoverPage'
+import { DrawerPage } from './pages/components/DrawerPage'
+import { PreviewCardPage } from './pages/components/PreviewCardPage'
+import { ComboboxPage } from './pages/components/ComboboxPage'
+import { MenuPage } from './pages/components/MenuPage'
+import { ContextMenuPage } from './pages/components/ContextMenuPage'
+import { NavigationMenuPage } from './pages/components/NavigationMenuPage'
+import { MenubarPage } from './pages/components/MenubarPage'
 
 export default function App() {
   return (
@@ -61,6 +74,19 @@ export default function App() {
           <Route path="/docs/components/toast" element={<ToastPage />} />
           <Route path="/docs/components/tooltip" element={<TooltipPage />} />
           <Route path="/docs/components/week-strip" element={<WeekStripPage />} />
+          <Route path="/docs/components/input" element={<InputPage />} />
+          <Route path="/docs/components/toggle" element={<TogglePage />} />
+          <Route path="/docs/components/collapsible" element={<CollapsiblePage />} />
+          <Route path="/docs/components/radio-group" element={<RadioGroupPage />} />
+          <Route path="/docs/components/scroll-area" element={<ScrollAreaPage />} />
+          <Route path="/docs/components/popover" element={<PopoverPage />} />
+          <Route path="/docs/components/drawer" element={<DrawerPage />} />
+          <Route path="/docs/components/preview-card" element={<PreviewCardPage />} />
+          <Route path="/docs/components/combobox" element={<ComboboxPage />} />
+          <Route path="/docs/components/menu" element={<MenuPage />} />
+          <Route path="/docs/components/context-menu" element={<ContextMenuPage />} />
+          <Route path="/docs/components/navigation-menu" element={<NavigationMenuPage />} />
+          <Route path="/docs/components/menubar" element={<MenubarPage />} />
           {/* fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

@@ -1,0 +1,99 @@
+/* src/combobox/styles.css */
+.awake-combobox-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-awake-border);
+  border-radius: var(--radius-awake-md);
+  background: var(--color-awake-surface);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.awake-combobox-input-wrapper:focus-within {
+  border-color: var(--color-awake-brand);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-awake-brand) 20%, transparent);
+}
+.awake-combobox-input {
+  flex: 1;
+  height: 2.5rem;
+  padding: 0 0.875rem;
+  font-size: 0.875rem;
+  color: var(--color-awake-text);
+  background: none;
+  border: none;
+  outline: none;
+  min-width: 0;
+}
+.awake-combobox-input::placeholder {
+  color: var(--color-awake-text-subtle);
+}
+.awake-combobox-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.25rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-awake-text-muted);
+  border-radius: var(--radius-awake-sm);
+}
+.awake-combobox-trigger:hover {
+  background: var(--color-awake-surface-raised);
+  color: var(--color-awake-text);
+}
+.awake-combobox-positioner {
+  z-index: 50;
+}
+.awake-combobox-popup {
+  background: var(--color-awake-surface);
+  border: 1px solid var(--color-awake-border);
+  border-radius: var(--radius-awake-md);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  outline: none;
+  min-width: 200px;
+  max-width: min(360px, 90vw);
+  transition: transform 0.1s, opacity 0.1s;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.awake-combobox-popup[data-starting-style],
+.awake-combobox-popup[data-ending-style] {
+  opacity: 0;
+  transform: scaleY(0.95);
+}
+.awake-combobox-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  color: var(--color-awake-text);
+  cursor: pointer;
+  outline: none;
+}
+.awake-combobox-item[data-highlighted] {
+  background: var(--color-awake-surface-raised);
+}
+.awake-combobox-item[data-selected] {
+  color: var(--color-awake-brand);
+  font-weight: 500;
+}
+.awake-combobox-empty {
+  padding: 0.75rem 0.875rem;
+  font-size: 0.875rem;
+  color: var(--color-awake-text-muted);
+  text-align: center;
+}
+.awake-combobox-group {
+  padding: 0.25rem 0;
+}
+.awake-combobox-group-label {
+  padding: 0.375rem 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-awake-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+/*# sourceMappingURL=combobox.css.map */

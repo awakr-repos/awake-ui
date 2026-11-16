@@ -1,0 +1,65 @@
+/* src/toggle/styles.css */
+.awake-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  border-radius: var(--radius-awake-md, 6px);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+  color: var(--color-awake-text-muted);
+  background-color: transparent;
+}
+.awake-toggle:hover {
+  background-color: var(--color-awake-surface-raised);
+  color: var(--color-awake-text);
+}
+.awake-toggle[data-pressed] {
+  background-color: var(--color-awake-brand-subtle);
+  color: var(--color-awake-brand);
+}
+.awake-toggle[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.awake-toggle--outline {
+  border-color: var(--color-awake-border);
+}
+.awake-toggle--outline[data-pressed] {
+  border-color: var(--color-awake-brand);
+}
+.awake-toggle--sm {
+  height: 2rem;
+  padding: 0 0.625rem;
+  font-size: 0.8125rem;
+}
+.awake-toggle--md {
+  height: 2.5rem;
+  padding: 0 0.75rem;
+}
+.awake-toggle--lg {
+  height: 3rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+.awake-toggle-group {
+  display: inline-flex;
+  gap: 2px;
+  background-color: var(--color-awake-surface-raised);
+  border-radius: var(--radius-awake-md, 6px);
+  padding: 2px;
+}
+.awake-toggle-group .awake-toggle {
+  border-radius: calc(var(--radius-awake-md, 6px) - 2px);
+}
+.awake-toggle-group--sm {
+  gap: 1px;
+  padding: 1px;
+}
+/*# sourceMappingURL=toggle.css.map */

@@ -23,6 +23,19 @@ import { Card } from 'awake-ui/card';
 import { Toast, useToast } from 'awake-ui/toast';
 import { BottomNav } from 'awake-ui/bottom-nav';
 import { WeekStrip } from 'awake-ui/week-strip';
+import { Input } from 'awake-ui/input';
+import { Toggle } from 'awake-ui/toggle';
+import { Collapsible } from 'awake-ui/collapsible';
+import { RadioGroup } from 'awake-ui/radio-group';
+import { ScrollArea } from 'awake-ui/scroll-area';
+import { Popover } from 'awake-ui/popover';
+import { Drawer } from 'awake-ui/drawer';
+import { PreviewCard } from 'awake-ui/preview-card';
+import { Combobox } from 'awake-ui/combobox';
+import { Menu } from 'awake-ui/menu';
+import { ContextMenu } from 'awake-ui/context-menu';
+import { NavigationMenu } from 'awake-ui/navigation-menu';
+import { Menubar } from 'awake-ui/menubar';
 import { useState } from 'react';
 import './App.css';
 
@@ -591,6 +604,238 @@ function App() {
             ))}
           </BottomNav.Root>
         </div>
+      </Section>
+
+      {/* ── Input ── */}
+      <Section title="Input">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12, minWidth: 280 }}>
+          <Input placeholder="Default input" />
+          <Input placeholder="Disabled input" disabled />
+          <Input type="password" placeholder="Password" />
+          <Input size="sm" placeholder="Small" />
+          <Input size="lg" placeholder="Large" />
+        </div>
+      </Section>
+
+      {/* ── Toggle ── */}
+      <Section title="Toggle">
+        <Toggle aria-label="Bold">B</Toggle>
+        <Toggle aria-label="Italic" defaultPressed>I</Toggle>
+        <Toggle aria-label="Underline" size="sm">U</Toggle>
+        <Toggle aria-label="Strike" size="lg">S</Toggle>
+        <Toggle aria-label="Disabled" disabled>D</Toggle>
+      </Section>
+
+      {/* ── Collapsible ── */}
+      <Section title="Collapsible">
+        <div style={{ width: '100%', maxWidth: 400 }}>
+          <Collapsible.Root>
+            <Collapsible.Trigger>Toggle content ▾</Collapsible.Trigger>
+            <Collapsible.Panel>
+              <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--color-awake-text-muted)' }}>
+                This content is revealed when the trigger is clicked.
+              </p>
+            </Collapsible.Panel>
+          </Collapsible.Root>
+        </div>
+      </Section>
+
+      {/* ── RadioGroup ── */}
+      <Section title="RadioGroup">
+        <RadioGroup.Root defaultValue="opt1">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <RadioGroup.Item value="opt1">Option 1</RadioGroup.Item>
+            <RadioGroup.Item value="opt2">Option 2</RadioGroup.Item>
+            <RadioGroup.Item value="opt3" disabled>Option 3 (disabled)</RadioGroup.Item>
+          </div>
+        </RadioGroup.Root>
+      </Section>
+
+      {/* ── ScrollArea ── */}
+      <Section title="ScrollArea">
+        <ScrollArea.Root style={{ width: 300, height: 160, border: '1px solid var(--color-awake-border)', borderRadius: 8 }}>
+          <ScrollArea.Viewport>
+            {Array.from({ length: 20 }, (_, i) => (
+              <p key={i} style={{ margin: '4px 12px', fontSize: 14 }}>Item {i + 1}</p>
+            ))}
+          </ScrollArea.Viewport>
+          <ScrollArea.Scrollbar>
+            <ScrollArea.Thumb />
+          </ScrollArea.Scrollbar>
+        </ScrollArea.Root>
+      </Section>
+
+      {/* ── Popover ── */}
+      <Section title="Popover">
+        <Popover.Root>
+          <Popover.Trigger render={<Button variant="outline">Open Popover</Button>} />
+          <Popover.Portal>
+            <Popover.Positioner>
+              <Popover.Popup>
+                <Popover.Title>Popover title</Popover.Title>
+                <Popover.Description>This is a popover description.</Popover.Description>
+                <Popover.Close render={<Button variant="ghost" style={{ marginTop: 8 }}>Close</Button>} />
+                <Popover.Arrow />
+              </Popover.Popup>
+            </Popover.Positioner>
+          </Popover.Portal>
+        </Popover.Root>
+      </Section>
+
+      {/* ── Drawer ── */}
+      <Section title="Drawer">
+        <Drawer.Root>
+          <Drawer.Trigger render={<Button variant="outline">Open Drawer (right)</Button>} />
+          <Drawer.Portal>
+            <Drawer.Backdrop />
+            <Drawer.Popup side="right">
+              <Drawer.Title>Drawer title</Drawer.Title>
+              <Drawer.Description>Drawer content goes here.</Drawer.Description>
+              <Drawer.Close render={<Button variant="secondary" style={{ marginTop: 16 }}>Close</Button>} />
+            </Drawer.Popup>
+          </Drawer.Portal>
+        </Drawer.Root>
+        <Drawer.Root>
+          <Drawer.Trigger render={<Button variant="outline">Open Drawer (bottom)</Button>} />
+          <Drawer.Portal>
+            <Drawer.Backdrop />
+            <Drawer.Popup side="bottom">
+              <Drawer.Title>Bottom Drawer</Drawer.Title>
+              <Drawer.Description>Slides up from the bottom.</Drawer.Description>
+              <Drawer.Close render={<Button variant="ghost" style={{ marginTop: 16 }}>Close</Button>} />
+            </Drawer.Popup>
+          </Drawer.Portal>
+        </Drawer.Root>
+      </Section>
+
+      {/* ── PreviewCard ── */}
+      <Section title="PreviewCard">
+        <PreviewCard.Root>
+          <PreviewCard.Trigger render={<a href="#" style={{ color: 'var(--color-awake-brand)' }}>Hover this link</a>} />
+          <PreviewCard.Portal>
+            <PreviewCard.Positioner>
+              <PreviewCard.Popup>
+                <div style={{ padding: '12px 16px', fontSize: 14 }}>
+                  <strong>awake-ui</strong>
+                  <p style={{ margin: '4px 0 0', color: 'var(--color-awake-text-muted)' }}>A preview card for link previews.</p>
+                </div>
+                <PreviewCard.Arrow />
+              </PreviewCard.Popup>
+            </PreviewCard.Positioner>
+          </PreviewCard.Portal>
+        </PreviewCard.Root>
+      </Section>
+
+      {/* ── Combobox ── */}
+      <Section title="Combobox">
+        <div style={{ width: 280 }}>
+          <Combobox.Root>
+            <Combobox.InputWrapper>
+              <Combobox.Input placeholder="Search frameworks…" />
+              <Combobox.Trigger>▾</Combobox.Trigger>
+            </Combobox.InputWrapper>
+            <Combobox.Portal>
+              <Combobox.Positioner>
+                <Combobox.Popup>
+                  {['React', 'Vue', 'Angular', 'Svelte', 'SolidJS'].map(fw => (
+                    <Combobox.Item key={fw} value={fw}>{fw}</Combobox.Item>
+                  ))}
+                  <Combobox.Empty>No results.</Combobox.Empty>
+                </Combobox.Popup>
+              </Combobox.Positioner>
+            </Combobox.Portal>
+          </Combobox.Root>
+        </div>
+      </Section>
+
+      {/* ── Menu ── */}
+      <Section title="Menu">
+        <Menu.Root>
+          <Menu.Trigger render={<Button variant="outline">Open Menu</Button>} />
+          <Menu.Portal>
+            <Menu.Positioner>
+              <Menu.Popup>
+                <Menu.Item>Profile</Menu.Item>
+                <Menu.Item>Settings</Menu.Item>
+                <Menu.Separator />
+                <Menu.Item>Sign out</Menu.Item>
+              </Menu.Popup>
+            </Menu.Positioner>
+          </Menu.Portal>
+        </Menu.Root>
+      </Section>
+
+      {/* ── ContextMenu ── */}
+      <Section title="ContextMenu">
+        <ContextMenu.Root>
+          <ContextMenu.Trigger>
+            <div style={{ padding: '24px 32px', border: '2px dashed var(--color-awake-border)', borderRadius: 8, fontSize: 14, color: 'var(--color-awake-text-muted)', cursor: 'context-menu' }}>
+              Right-click here
+            </div>
+          </ContextMenu.Trigger>
+          <ContextMenu.Portal>
+            <ContextMenu.Positioner>
+              <ContextMenu.Popup>
+                <ContextMenu.Item>Open</ContextMenu.Item>
+                <ContextMenu.Item>Rename</ContextMenu.Item>
+                <ContextMenu.Separator />
+                <ContextMenu.Item>Delete</ContextMenu.Item>
+              </ContextMenu.Popup>
+            </ContextMenu.Positioner>
+          </ContextMenu.Portal>
+        </ContextMenu.Root>
+      </Section>
+
+      {/* ── NavigationMenu ── */}
+      <Section title="NavigationMenu">
+        <NavigationMenu.Root>
+          <NavigationMenu.List>
+            <NavigationMenu.Item>
+              <NavigationMenu.Trigger>Products ▾</NavigationMenu.Trigger>
+              <NavigationMenu.Portal>
+                <NavigationMenu.Positioner>
+                  <NavigationMenu.Popup>
+                    <NavigationMenu.Link href="#">Components</NavigationMenu.Link>
+                    <NavigationMenu.Link href="#">Templates</NavigationMenu.Link>
+                  </NavigationMenu.Popup>
+                </NavigationMenu.Positioner>
+              </NavigationMenu.Portal>
+            </NavigationMenu.Item>
+            <NavigationMenu.Item>
+              <NavigationMenu.Link href="#">Docs</NavigationMenu.Link>
+            </NavigationMenu.Item>
+          </NavigationMenu.List>
+        </NavigationMenu.Root>
+      </Section>
+
+      {/* ── Menubar ── */}
+      <Section title="Menubar">
+        <Menubar.Root>
+          <Menubar.Menu>
+            <Menubar.Trigger>File</Menubar.Trigger>
+            <Menubar.Portal>
+              <Menubar.Positioner>
+                <Menubar.Popup>
+                  <Menubar.Item>New</Menubar.Item>
+                  <Menubar.Item>Open</Menubar.Item>
+                  <Menubar.Separator />
+                  <Menubar.Item>Save</Menubar.Item>
+                </Menubar.Popup>
+              </Menubar.Positioner>
+            </Menubar.Portal>
+          </Menubar.Menu>
+          <Menubar.Menu>
+            <Menubar.Trigger>Edit</Menubar.Trigger>
+            <Menubar.Portal>
+              <Menubar.Positioner>
+                <Menubar.Popup>
+                  <Menubar.Item>Undo</Menubar.Item>
+                  <Menubar.Item>Redo</Menubar.Item>
+                </Menubar.Popup>
+              </Menubar.Positioner>
+            </Menubar.Portal>
+          </Menubar.Menu>
+        </Menubar.Root>
       </Section>
     </div>
   );

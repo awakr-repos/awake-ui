@@ -1,0 +1,25 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as Stories from './collapsible.stories';
+
+<Meta of={Stories} />
+
+# Collapsible
+
+A simple show/hide toggle for a single panel. For a grouped accordion, use the **Accordion** component.
+
+## Default
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+## Open by default
+
+<Canvas of={Stories.DefaultOpen} />
+
+## Multiple
+
+<Canvas of={Stories.Multiple} />
+
+## Props
+
+<ArgTypes of={Stories} />

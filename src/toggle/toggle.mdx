@@ -1,0 +1,35 @@
+import { Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as Stories from './toggle.stories';
+
+# Toggle
+
+A two-state button (pressed/unpressed). Use `Toggle.Group` to group multiple toggles with optional single-select behavior.
+
+```tsx
+import { Toggle } from '@awakr/awake-ui/toggle';
+```
+
+## Default
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+## Outline
+
+<Canvas of={Stories.Outline} />
+
+## Sizes
+
+<Canvas of={Stories.Sizes} />
+
+## Group
+
+<Canvas of={Stories.Group} />
+
+## Group — single select
+
+<Canvas of={Stories.GroupSingleSelect} />
+
+## Props
+
+<ArgTypes of={Stories} />

@@ -655,6 +655,270 @@ const [selected, setSelected] = useState(new Date());
 
 ---
 
+### Collapsible
+
+```tsx
+import { Collapsible } from '@awakr/awake-ui/collapsible';
+
+<Collapsible.Root>
+  <Collapsible.Trigger>Show details</Collapsible.Trigger>
+  <Collapsible.Panel>Hidden content revealed on click.</Collapsible.Panel>
+</Collapsible.Root>
+```
+
+---
+
+### Combobox
+
+```tsx
+import { Combobox } from '@awakr/awake-ui/combobox';
+
+<Combobox.Root>
+  <Combobox.InputWrapper>
+    <Combobox.Input placeholder="Search…" />
+    <Combobox.Trigger>▾</Combobox.Trigger>
+  </Combobox.InputWrapper>
+  <Combobox.Portal>
+    <Combobox.Positioner>
+      <Combobox.Popup>
+        <Combobox.Item value="react">React</Combobox.Item>
+        <Combobox.Item value="vue">Vue</Combobox.Item>
+        <Combobox.Empty>No results.</Combobox.Empty>
+      </Combobox.Popup>
+    </Combobox.Positioner>
+  </Combobox.Portal>
+</Combobox.Root>
+```
+
+---
+
+### ContextMenu
+
+```tsx
+import { ContextMenu } from '@awakr/awake-ui/context-menu';
+
+<ContextMenu.Root>
+  <ContextMenu.Trigger>
+    <div>Right-click me</div>
+  </ContextMenu.Trigger>
+  <ContextMenu.Portal>
+    <ContextMenu.Positioner>
+      <ContextMenu.Popup>
+        <ContextMenu.Item>Open</ContextMenu.Item>
+        <ContextMenu.Item>Rename</ContextMenu.Item>
+        <ContextMenu.Separator />
+        <ContextMenu.Item>Delete</ContextMenu.Item>
+      </ContextMenu.Popup>
+    </ContextMenu.Positioner>
+  </ContextMenu.Portal>
+</ContextMenu.Root>
+```
+
+---
+
+### Drawer
+
+Built on `Dialog` primitives — `Popup` accepts a `side` prop:
+
+```tsx
+import { Drawer } from '@awakr/awake-ui/drawer';
+import { Button } from '@awakr/awake-ui/button';
+
+// side: 'right' (default) | 'left' | 'bottom'
+<Drawer.Root>
+  <Drawer.Trigger render={<Button variant="outline">Open Drawer</Button>} />
+  <Drawer.Portal>
+    <Drawer.Backdrop />
+    <Drawer.Popup side="right">
+      <Drawer.Title>Settings</Drawer.Title>
+      <Drawer.Description>Adjust your preferences.</Drawer.Description>
+      <Drawer.Close render={<Button variant="ghost">Close</Button>} />
+    </Drawer.Popup>
+  </Drawer.Portal>
+</Drawer.Root>
+```
+
+---
+
+### Input
+
+```tsx
+import { Input } from '@awakr/awake-ui/input';
+
+<Input placeholder="Enter text…" />
+<Input type="password" placeholder="Password" />
+<Input size="sm" placeholder="Small" />
+<Input size="lg" placeholder="Large" />
+<Input disabled placeholder="Disabled" />
+```
+
+Sizes: `sm` | `md` (default) | `lg`.
+
+---
+
+### Menu
+
+```tsx
+import { Menu } from '@awakr/awake-ui/menu';
+import { Button } from '@awakr/awake-ui/button';
+
+<Menu.Root>
+  <Menu.Trigger render={<Button variant="outline">Actions</Button>} />
+  <Menu.Portal>
+    <Menu.Positioner>
+      <Menu.Popup>
+        <Menu.Item>Edit</Menu.Item>
+        <Menu.Item>Duplicate</Menu.Item>
+        <Menu.Separator />
+        <Menu.Item>Delete</Menu.Item>
+      </Menu.Popup>
+    </Menu.Positioner>
+  </Menu.Portal>
+</Menu.Root>
+```
+
+---
+
+### Menubar
+
+```tsx
+import { Menubar } from '@awakr/awake-ui/menubar';
+
+<Menubar.Root>
+  <Menubar.Menu>
+    <Menubar.Trigger>File</Menubar.Trigger>
+    <Menubar.Portal>
+      <Menubar.Positioner>
+        <Menubar.Popup>
+          <Menubar.Item>New</Menubar.Item>
+          <Menubar.Item>Open</Menubar.Item>
+          <Menubar.Separator />
+          <Menubar.Item>Save</Menubar.Item>
+        </Menubar.Popup>
+      </Menubar.Positioner>
+    </Menubar.Portal>
+  </Menubar.Menu>
+</Menubar.Root>
+```
+
+---
+
+### NavigationMenu
+
+```tsx
+import { NavigationMenu } from '@awakr/awake-ui/navigation-menu';
+
+<NavigationMenu.Root>
+  <NavigationMenu.List>
+    <NavigationMenu.Item>
+      <NavigationMenu.Trigger>Products ▾</NavigationMenu.Trigger>
+      <NavigationMenu.Portal>
+        <NavigationMenu.Positioner>
+          <NavigationMenu.Popup>
+            <NavigationMenu.Link href="/components">Components</NavigationMenu.Link>
+            <NavigationMenu.Link href="/templates">Templates</NavigationMenu.Link>
+          </NavigationMenu.Popup>
+        </NavigationMenu.Positioner>
+      </NavigationMenu.Portal>
+    </NavigationMenu.Item>
+    <NavigationMenu.Item>
+      <NavigationMenu.Link href="/docs">Docs</NavigationMenu.Link>
+    </NavigationMenu.Item>
+  </NavigationMenu.List>
+</NavigationMenu.Root>
+```
+
+---
+
+### Popover
+
+```tsx
+import { Popover } from '@awakr/awake-ui/popover';
+import { Button } from '@awakr/awake-ui/button';
+
+<Popover.Root>
+  <Popover.Trigger render={<Button variant="outline">Open</Button>} />
+  <Popover.Portal>
+    <Popover.Positioner sideOffset={8}>
+      <Popover.Popup>
+        <Popover.Title>Popover title</Popover.Title>
+        <Popover.Description>Some description text.</Popover.Description>
+        <Popover.Close render={<Button variant="ghost">Close</Button>} />
+        <Popover.Arrow />
+      </Popover.Popup>
+    </Popover.Positioner>
+  </Popover.Portal>
+</Popover.Root>
+```
+
+---
+
+### PreviewCard
+
+```tsx
+import { PreviewCard } from '@awakr/awake-ui/preview-card';
+
+<PreviewCard.Root>
+  <PreviewCard.Trigger render={<a href="https://example.com">Hover me</a>} />
+  <PreviewCard.Portal>
+    <PreviewCard.Positioner>
+      <PreviewCard.Popup>
+        <strong>example.com</strong>
+        <p>A link preview card.</p>
+        <PreviewCard.Arrow />
+      </PreviewCard.Popup>
+    </PreviewCard.Positioner>
+  </PreviewCard.Portal>
+</PreviewCard.Root>
+```
+
+---
+
+### RadioGroup
+
+```tsx
+import { RadioGroup } from '@awakr/awake-ui/radio-group';
+
+<RadioGroup.Root defaultValue="option1">
+  <RadioGroup.Item value="option1">Option 1</RadioGroup.Item>
+  <RadioGroup.Item value="option2">Option 2</RadioGroup.Item>
+  <RadioGroup.Item value="option3" disabled>Option 3 (disabled)</RadioGroup.Item>
+</RadioGroup.Root>
+```
+
+---
+
+### ScrollArea
+
+```tsx
+import { ScrollArea } from '@awakr/awake-ui/scroll-area';
+
+<ScrollArea.Root style={{ height: 200, width: 300 }}>
+  <ScrollArea.Viewport>
+    {/* long content */}
+  </ScrollArea.Viewport>
+  <ScrollArea.Scrollbar>
+    <ScrollArea.Thumb />
+  </ScrollArea.Scrollbar>
+</ScrollArea.Root>
+```
+
+---
+
+### Toggle
+
+```tsx
+import { Toggle } from '@awakr/awake-ui/toggle';
+
+// Sizes: sm | md (default) | lg
+<Toggle aria-label="Bold">B</Toggle>
+<Toggle aria-label="Italic" defaultPressed>I</Toggle>
+<Toggle aria-label="Underline" size="sm">U</Toggle>
+<Toggle aria-label="Disabled" disabled>D</Toggle>
+```
+
+---
+
 ## Customization
 
 awake-ui uses a two-layer token system:

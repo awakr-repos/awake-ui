@@ -1,0 +1,45 @@
+.awake-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.awake-radio {
+  display: flex;
+  align-items: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-awake-border-strong);
+  background: var(--color-awake-surface);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.awake-radio:hover {
+  border-color: var(--color-awake-brand);
+}
+
+.awake-radio[data-checked] {
+  border-color: var(--color-awake-brand);
+  background: var(--color-awake-brand);
+}
+
+.awake-radio[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.awake-radio-indicator {
+  display: none;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: var(--color-awake-text-on-brand);
+  margin: auto;
+}
+
+.awake-radio[data-checked] .awake-radio-indicator {
+  display: block;
+}

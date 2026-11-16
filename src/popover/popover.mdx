@@ -1,0 +1,25 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as Stories from './popover.stories';
+
+<Meta of={Stories} />
+
+# Popover
+
+A floating panel anchored to a trigger element.
+
+## Default
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+## With close button
+
+<Canvas of={Stories.WithClose} />
+
+## Placement
+
+<Canvas of={Stories.Sides} />
+
+## Props
+
+<ArgTypes of={Stories} />

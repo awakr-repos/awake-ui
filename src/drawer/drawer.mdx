@@ -1,0 +1,25 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as Stories from './drawer.stories';
+
+<Meta of={Stories} />
+
+# Drawer
+
+A panel that slides in from an edge of the screen.
+
+## Right
+
+<Canvas of={Stories.Right} />
+<Controls of={Stories.Right} />
+
+## Left
+
+<Canvas of={Stories.Left} />
+
+## Bottom sheet
+
+<Canvas of={Stories.Bottom} />
+
+## Props
+
+<ArgTypes of={Stories} />

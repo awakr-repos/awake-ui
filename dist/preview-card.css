@@ -1,0 +1,37 @@
+/* src/preview-card/styles.css */
+.awake-preview-card-trigger {
+  display: inline-flex;
+  cursor: pointer;
+  color: var(--color-awake-brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  background: none;
+  border: none;
+  font: inherit;
+  padding: 0;
+}
+.awake-preview-card-positioner {
+  z-index: 50;
+}
+.awake-preview-card-popup {
+  background: var(--color-awake-surface);
+  border: 1px solid var(--color-awake-border);
+  border-radius: var(--radius-awake-lg);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  min-width: 240px;
+  max-width: 320px;
+  outline: none;
+  transform-origin: var(--transform-origin);
+  transition: transform 0.15s, opacity 0.15s;
+}
+.awake-preview-card-popup[data-starting-style],
+.awake-preview-card-popup[data-ending-style] {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.awake-preview-card-arrow {
+  fill: var(--color-awake-surface);
+  stroke: var(--color-awake-border);
+}
+/*# sourceMappingURL=preview-card.css.map */
