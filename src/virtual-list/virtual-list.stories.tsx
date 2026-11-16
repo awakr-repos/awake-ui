@@ -40,16 +40,12 @@ export const Default: Story = {
   parameters: {
     docs: {
       source: {
-        code: `const items = Array.from({ length: 10_000 }, (_, i) => ({ id: i + 1, name: \`Item \${i + 1}\` }));
-
-<VirtualList
+        code: `<VirtualList
   items={items}
   itemHeight={48}
   height={400}
   renderItem={(item) => (
-    <span>
-      <strong>#{item.id}</strong> {item.name}
-    </span>
+    <span><strong>#{item.id}</strong> {item.name}</span>
   )}
 />`,
       },
@@ -66,38 +62,6 @@ export const Default: Story = {
         <span>
           <strong>#{item.id}</strong>&nbsp;{item.name}
         </span>
-      )}
-    />
-  ),
-};
-
-export const DenseRows: Story = {
-  parameters: {
-    docs: {
-      source: {
-        code: `const items = Array.from({ length: 10_000 }, (_, i) => ({ id: i + 1, name: \`Item \${i + 1}\` }));
-
-<VirtualList
-  items={items}
-  itemHeight={32}
-  height={320}
-  overscan={8}
-  renderItem={(item) => (
-    <span style={{ fontSize: '0.8125rem' }}>{item.name}</span>
-  )}
-/>`,
-      },
-    },
-  },
-  render: (args) => (
-    <VirtualList<Item>
-      {...args}
-      items={ITEMS}
-      itemHeight={32}
-      height={320}
-      overscan={8}
-      renderItem={(item) => (
-        <span style={{ fontSize: '0.8125rem' }}>{item.name}</span>
       )}
     />
   ),
