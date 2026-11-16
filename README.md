@@ -476,6 +476,80 @@ import { Table } from '@awakr/awake-ui/table';
 </Table.Root>
 ```
 
+**Props on `Table.Root`:** `striped` (boolean), `hoverable` (boolean, default `true`), `loading` (boolean), `stickyHeader` (boolean), `searchBar` (ReactNode).
+
+**Sortable columns:**
+
+```tsx
+const [sortDir, setSortDir] = useState<'asc' | 'desc' | null>(null);
+
+<Table.HeaderCell
+  sortable
+  sortDirection={sortDir}
+  onSort={() => setSortDir(d => d === 'asc' ? 'desc' : 'asc')}
+>
+  Name
+</Table.HeaderCell>
+```
+
+**Row selection:**
+
+```tsx
+<Table.Root>
+  <Table.Head>
+    <Table.Row>
+      <Table.SelectionHeaderCell
+        checked={allSelected}
+        indeterminate={someSelected}
+        onChange={toggleAll}
+      />
+      <Table.HeaderCell>Name</Table.HeaderCell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row selected={isSelected}>
+      <Table.SelectionCell checked={isSelected} onChange={toggleRow} />
+      <Table.Cell>Alice</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table.Root>
+```
+
+**Loading skeleton:**
+
+```tsx
+<Table.Root loading>
+  <Table.Head>…</Table.Head>
+  <Table.Body>…</Table.Body>
+</Table.Root>
+```
+
+**Empty state:**
+
+```tsx
+<Table.Body>
+  <Table.Empty colSpan={3}>No results found.</Table.Empty>
+</Table.Body>
+```
+
+**Search (consumer owns state and filter logic):**
+
+`Table.SearchBar` only manages the input state. The filtering logic — whether local, remote, or fuzzy — is entirely up to the consumer.
+
+```tsx
+const [query, setQuery] = useState('');
+const filtered = users.filter(u => u.name.toLowerCase().includes(query.toLowerCase()));
+
+<Table.Root searchBar={<Table.SearchBar value={query} onChange={setQuery} placeholder="Search…" />}>
+  <Table.Head>…</Table.Head>
+  <Table.Body>
+    {filtered.length > 0
+      ? filtered.map(u => <Table.Row key={u.id}>…</Table.Row>)
+      : <Table.Empty colSpan={3}>No results.</Table.Empty>}
+  </Table.Body>
+</Table.Root>
+```
+
 ---
 
 ### Tabs

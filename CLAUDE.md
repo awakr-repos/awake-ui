@@ -80,10 +80,15 @@ Each component has a `<name>.mdx` file. Rules:
 3. Add the entry to `tsup.config.ts` (`entry` array)
 4. Add the export to `package.json` (`exports` map)
 5. Import the component CSS in `src/styles.css`
-6. Create `src/<name>/<name>.stories.tsx` — include explicit `argTypes` in the meta
+6. Create `src/<name>/<name>.stories.tsx` — include explicit `argTypes` in the meta (all props documented)
 7. Create `src/<name>/<name>.mdx` — use `<Canvas>`, `<Controls>`, `<ArgTypes>`
 8. Add the component to `playground/src/App.tsx`
-9. Run `pnpm build` and verify `dist/` output
+9. Add a section to `README.md` with usage examples (required — this is the npm documentation)
+10. Add a row to the components table in `CLAUDE.md`
+11. Add a page to `apps/docs/src/pages/components/` and register it in the sidebar
+12. Run `pnpm build` and verify `dist/` output
+
+> Any addition, edit or removal of a component must update: `README.md`, `argTypes` in the stories file, and this `CLAUDE.md` components table.
 
 ## What not to touch
 
@@ -98,6 +103,8 @@ Each component has a `<name>.mdx` file. Rules:
 | `Avatar` | `src/avatar/index.tsx` | Profile image with initial fallback |
 | `Badge` | `src/badge/index.tsx` | Status label (default/success/warning/error/info) |
 | `Card` | `src/card/index.tsx` | Compound: Root/Header/Title/Description/Content/Footer |
+| `Checkbox` | `src/checkbox/index.tsx` | Controlled checkbox; `checked` accepts `boolean \| 'mixed'` for indeterminate |
 | `Toast` | `src/toast/index.tsx` | Temporary notifications via Provider + useToast hook |
 | `BottomNav` | `src/bottom-nav/index.tsx` | Fixed bottom bar (Root + Item) for mobile |
 | `WeekStrip` | `src/week-strip/index.tsx` | 7-day week selector strip |
+| `Table.SearchBar` | `src/table/index.tsx` | Controlled search input passed via `searchBar` prop on `Table.Root`; consumer owns state and filter logic |

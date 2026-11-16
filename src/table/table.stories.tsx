@@ -9,6 +9,7 @@ const meta: Meta = {
     hoverable: { control: 'boolean', description: 'Highlight rows on hover', defaultValue: true },
     loading: { control: 'boolean', description: 'Show loading skeleton overlay' },
     stickyHeader: { control: 'boolean', description: 'Pin the header on scroll' },
+    searchBar: { control: false, description: 'Pass <Table.SearchBar value={query} onChange={setQuery} /> — the consumer owns the query state and decides the filtering logic' },
   },
 };
 
