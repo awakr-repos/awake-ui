@@ -20,7 +20,7 @@ export function RadioGroupPage() {
     <RadioGroup.Item value="option2" /> Option 2
   </label>
 </RadioGroup.Root>`}>
-        <RadioGroup.Root value={value} onValueChange={setValue}>
+        <RadioGroup.Root value={value} onValueChange={(v) => setValue(v as string)}>
           <div className="flex flex-col gap-3">
             {['option1', 'option2', 'option3'].map((v) => (
               <label key={v} className="flex items-center gap-2 text-sm cursor-pointer">

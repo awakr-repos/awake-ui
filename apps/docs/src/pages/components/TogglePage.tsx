@@ -25,12 +25,12 @@ export function TogglePage() {
       </ComponentPreview>
 
       <h2 className="text-lg font-semibold mb-4">Toggle group</h2>
-      <ComponentPreview code={`<Toggle.Group toggleMultiple>
+      <ComponentPreview code={`<Toggle.Group>
   <Toggle.Root value="b">B</Toggle.Root>
   <Toggle.Root value="i">I</Toggle.Root>
   <Toggle.Root value="u">U</Toggle.Root>
 </Toggle.Group>`}>
-        <Toggle.Group toggleMultiple>
+        <Toggle.Group>
           <Toggle.Root value="b">B</Toggle.Root>
           <Toggle.Root value="i">I</Toggle.Root>
           <Toggle.Root value="u">U</Toggle.Root>

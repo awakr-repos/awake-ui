@@ -32,11 +32,11 @@ const filtered = FRUITS.filter((f) => f.toLowerCase().includes(inputValue.toLowe
   </Combobox.Portal>
 </Combobox.Root>`}>
         <div style={{ width: 280 }}>
-          <Combobox.Root value={null} inputValue={inputValue} onInputChange={setInputValue}>
-            <Combobox.InputWrapper>
-              <Combobox.Input placeholder="Search fruits…" />
+          <Combobox.Root value={null}>
+            <Combobox.InputGroup>
+              <Combobox.Input placeholder="Search fruits…" onChange={(e) => setInputValue(e.target.value)} />
               <Combobox.Trigger>▾</Combobox.Trigger>
-            </Combobox.InputWrapper>
+            </Combobox.InputGroup>
             <Combobox.Portal>
               <Combobox.Positioner>
                 <Combobox.Popup>
