@@ -37,6 +37,24 @@ type Story = StoryObj<typeof meta>;
 const ITEMS: Item[] = Array.from({ length: 10_000 }, (_, i) => ({ id: i + 1, name: `Item ${i + 1}` }));
 
 export const Default: Story = {
+  parameters: {
+    docs: {
+      source: {
+        code: `const items = Array.from({ length: 10_000 }, (_, i) => ({ id: i + 1, name: \`Item \${i + 1}\` }));
+
+<VirtualList
+  items={items}
+  itemHeight={48}
+  height={400}
+  renderItem={(item) => (
+    <span>
+      <strong>#{item.id}</strong> {item.name}
+    </span>
+  )}
+/>`,
+      },
+    },
+  },
   render: (args) => (
     <VirtualList<Item>
       {...args}
@@ -54,6 +72,23 @@ export const Default: Story = {
 };
 
 export const DenseRows: Story = {
+  parameters: {
+    docs: {
+      source: {
+        code: `const items = Array.from({ length: 10_000 }, (_, i) => ({ id: i + 1, name: \`Item \${i + 1}\` }));
+
+<VirtualList
+  items={items}
+  itemHeight={32}
+  height={320}
+  overscan={8}
+  renderItem={(item) => (
+    <span style={{ fontSize: '0.8125rem' }}>{item.name}</span>
+  )}
+/>`,
+      },
+    },
+  },
   render: (args) => (
     <VirtualList<Item>
       {...args}
