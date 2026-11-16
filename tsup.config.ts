@@ -3,6 +3,7 @@ import { defineConfig } from 'tsup';
 export default defineConfig({
   entry: {
     button: 'src/button/index.tsx',
+    checkbox: 'src/checkbox/index.tsx',
     dialog: 'src/dialog/index.tsx',
     field: 'src/field/index.tsx',
     separator: 'src/separator/index.tsx',

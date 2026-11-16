@@ -2,6 +2,7 @@
 @import "./theme.css";
 
 @import "./button/styles.css";
+@import "./checkbox/styles.css";
 @import "./dialog/styles.css";
 @import "./field/styles.css";
 @import "./pagination/styles.css";
@@ -12,7 +13,6 @@
 @import "./loading/styles.css";
 @import "./tooltip/styles.css";
 @import "./alert/styles.css";
-
 
 @import './autocomplete/styles.css';
 @import './number-field/styles.css';

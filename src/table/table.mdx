@@ -8,25 +8,36 @@ import * as TableStories from './table.stories';
 ```tsx
 import { Table } from '@awakr/awake-ui/table';
 import '@awakr/awake-ui/style.css';
-
-<Table.Root>
-  <Table.Head>
-    <Table.Row>
-      <Table.HeaderCell>Nome</Table.HeaderCell>
-    </Table.Row>
-  </Table.Head>
-  <Table.Body>
-    <Table.Row>
-      <Table.Cell>Valor</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table.Root>
 ```
 
-## Interactive example
+## Default
 
 <Canvas of={TableStories.Default} />
 <Controls of={TableStories.Default} />
+
+## Striped
+
+<Canvas of={TableStories.Striped} />
+
+## Sortable columns
+
+<Canvas of={TableStories.Sortable} />
+
+## Row selection
+
+<Canvas of={TableStories.WithSelection} />
+
+## Loading
+
+<Canvas of={TableStories.Loading} />
+
+## Empty state
+
+<Canvas of={TableStories.EmptyState} />
+
+## Searchable
+
+<Canvas of={TableStories.Searchable} />
 
 ## Props
 

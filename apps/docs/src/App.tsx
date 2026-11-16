@@ -9,6 +9,7 @@ import { AvatarPage } from './pages/components/AvatarPage'
 import { BadgePage } from './pages/components/BadgePage'
 import { BottomNavPage } from './pages/components/BottomNavPage'
 import { ButtonPage } from './pages/components/ButtonPage'
+import { CheckboxPage } from './pages/components/CheckboxPage'
 import { CardPage } from './pages/components/CardPage'
 import { DialogPage } from './pages/components/DialogPage'
 import { FieldPage } from './pages/components/FieldPage'
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/docs/components/badge" element={<BadgePage />} />
           <Route path="/docs/components/bottom-nav" element={<BottomNavPage />} />
           <Route path="/docs/components/button" element={<ButtonPage />} />
+          <Route path="/docs/components/checkbox" element={<CheckboxPage />} />
           <Route path="/docs/components/card" element={<CardPage />} />
           <Route path="/docs/components/dialog" element={<DialogPage />} />
           <Route path="/docs/components/field" element={<FieldPage />} />

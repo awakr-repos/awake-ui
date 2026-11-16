@@ -9,6 +9,7 @@ const components = [
   { name: 'Bottom Nav', path: 'bottom-nav' },
   { name: 'Button', path: 'button' },
   { name: 'Card', path: 'card' },
+  { name: 'Checkbox', path: 'checkbox' },
   { name: 'Dialog', path: 'dialog' },
   { name: 'Field', path: 'field' },
   { name: 'Loading', path: 'loading' },

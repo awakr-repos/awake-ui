@@ -1,0 +1,52 @@
+/* src/checkbox/styles.css */
+.awake-checkbox-root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-awake-sm);
+  border: 1.5px solid var(--awake-checkbox-border, var(--color-awake-border-strong));
+  background-color: var(--awake-checkbox-bg, var(--color-awake-surface));
+  cursor: pointer;
+  transition: background-color 120ms, border-color 120ms;
+  flex-shrink: 0;
+}
+.awake-checkbox-root:hover {
+  border-color: var(--awake-checkbox-border-hover, var(--color-awake-brand));
+}
+.awake-checkbox-root[data-checked] {
+  background-color: var(--awake-checkbox-checked-bg, var(--color-awake-brand));
+  border-color: var(--awake-checkbox-checked-border, var(--color-awake-brand));
+}
+.awake-checkbox-root[data-indeterminate] {
+  background-color: var(--awake-checkbox-checked-bg, var(--color-awake-brand));
+  border-color: var(--awake-checkbox-checked-border, var(--color-awake-brand));
+}
+.awake-checkbox-root[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.awake-checkbox-root:focus-visible {
+  outline: 2px solid var(--color-awake-brand-focus);
+  outline-offset: 2px;
+}
+.awake-checkbox-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--awake-checkbox-icon-color, var(--color-awake-text-on-brand));
+}
+.awake-checkbox-indicator[data-hidden] {
+  display: none;
+}
+.awake-checkbox-icon {
+  width: 10px;
+  height: 10px;
+}
+.awake-checkbox-root[data-indeterminate] .awake-checkbox-icon path {
+  d: path("M2.5 6h7");
+}
+/*# sourceMappingURL=checkbox.css.map */
