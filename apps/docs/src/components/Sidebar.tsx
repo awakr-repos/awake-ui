@@ -37,6 +37,7 @@ const components = [
   { name: 'Toast', path: 'toast' },
   { name: 'Toggle', path: 'toggle' },
   { name: 'Tooltip', path: 'tooltip' },
+  { name: 'Virtual List', path: 'virtual-list' },
   { name: 'Week Strip', path: 'week-strip' },
 ]
 

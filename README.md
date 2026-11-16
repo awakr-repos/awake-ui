@@ -674,10 +674,10 @@ import { Collapsible } from '@awakr/awake-ui/collapsible';
 import { Combobox } from '@awakr/awake-ui/combobox';
 
 <Combobox.Root>
-  <Combobox.InputWrapper>
+  <Combobox.InputGroup>
     <Combobox.Input placeholder="Search…" />
     <Combobox.Trigger>▾</Combobox.Trigger>
-  </Combobox.InputWrapper>
+  </Combobox.InputGroup>
   <Combobox.Portal>
     <Combobox.Positioner>
       <Combobox.Popup>
@@ -724,7 +724,7 @@ Built on `Dialog` primitives — `Popup` accepts a `side` prop:
 import { Drawer } from '@awakr/awake-ui/drawer';
 import { Button } from '@awakr/awake-ui/button';
 
-// side: 'right' (default) | 'left' | 'bottom'
+// side: 'right' (default) | 'left' | 'bottom' | 'top'
 <Drawer.Root>
   <Drawer.Trigger render={<Button variant="outline">Open Drawer</Button>} />
   <Drawer.Portal>
@@ -902,6 +902,38 @@ import { ScrollArea } from '@awakr/awake-ui/scroll-area';
   </ScrollArea.Scrollbar>
 </ScrollArea.Root>
 ```
+
+---
+
+### VirtualList
+
+Renders large lists efficiently using `@tanstack/react-virtual`. Only the rows visible in the viewport are mounted in the DOM.
+
+> **When to use:** prefer `VirtualList` over `ScrollArea` when the list has hundreds or thousands of items. For small, in-memory content, `ScrollArea` is simpler.
+
+```tsx
+import { VirtualList } from '@awakr/awake-ui/virtual-list';
+
+const ITEMS = Array.from({ length: 10_000 }, (_, i) => ({
+  id: i + 1,
+  label: `Item ${i + 1}`,
+}));
+
+<VirtualList
+  items={ITEMS}
+  itemHeight={48}
+  height={400}
+  renderItem={(item) => <span>#{item.id} {item.label}</span>}
+/>
+```
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `items` | `T[]` | — | Array of items to render |
+| `itemHeight` | `number` | — | Fixed height of each row (px) |
+| `renderItem` | `(item: T, index: number) => ReactNode` | — | Render function for each row |
+| `height` | `number` | `400` | Height of the scroll container (px) |
+| `overscan` | `number` | `5` | Extra rows rendered beyond the visible area |
 
 ---
 

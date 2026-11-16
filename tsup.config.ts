@@ -39,6 +39,7 @@ export default defineConfig({
     'context-menu': 'src/context-menu/index.tsx',
     'navigation-menu': 'src/navigation-menu/index.tsx',
     menubar: 'src/menubar/index.tsx',
+    'virtual-list': 'src/virtual-list/index.tsx',
   },
   format: ['cjs', 'esm'],
   dts: true,

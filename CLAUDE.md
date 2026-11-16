@@ -114,10 +114,11 @@ Each component has a `<name>.mdx` file. Rules:
 | `RadioGroup` | `src/radio-group/index.tsx` | Compound: Root/Item — accessible radio group built on Base UI radio primitives |
 | `ScrollArea` | `src/scroll-area/index.tsx` | Compound: Root/Viewport/Scrollbar/Thumb — custom-styled scrollable area |
 | `Popover` | `src/popover/index.tsx` | Compound: Root/Trigger/Portal/Backdrop/Positioner/Popup/Title/Description/Close/Arrow |
-| `Drawer` | `src/drawer/index.tsx` | Compound built on Dialog; Popup has `side` prop: `left` \| `right` (default) \| `bottom` |
+| `Drawer` | `src/drawer/index.tsx` | Compound built on Dialog; Popup has `side` prop: `left` \| `right` (default) \| `bottom` \| `top` |
 | `PreviewCard` | `src/preview-card/index.tsx` | Compound: Root/Trigger/Portal/Positioner/Popup/Arrow — link hover preview |
-| `Combobox` | `src/combobox/index.tsx` | Compound: Root/InputWrapper/Input/Trigger/Portal/Positioner/Popup/Item/Empty/Group/GroupLabel |
-| `Menu` | `src/menu/index.tsx` | Compound: Root/Trigger/Portal/Positioner/Popup/Item/CheckboxItem/RadioGroup/RadioItem/Separator/Group/GroupLabel/SubmenuTrigger/ItemIndicator |
+| `Combobox` | `src/combobox/index.tsx` | Compound: Root/InputGroup/Input/Trigger/Portal/Positioner/Popup/Item/Empty/Group/GroupLabel |
+| `Menu` | `src/menu/index.tsx` | Compound: Root/Trigger/Portal/Positioner/Popup/Item/CheckboxItem/RadioGroup/RadioItem/Separator/Group/GroupLabel/SubmenuTrigger |
 | `ContextMenu` | `src/context-menu/index.tsx` | Compound: Root/Trigger/Portal/Positioner/Popup/Item/Separator/Group/GroupLabel |
 | `NavigationMenu` | `src/navigation-menu/index.tsx` | Compound: Root/List/Item/Trigger/Link/Portal/Positioner/Popup/Viewport/Arrow |
 | `Menubar` | `src/menubar/index.tsx` | Compound: Root wraps Base UI Menubar; Menu/Trigger/Portal/Positioner/Popup/Item/Separator/GroupLabel delegate to @base-ui/react/menu |
+| `VirtualList` | `src/virtual-list/index.tsx` | Virtualized list via @tanstack/react-virtual + ScrollArea; props: items, itemHeight, renderItem, height, overscan |

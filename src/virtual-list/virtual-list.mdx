@@ -1,0 +1,40 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as Stories from './virtual-list.stories';
+
+<Meta of={Stories} />
+
+# VirtualList
+
+Renders large lists efficiently by only mounting the rows visible in the viewport.
+Built on `ScrollArea` + `@tanstack/react-virtual`.
+
+Use `ScrollArea` for small, in-memory content. Use `VirtualList` when the list
+is long (hundreds or thousands of items) and performance matters.
+
+## Default
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+## Dense rows
+
+<Canvas of={Stories.DenseRows} />
+
+## Usage
+
+```tsx
+import { VirtualList } from '@awakr/awake-ui/virtual-list';
+
+const ITEMS = Array.from({ length: 5000 }, (_, i) => ({ id: i + 1, name: `Item ${i + 1}` }));
+
+<VirtualList
+  items={ITEMS}
+  itemHeight={48}
+  height={400}
+  renderItem={(item) => <span>{item.name}</span>}
+/>
+```
+
+## Props
+
+<ArgTypes of={Stories} />

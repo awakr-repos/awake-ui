@@ -1,6 +1,6 @@
 {
   "name": "@awakr/awake-ui",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "publishConfig": {
     "access": "public"
   },
@@ -201,6 +201,11 @@
       "types": "./dist/menubar.d.ts",
       "import": "./dist/menubar.js",
       "require": "./dist/menubar.cjs"
+    },
+    "./virtual-list": {
+      "types": "./dist/virtual-list.d.ts",
+      "import": "./dist/virtual-list.js",
+      "require": "./dist/virtual-list.cjs"
     }
   },
   "scripts": {
@@ -246,6 +251,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
+    "@tanstack/react-virtual": "^3.13.6",
     "clsx": "^2.1.1"
   }
 }
