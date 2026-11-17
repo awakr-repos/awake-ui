@@ -1,0 +1,139 @@
+/* src/file-upload/styles.css */
+.awake-file-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+.awake-file-upload-input {
+  display: none;
+}
+.awake-file-upload-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  border: 1.5px dashed var(--color-awake-border);
+  border-radius: var(--radius-awake-md);
+  background: var(--color-awake-surface);
+  color: var(--color-awake-text-muted);
+  cursor: pointer;
+  text-align: center;
+  transition:
+    border-color 0.15s,
+    background 0.15s,
+    color 0.15s;
+  outline: none;
+  user-select: none;
+  box-sizing: border-box;
+}
+.awake-file-upload-dropzone:hover:not([data-disabled]) {
+  border-color: var(--color-awake-brand);
+  background: var(--color-awake-surface-raised);
+}
+.awake-file-upload-dropzone:focus-visible {
+  outline: 2px solid var(--color-awake-brand);
+  outline-offset: 2px;
+}
+.awake-file-upload-dropzone[data-dragging] {
+  border-color: var(--color-awake-brand);
+  background: var(--color-awake-surface-raised);
+}
+.awake-file-upload-dropzone[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.awake-file-upload-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-awake-text-subtle);
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+.awake-file-upload-dropzone:hover:not([data-disabled]) .awake-file-upload-icon,
+.awake-file-upload-dropzone[data-dragging] .awake-file-upload-icon {
+  color: var(--color-awake-brand);
+}
+.awake-file-upload-dropzone-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-awake-text);
+}
+.awake-file-upload-dropzone-link {
+  color: var(--color-awake-brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.awake-file-upload-dropzone-hint {
+  font-size: 0.75rem;
+  color: var(--color-awake-text-muted);
+}
+.awake-file-upload-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.awake-file-upload-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-awake-border);
+  border-radius: var(--radius-awake-md);
+  background: var(--color-awake-surface);
+  box-sizing: border-box;
+}
+.awake-file-upload-item-thumb {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+  border-radius: var(--radius-awake-sm);
+  flex-shrink: 0;
+  background: var(--color-awake-surface-raised);
+}
+.awake-file-upload-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  flex: 1;
+  min-width: 0;
+}
+.awake-file-upload-item-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-awake-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.awake-file-upload-item-size {
+  font-size: 0.75rem;
+  color: var(--color-awake-text-muted);
+}
+.awake-file-upload-item-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-awake-text-muted);
+  border-radius: var(--radius-awake-sm);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.1s, color 0.1s;
+}
+.awake-file-upload-item-remove:hover {
+  background: var(--color-awake-surface-raised);
+  color: var(--color-awake-text);
+}
+/*# sourceMappingURL=file-upload.css.map */

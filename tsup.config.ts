@@ -40,6 +40,7 @@ export default defineConfig({
     'navigation-menu': 'src/navigation-menu/index.tsx',
     menubar: 'src/menubar/index.tsx',
     'virtual-list': 'src/virtual-list/index.tsx',
+    'file-upload': 'src/file-upload/index.tsx',
   },
   format: ['cjs', 'esm'],
   dts: true,

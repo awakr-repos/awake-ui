@@ -16,6 +16,7 @@ const components = [
   { name: 'Dialog', path: 'dialog' },
   { name: 'Drawer', path: 'drawer' },
   { name: 'Field', path: 'field' },
+  { name: 'File Upload', path: 'file-upload' },
   { name: 'Input', path: 'input' },
   { name: 'Loading', path: 'loading' },
   { name: 'Menu', path: 'menu' },

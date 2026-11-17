@@ -1,0 +1,48 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as Stories from './file-upload.stories';
+
+<Meta of={Stories} />
+
+# FileUpload
+
+Drag-and-drop or click-to-select file input with thumbnail preview. Built with native browser APIs — no external dependencies.
+
+## Single
+
+<Canvas of={Stories.Single} />
+<Controls of={Stories.Single} />
+
+## Multiple
+
+<Canvas of={Stories.Multiple} />
+
+## Disabled
+
+<Canvas of={Stories.Disabled} />
+
+## Usage
+
+```tsx
+import { FileUpload } from '@awakr/awake-ui/file-upload';
+
+<FileUpload.Root multiple onChange={(files) => console.log(files)}>
+  <FileUpload.Dropzone />
+  <FileUpload.FileList />
+</FileUpload.Root>
+```
+
+## Customizing accepted types
+
+The `accept` prop takes an array of MIME types. The default accepts common image formats.
+
+```tsx
+// Images only (default)
+<FileUpload.Root accept={['image/jpeg', 'image/png', 'image/webp']}>
+
+// Future: extend to other types
+<FileUpload.Root accept={['application/pdf', 'text/plain']}>
+```
+
+## Props
+
+<ArgTypes of={Stories} />

@@ -39,6 +39,7 @@ import { MenuPage } from './pages/components/MenuPage'
 import { ContextMenuPage } from './pages/components/ContextMenuPage'
 import { NavigationMenuPage } from './pages/components/NavigationMenuPage'
 import { MenubarPage } from './pages/components/MenubarPage'
+import { FileUploadPage } from './pages/components/FileUploadPage'
 import { VirtualListPage } from './pages/components/VirtualListPage'
 
 export default function App() {
@@ -88,6 +89,7 @@ export default function App() {
           <Route path="/docs/components/context-menu" element={<ContextMenuPage />} />
           <Route path="/docs/components/navigation-menu" element={<NavigationMenuPage />} />
           <Route path="/docs/components/menubar" element={<MenubarPage />} />
+          <Route path="/docs/components/file-upload" element={<FileUploadPage />} />
           <Route path="/docs/components/virtual-list" element={<VirtualListPage />} />
           {/* fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
