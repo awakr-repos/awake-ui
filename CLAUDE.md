@@ -122,3 +122,4 @@ Each component has a `<name>.mdx` file. Rules:
 | `NavigationMenu` | `src/navigation-menu/index.tsx` | Compound: Root/List/Item/Trigger/Link/Portal/Positioner/Popup/Viewport/Arrow |
 | `Menubar` | `src/menubar/index.tsx` | Compound: Root wraps Base UI Menubar; Menu/Trigger/Portal/Positioner/Popup/Item/Separator/GroupLabel delegate to @base-ui/react/menu |
 | `VirtualList` | `src/virtual-list/index.tsx` | Virtualized list via @tanstack/react-virtual + ScrollArea; props: items, itemHeight, renderItem, height, overscan |
+| `FileUpload` | `src/file-upload/index.tsx` | Compound: Root/Dropzone/FileList — drag & drop + click-to-select with image thumbnail preview; props: multiple, accept, maxSize, onChange, disabled |

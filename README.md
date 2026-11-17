@@ -267,6 +267,41 @@ import { Field } from '@awakr/awake-ui/field';
 
 ---
 
+### FileUpload
+
+Compound drag-and-drop / click-to-select file picker with image thumbnail previews. Accepts multiple files, enforces accepted MIME types, and optionally enforces a max file size per file.
+
+```tsx
+import { FileUpload } from '@awakr/awake-ui/file-upload';
+
+// Single image (default)
+<FileUpload.Root onChange={(files) => console.log(files)}>
+  <FileUpload.Dropzone />
+  <FileUpload.FileList />
+</FileUpload.Root>
+
+// Multiple images with size cap
+<FileUpload.Root
+  multiple
+  accept={['image/jpeg', 'image/png', 'image/webp']}
+  maxSize={5 * 1024 * 1024}
+  onChange={(files) => console.log(files)}
+>
+  <FileUpload.Dropzone />
+  <FileUpload.FileList />
+</FileUpload.Root>
+```
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `multiple` | `boolean` | `false` | Allow selecting more than one file |
+| `accept` | `string[]` | `['image/jpeg','image/png','image/webp']` | Accepted MIME types |
+| `maxSize` | `number` | — | Max bytes per file; oversized files are silently skipped |
+| `onChange` | `(files: FileUploadFile[]) => void` | — | Called whenever the file list changes |
+| `disabled` | `boolean` | `false` | Disables all interactions |
+
+---
+
 ### Loading
 
 ```tsx
