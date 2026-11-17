@@ -130,9 +130,9 @@ export function Home() {
           {/* CTA card */}
           <div className="rounded-2xl border docs-border-cta docs-nav-active-bg p-6 flex flex-col justify-between md:col-span-2 lg:col-span-2">
             <div>
-              <p className="font-semibold text-lg mb-2">38 components and counting</p>
+              <p className="font-semibold text-lg mb-2">39 components and counting</p>
               <p className="docs-text-muted text-sm">
-                Accordion, Alert, Autocomplete, Avatar, Badge, Bottom Nav, Button, Card, Checkbox, Collapsible, Combobox, Context Menu, Dialog, Drawer, Field, Input, Loading, Menu, Menubar, Navigation Menu, Number Field, Pagination, Popover, Preview Card, Progress, Radio Group, Scroll Area, Select, Separator, Slider, Switch, Table, Tabs, Toast, Toggle, Tooltip, Virtual List, Week Strip.
+                Accordion, Alert, Autocomplete, Avatar, Badge, Bottom Nav, Button, Card, Checkbox, Collapsible, Combobox, Context Menu, Dialog, Drawer, Field, File Upload, Input, Loading, Menu, Menubar, Navigation Menu, Number Field, Pagination, Popover, Preview Card, Progress, Radio Group, Scroll Area, Select, Separator, Slider, Switch, Table, Tabs, Toast, Toggle, Tooltip, Virtual List, Week Strip.
               </p>
             </div>
             <Link to="/docs/components/accordion" className="mt-6 self-start">
